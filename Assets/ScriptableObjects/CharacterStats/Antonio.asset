@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Antonio
   m_EditorClassIdentifier: 
   maxHealth: 150
-  currHealth: -215
+  currHealth: 150
   speed: 1.2
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 11400000, guid: 7b8cbdb4233530b43968db69d3b4cb6b, type: 2}
   characterBonus: 0
