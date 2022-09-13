@@ -30,6 +30,8 @@ public class PlayerWeaponsHandler : MonoBehaviour
 
     void Update()
     {
+		// for debugging and testing weapons
+
 		for (int i = 0; i < _weapons.Length; i++)
 		{
 			if (_weapons[i].equipped)

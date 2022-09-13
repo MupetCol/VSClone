@@ -17,7 +17,7 @@ MonoBehaviour:
   maxLevel: 8
   baseDamage: 10
   cooldown: 1
-  amount: 1
+  amount: 3
   pierce: 0
   poolLimit: 0
   rarity: 100
@@ -25,5 +25,5 @@ MonoBehaviour:
   area: 1
   duration: 0
   projectInverval: 0
-  hitboxDelay: 0
-  knockBack: 0
+  hitboxDelay: 1
+  knockBack: 1

@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7652631389974480119}
   - component: {fileID: 7244727886281783686}
-  - component: {fileID: 6229809234707238540}
-  - component: {fileID: 7403656456060319679}
+  - component: {fileID: 6930752144845939256}
+  - component: {fileID: 4531676614431228381}
+  - component: {fileID: 2426927501625921810}
+  - component: {fileID: 6046955264627066603}
   m_Layer: 0
-  m_Name: KnifeProjectile
-  m_TagString: Untagged
+  m_Name: AxeProjectile
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1858347026739939312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.131944, y: 0.15164997, z: -0.02202155}
-  m_LocalScale: {x: 0.5, y: 0.25, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0, g: 0.8002434, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6229809234707238540
+--- !u!61 &6930752144845939256
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +114,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &7403656456060319679
+--- !u!50 &4531676614431228381
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858347026739939312}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2426927501625921810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +144,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1858347026739939312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb392db6bd55fa4fa4c4d9d0b33f8c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c416e1239508724fab88fdde0ab7654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knifeStats: {fileID: 11400000, guid: 38529733e50ec824f9f4b33076ad8d5a, type: 2}
+  _axeStats: {fileID: 11400000, guid: 0f5ae2f198960a24aa393f63975b90d4, type: 2}
+  _direction: {x: 0, y: 0, z: 0}
+--- !u!114 &6046955264627066603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858347026739939312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 11400000, guid: 0f5ae2f198960a24aa393f63975b90d4, type: 2}
+  _triggerDamage: 1
+  _tickDamage: 0

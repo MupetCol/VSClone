@@ -26,4 +26,4 @@ MonoBehaviour:
   duration: 0
   projectInverval: 0.1
   hitboxDelay: 0.1
-  knockBack: 0
+  knockBack: 1

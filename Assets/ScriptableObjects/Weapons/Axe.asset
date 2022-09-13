@@ -15,7 +15,7 @@ MonoBehaviour:
   equipped: 0
   weaponLevel: 1
   maxLevel: 8
-  baseDamage: 20
+  baseDamage: 1
   cooldown: 3
   amount: 3
   pierce: 1
@@ -26,4 +26,4 @@ MonoBehaviour:
   duration: 0
   projectInverval: 0
   hitboxDelay: 0
-  knockBack: 0
+  knockBack: 1
