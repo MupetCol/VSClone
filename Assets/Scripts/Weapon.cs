@@ -28,7 +28,7 @@ public class Weapon : ScriptableObject
 
 	#endregion
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
 		equipped = false;
 	}

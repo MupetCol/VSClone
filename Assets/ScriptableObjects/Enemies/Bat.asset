@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f7948158db4ac4d9ebf1da9a834843, type: 3}
   m_Name: Bat
   m_EditorClassIdentifier: 
-  baseHealth: 10000
+  baseHealth: 10
   power: 3
-  speed: 1
+  speed: 2
   knockback: 0.1
   xp: 3
   hpXlevel: 0
-  fixedDirection: 0

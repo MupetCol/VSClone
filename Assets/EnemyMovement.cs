@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class EnemyMovement : MonoBehaviour
 
 	private GameObject _player;
 	public Enemy _enemyStats;
+	public bool _fixedMovement;
+	public float _trackingInterval = 0.1f;
 
 	private float _trackingSpeed;
+	private Vector3 _fixedPosition;
+	private Vector3 _updatedPosition;
 
 
 	#endregion
@@ -28,14 +33,16 @@ public class EnemyMovement : MonoBehaviour
 	private void Awake()
 	{
 		_player = FindObjectOfType<PlayerMovement>().gameObject;
-		_trackingSpeed = _enemyStats.speed;
-
+		_trackingSpeed = _enemyStats.speed;		
 	}
 
 	void Start()
     {
-        
-    }
+        if(!_fixedMovement)
+			StartCoroutine(UpdateTargetPosition());
+
+		_fixedPosition = (_player.transform.position - transform.position).normalized;
+	}
 
     void Update()
     {
@@ -50,7 +57,27 @@ public class EnemyMovement : MonoBehaviour
 
 	void Move()
 	{
-		transform.Translate((_player.transform.position - transform.position).normalized * Time.deltaTime * _trackingSpeed);
+		if (_player)
+		{
+			if (!_fixedMovement)
+			{
+				transform.Translate(_updatedPosition * Time.deltaTime * _trackingSpeed);
+			}
+			else
+			{
+				transform.Translate(_fixedPosition * Time.deltaTime * _trackingSpeed);
+			}
+		}
+	}
+
+	IEnumerator UpdateTargetPosition()
+	{
+		while (_player)
+		{
+			_updatedPosition = (_player.transform.position - transform.position).normalized;
+			yield return new WaitForSeconds(_trackingInterval);
+		}
+
 	}
 
 	#endregion

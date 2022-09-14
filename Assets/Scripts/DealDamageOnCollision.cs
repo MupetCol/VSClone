@@ -47,20 +47,22 @@ public class DealDamageOnCollision : MonoBehaviour
 		ContactFilter2D filter = new ContactFilter2D();
 		filter.SetLayerMask(_enemyLayer);
 		List<Collider2D> colliders = new List<Collider2D>();
-		while(_constant)
+
+		do
 		{
 			Physics2D.OverlapCollider(_collider, filter, colliders);
 
-			Debug.Log(colliders.Count);
+			//Debug.Log(colliders.Count);
 
 			foreach (Collider2D col in colliders)
 			{
-				col.GetComponent<IDamageable<float,float>>().Damage(_damage,_knockBack);
+				col.GetComponent<IDamageable<float, float>>().Damage(_damage, _knockBack);
 			}
 
 			colliders.Clear();
 			yield return new WaitForSeconds(_hitboxDelay);
-		} 
+
+		} while (_constant);
 	}
 
 

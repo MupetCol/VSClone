@@ -13,7 +13,6 @@ public class Enemy : ScriptableObject
 	public float xp;
 
 	public bool hpXlevel;
-	public bool fixedDirection;
 
 
 	#endregion

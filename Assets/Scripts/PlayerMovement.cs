@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
+	public bool _playSelectedCharacter;
+	public PlayerCharacter[] _allCharacters;
 	public PlayerCharacter _character;
 
 	#endregion
@@ -21,12 +23,23 @@ public class PlayerMovement : MonoBehaviour
 
 	#region UNITY_METHODS
 
-    void Start()
-    {
-        
-    }
+	private void Awake()
+	{
+		if (_playSelectedCharacter)
+		{
+			foreach (PlayerCharacter chara in _allCharacters)
+			{
+				if (chara.selected)
+				{
+					_character = chara;
+					break;
+				}
 
-    void Update()
+			}
+		}
+	}
+
+	void Update()
     {
 		Vector3 totalMovement = Vector3.zero;
 

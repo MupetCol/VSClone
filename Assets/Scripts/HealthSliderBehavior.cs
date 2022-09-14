@@ -25,6 +25,7 @@ public class HealthSliderBehavior : MonoBehaviour
 
 	void Start()
     {
+		_character = GetComponentInParent<PlayerBehavior>()._character;
 		_healthBar = GetComponent<Slider>();
     }
 

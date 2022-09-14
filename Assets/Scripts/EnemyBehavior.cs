@@ -59,7 +59,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	public IEnumerator DealDamage(Collision2D coll)
 	{
 		_canDealDamage = false;
-		coll.gameObject.GetComponent<PlayerHandler>()._character.currHealth -= _damagePoints;
+		coll.gameObject.GetComponent<IDamageable<float, float>>().Damage(_damagePoints, 0);
 		yield return new WaitForSeconds(_timeBetweenHit);
 		_canDealDamage = true;
 	}

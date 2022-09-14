@@ -11,6 +11,9 @@ public class PlayerCharacter : ScriptableObject
 	public Weapon startingWeapon;
 	public int characterBonus = 0;
 
+	public bool selected = false;
+
+	public Sprite sprite;
 
 
 
@@ -20,5 +23,10 @@ public class PlayerCharacter : ScriptableObject
 	{
 		currHealth = maxHealth;
 		//startingWeapon.equipped = true;
+	}
+
+	private void OnDisable()
+	{
+		selected = false;
 	}
 }

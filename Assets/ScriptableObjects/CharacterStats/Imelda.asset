@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currHealth: 100
-  speed: 1
-  startingWeapon: {fileID: 0}
+  speed: 1.2
+  startingWeapon: {fileID: 11400000, guid: a73bd4ccd696dcf4981e1373a9807a7c, type: 2}
   characterBonus: 0
+  selected: 1
+  sprite: {fileID: 21300000, guid: ca55e9b266c0edb46b400e7926d33d39, type: 3}

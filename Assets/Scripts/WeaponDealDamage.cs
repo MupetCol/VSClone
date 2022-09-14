@@ -40,7 +40,7 @@ public class WeaponDealDamage : DealDamageOnCollision
 		}
 	}
 
-	private void Start()
+	private void OnEnable()
 	{
 		if(_tickDamage)
 		StartCoroutine(DamageOnEnemiesOnArea());
