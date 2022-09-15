@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerBehavior : MonoBehaviour, IDamageable<float, float>, IKillable
+public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKillable
 {
 	#region PUBLIC_VARIABLES
 
