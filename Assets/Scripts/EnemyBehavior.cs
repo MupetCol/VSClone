@@ -20,6 +20,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	private Rigidbody2D _rigidbody;
 
 	private bool _canDealDamage = true;
+	private DropCollectable _dropper;
 
 	#endregion
 
@@ -37,6 +38,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 		_damagePoints = _enemyStats.power;
 		_health = _enemyStats.baseHealth;
 		_rigidbody = GetComponent<Rigidbody2D>();
+		_dropper = GetComponent<DropCollectable>();
 		
 	}
 	void Start()
@@ -80,6 +82,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	public void Kill()
 	{
+		_dropper.Drop();
 		Destroy(this.gameObject);
 	}
 

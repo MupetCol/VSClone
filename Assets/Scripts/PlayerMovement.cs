@@ -4,9 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
-	public bool _playSelectedCharacter;
-	public PlayerCharacter[] _allCharacters;
-	public PlayerCharacter _character;
+	public Stat _speed;
 
 	#endregion
 
@@ -22,22 +20,6 @@ public class PlayerMovement : MonoBehaviour
 	#endregion
 
 	#region UNITY_METHODS
-
-	private void Awake()
-	{
-		if (_playSelectedCharacter)
-		{
-			foreach (PlayerCharacter chara in _allCharacters)
-			{
-				if (chara.selected)
-				{
-					_character = chara;
-					break;
-				}
-
-			}
-		}
-	}
 
 	void Update()
     {
@@ -63,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 			totalMovement += transform.right;
 		}
 
-		transform.Translate(totalMovement.normalized * Time.deltaTime * _character.speed);
+		transform.Translate(totalMovement.normalized * Time.deltaTime * _speed.baseStat.Value);
 	}
 
 	#endregion

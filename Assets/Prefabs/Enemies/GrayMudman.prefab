@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7644087620166280356}
   - component: {fileID: 7644087620166280359}
   - component: {fileID: 7644087620166280353}
+  - component: {fileID: -3191932241318737960}
   m_Layer: 6
   m_Name: GrayMudman
   m_TagString: Enemy
@@ -166,6 +167,21 @@ MonoBehaviour:
   _enemyStats: {fileID: 11400000, guid: 9c56b02d1a0338f46ba573d36bd68c36, type: 2}
   _fixedMovement: 0
   _trackingInterval: 0.1
+--- !u!114 &-3191932241318737960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644087620166280347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb13ec9242c85d647a09a955640d4181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectibles:
+  - {fileID: 2900014535521336057, guid: b344213814053414ea50fa5295e04ce3, type: 3}
+  - {fileID: 669924481555236137, guid: 3ee0dcc0ce4d28d49991d9d6114528f9, type: 3}
 --- !u!1 &7644087621063089693
 GameObject:
   m_ObjectHideFlags: 0

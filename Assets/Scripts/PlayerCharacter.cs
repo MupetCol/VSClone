@@ -5,28 +5,37 @@ using UnityEngine;
 public class PlayerCharacter : ScriptableObject
 {
 	#region PUBLIC_VARIABLES
-	public float maxHealth = 0;
-	public float currHealth = 0;
-	public float speed = 1;
-	public Weapon startingWeapon;
-	public int characterBonus = 0;
 
 	public bool selected = false;
-
-	public Sprite sprite;
-
-
+	public Weapon startingWeapon;
+	public Sprite characterSprite;
+	public Stat[] baseStatToBoost;
+	public float[] bonus;
 
 	#endregion
 
-	private void OnEnable()
+	public void ApplyCharacterBonus()
 	{
-		currHealth = maxHealth;
-		//startingWeapon.equipped = true;
-	}
-
-	private void OnDisable()
-	{
-		selected = false;
+		if (selected)
+		{
+			for (int i = 0; i < baseStatToBoost.Length; i++)
+			{
+				if (baseStatToBoost[i].stackingType == 0)
+				{
+					baseStatToBoost[i].baseStat.Value += bonus[i];
+				}
+				else if(baseStatToBoost[i].stackingType == 1)
+				{
+					//Max health stat
+					baseStatToBoost[i].baseStat.Value += bonus[i];
+				}
+				else if(baseStatToBoost[i].stackingType == 2)
+				{
+					//Magnet stat
+					baseStatToBoost[i].baseStat.Value *= bonus[i];
+				}
+			}
+			startingWeapon.equipped = true;
+		}
 	}
 }

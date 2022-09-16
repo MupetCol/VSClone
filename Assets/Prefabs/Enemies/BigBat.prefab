@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 386388283686433600}
   - component: {fileID: 386388283686433603}
   - component: {fileID: 386388283686433605}
+  - component: {fileID: 3224909643729031256}
   m_Layer: 6
   m_Name: BigBat
   m_TagString: Enemy
@@ -250,3 +251,18 @@ MonoBehaviour:
   _enemyStats: {fileID: 11400000, guid: 26053f4d94896ae4ca149a891f11d6be, type: 2}
   _fixedMovement: 0
   _trackingInterval: 0.1
+--- !u!114 &3224909643729031256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386388283686433663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb13ec9242c85d647a09a955640d4181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectibles:
+  - {fileID: 2900014535521336057, guid: b344213814053414ea50fa5295e04ce3, type: 3}
+  - {fileID: 669924481555236137, guid: 3ee0dcc0ce4d28d49991d9d6114528f9, type: 3}

@@ -5,7 +5,7 @@ public class HealthSliderBehavior : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
-	public PlayerCharacter _character;
+	public FloatReference _health;
 
 	#endregion
 
@@ -25,13 +25,12 @@ public class HealthSliderBehavior : MonoBehaviour
 
 	void Start()
     {
-		_character = GetComponentInParent<PlayerDamageHandler>()._character;
 		_healthBar = GetComponent<Slider>();
     }
 
     void Update()
     {
-		_healthBar.value = _character.currHealth / _character.maxHealth ;
+		_healthBar.value = _health.Value / Utilities.Instance._maxHealth;
     }
 
 	#endregion

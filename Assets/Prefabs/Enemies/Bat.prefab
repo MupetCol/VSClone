@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8498023513057759697}
   - component: {fileID: 8498023513057759698}
   - component: {fileID: 8498023513057759700}
+  - component: {fileID: -2191001247584610343}
   m_Layer: 6
   m_Name: Bat
   m_TagString: Enemy
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938baa1d6882a334cae0aae5fedbf568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStats: {fileID: 11400000, guid: 81dc02a70e50de44fa8fa7e2540372da, type: 2}
+  _enemyStats: {fileID: 11400000, guid: 667ac461f19ca4f4293a694c49b5daae, type: 2}
   _health: 0
   _whiteCopy: {fileID: 8498023512142539624}
 --- !u!114 &8498023513057759700
@@ -247,6 +248,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a817e90cf998f4dbf7a3fdf543f7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStats: {fileID: 11400000, guid: 81dc02a70e50de44fa8fa7e2540372da, type: 2}
-  _fixedMovement: 1
+  _enemyStats: {fileID: 11400000, guid: 667ac461f19ca4f4293a694c49b5daae, type: 2}
+  _fixedMovement: 0
   _trackingInterval: 0.1
+--- !u!114 &-2191001247584610343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498023513057759726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb13ec9242c85d647a09a955640d4181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectibles:
+  - {fileID: 2900014535521336057, guid: b344213814053414ea50fa5295e04ce3, type: 3}
+  - {fileID: 669924481555236137, guid: 3ee0dcc0ce4d28d49991d9d6114528f9, type: 3}

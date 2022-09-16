@@ -8,7 +8,6 @@ public class Coin : CollectableBase, ICollectable
 	public void Collected()
 	{
 		_coinsCounter.Value += _value;
-		Debug.Log("I've been collected");
 		Destroy(gameObject);
 	}
 }

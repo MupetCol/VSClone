@@ -7,9 +7,15 @@ public class FloatReference : ScriptableObject
 	public float defaultValue;
 	public bool reset;
 
-	private void OnDisable()
+	private void OnEnable()
 	{
-		if(reset)
-		Value = defaultValue;
+		if (reset)
+			Value = defaultValue;
+	}
+
+	public void ResetValues()
+	{
+		if (reset)
+			Value = defaultValue;
 	}
 }

@@ -38,4 +38,9 @@ public class LoadScene : MonoBehaviour
 	{
 		SceneManager.LoadScene((int)_sceneIndex.Value);
 	}
+
+	public void LoadFreeScene(int index)
+	{
+		SceneManager.LoadScene(index);
+	}
 }

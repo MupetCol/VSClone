@@ -8,8 +8,6 @@ public class PlayerCharacterHandler : MonoBehaviour
 	public PlayerCharacter[] _allCharacters;
 	public PlayerCharacter _character;
 
-    public bool _activateStartingWeapon = false;
-
 
 
 
@@ -19,30 +17,22 @@ public class PlayerCharacterHandler : MonoBehaviour
 
     void Awake()
     {
-		if (_playSelectedCharacter)
+	
+		foreach (PlayerCharacter chara in _allCharacters)
 		{
-			foreach (PlayerCharacter chara in _allCharacters)
+			if (chara.selected)
 			{
-				if (chara.selected)
-				{
-					_character = chara;
-					break;
-				}
-
+				_character = chara;
+				break;
 			}
+
 		}
+		
 
-		GetComponent<SpriteRenderer>().sprite = _character.sprite;
-
-		//Activate starting weapon on start
-		if (_activateStartingWeapon)
-        _character.startingWeapon.equipped = true;
+		GetComponent<SpriteRenderer>().sprite = _character.characterSprite;
 	}
 
-    void Update()
-    {
-        
-    }
+ 
 
 	#endregion
 }
