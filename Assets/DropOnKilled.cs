@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class DropOnKilled : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
-	public Weapon _weapon;
 
 	#endregion
 
@@ -23,8 +22,8 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-		Destroy(gameObject, _weapon.duration * _weapon.globalDuration.Value);
-	}
+        
+    }
 
     void Update()
     {

@@ -14,20 +14,16 @@ public class KingBibleProjectile : Projectile
 
 	#endregion
 
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
-
-	#endregion
-
 	#region UNITY_METHODS
-
-	public void SetValues(float speed, GameObject pivot, bool rotate, float distance)
+	private void Awake()
+	{
+		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
+	}
+	public void SetValues(float speed, GameObject pivot, bool rotate)
 	{
 		_speed = speed;
 		_pivot = pivot;
 		_rotate = true;
-		//SetPosition(distance);
 	}
 
 	public void SetPosition(float distance)

@@ -2,19 +2,9 @@ using UnityEngine;
 
 public class AxeProjectile : Projectile
 {
-	#region PUBLIC_VARIABLES
-
-	#endregion
-
 	#region PRIVATE_VARIABLES
 
 	public Vector3 _direction;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
 
 	#endregion
 
@@ -22,6 +12,7 @@ public class AxeProjectile : Projectile
 
 	private void Awake()
 	{
+		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
 	public void SetDirection(float axeNumber, float force)

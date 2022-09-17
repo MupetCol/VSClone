@@ -10,19 +10,11 @@ public class FireWandBehavior : WeaponBase
 	public Transform _spawnPoint;
 	public float _offsetDivider = 5f;
 
-
-
 	#endregion
 
 	#region PRIVATE_VARIABLES
 
 	private LayerMask _enemyLayer;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
 
 	#endregion
 
@@ -32,14 +24,9 @@ public class FireWandBehavior : WeaponBase
 		base.Awake();
 		_enemyLayer = LayerMask.GetMask("Enemies");
 	}
-	void Start()
+	private void Start()
 	{
 		StartCoroutine(FireWandFlow());
-	}
-
-	void Update()
-	{
-
 	}
 
 	#endregion
@@ -50,16 +37,16 @@ public class FireWandBehavior : WeaponBase
 		{
 			var closestEnemy = DetectClosestEnemy();
 			int offset = 0;
-			for (int i = 0; i < amount; i++)
+			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				FireWandProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
 
 				if (offset == 3) offset = 0;
 				project.SetDirection(closestEnemy, offset/_offsetDivider);
-				if (i % 3 == 2) yield return new WaitForSeconds(.25f);
+				if (i % 3 == 2) yield return new WaitForSeconds(_weaponStats.projectInverval);
 				offset++;
 			}
-			yield return new WaitForSeconds(cooldown);
+			yield return new WaitForSeconds(cooldown/_weaponStats.globalCooldown.Value);
 		}
 
 	}

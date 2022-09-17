@@ -28,15 +28,7 @@ public class RuneTracerProjectile : Projectile
 	{
 		_direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
 		_origin = transform.position;
-	}
-
-	public void SetDirection(Transform target, float offset)
-	{
-		//if (target != null)
-		//{
-		//	_direction = target.position + new Vector3(0, offset, 0) - transform.position;
-		//	_direction.Normalize();
-		//}
+		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
 	void Update()
@@ -47,11 +39,11 @@ public class RuneTracerProjectile : Projectile
 		}
 		if(_hasBounced)
 		{
-			transform.Translate(_direction * _weapon.speed * Time.deltaTime);
+			transform.Translate(_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
 		}
 		else
 		{
-			transform.Translate(-_direction * _weapon.speed * Time.deltaTime);
+			transform.Translate(-_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
 		}
 
 	}

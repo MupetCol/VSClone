@@ -11,12 +11,13 @@ public class DealDamageOnCollision : MonoBehaviour
 
 	#region PRIVATE_VARIABLES
 
-	protected float _damage = 0f;
-	protected float _hitboxDelay = .1f;
-	protected float _knockBack = 1f;
+	public Weapon _weapon;
 	public bool _constant;
 	protected Collider2D _collider;
 	private LayerMask _enemyLayer;
+	private float _hitCount = 0;
+
+	public List<GameObject> _targetsOnCooldown = new List<GameObject>();
 
 	#endregion
 
@@ -36,10 +37,24 @@ public class DealDamageOnCollision : MonoBehaviour
 
 	protected virtual void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.TryGetComponent(out IDamageable<float,float> dam))
+		if(collision.TryGetComponent(out IDamageable<float,float> dam) && !_targetsOnCooldown.Contains(collision.gameObject))
 		{
-			dam.Damage(_damage,_knockBack);
+			// Deal damage and destroy projectile if pierce count is equal to hitcount
+			// 0 on a weapon pierce stat is taken as "IGNORE" pierce stat
+			_hitCount++;
+			dam.Damage(_weapon.baseDamage * _weapon.globalMight.Value
+					, _weapon.knockBack);
+			if (_hitCount == _weapon.pierce && _weapon.pierce != 0) Destroy(this.gameObject);
+
+			_targetsOnCooldown.Add(collision.gameObject);
+			StartCoroutine(TargetCooldown(collision.gameObject));
 		}
+	}
+
+	IEnumerator TargetCooldown(GameObject target)
+	{
+		yield return new WaitForSeconds(_weapon.hitboxDelay);
+		_targetsOnCooldown.Remove(target);
 	}
 
 	protected IEnumerator DamageOnEnemiesOnArea()
@@ -56,14 +71,16 @@ public class DealDamageOnCollision : MonoBehaviour
 
 			foreach (Collider2D col in colliders)
 			{
-				col.GetComponent<IDamageable<float, float>>().Damage(_damage, _knockBack);
+				col.GetComponent<IDamageable<float, float>>().Damage(_weapon.baseDamage * _weapon.globalMight.Value
+					, _weapon.knockBack);
 			}
 
 			colliders.Clear();
-			yield return new WaitForSeconds(_hitboxDelay);
+			yield return new WaitForSeconds(_weapon.hitboxDelay);
 
 		} while (_constant);
 	}
+	
 
 
 	#endregion

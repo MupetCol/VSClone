@@ -16,14 +16,20 @@ MonoBehaviour:
   weaponLevel: 1
   maxLevel: 8
   baseDamage: 10
-  cooldown: 3
+  cooldown: 4
   amount: 1
   pierce: 0
   poolLimit: 0
   rarity: 100
   speed: 2
-  area: 0
-  duration: 3
-  projectInverval: 0.1
-  hitboxDelay: 0.1
+  area: 1
+  duration: 5
+  projectInverval: 0.25
+  hitboxDelay: 0.25
   knockBack: 1
+  globalAmount: {fileID: 11400000, guid: 28ca878219d4c4e4e854d5d53a6e8db3, type: 2}
+  globalArea: {fileID: 11400000, guid: a9098175408b47e43b5dfd200a5ccec9, type: 2}
+  globalCooldown: {fileID: 11400000, guid: aba07f73c96dcf541a59f85720879589, type: 2}
+  globalDuration: {fileID: 11400000, guid: 47408c63969c4a4498a441fb0bc87e36, type: 2}
+  globalMight: {fileID: 11400000, guid: dbf5b3124ca1467409f87e12c5948d42, type: 2}
+  globalSpeed: {fileID: 11400000, guid: 703e306eb65367045a2118701d3b3584, type: 2}

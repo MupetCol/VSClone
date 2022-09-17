@@ -10,19 +10,11 @@ public class MagicWandBehavior : WeaponBase
 	public MagicWandProjectile _projectile;
 	public Transform _spawnPoint;
 
-
-
 	#endregion
 
 	#region PRIVATE_VARIABLES
 
 	private LayerMask _enemyLayer;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
 
 	#endregion
 
@@ -37,22 +29,20 @@ public class MagicWandBehavior : WeaponBase
 		StartCoroutine(MagicWandFlow());
     }
 
-    void Update()
-    {
-        
-    }
-
 	#endregion
 
 	IEnumerator MagicWandFlow()
 	{
 		while (true)
 		{
-			MagicWandProjectile project = Instantiate(_projectile,_spawnPoint.position,Quaternion.identity);
-			project.SetDirection(DetectClosestEnemy());
-			yield return new WaitForSeconds(cooldown);
+			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
+			{
+				MagicWandProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				project.SetDirection(DetectClosestEnemy());
+				yield return new WaitForSeconds(_weaponStats.projectInverval);
+			}
+			yield return new WaitForSeconds(cooldown / _weaponStats.globalSpeed.Value);
 		}
-
 	}
 
 	private void OnDrawGizmosSelected()

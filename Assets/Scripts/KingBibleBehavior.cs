@@ -11,32 +11,11 @@ public class KingBibleBehavior : WeaponBase
 
 	#endregion
 
-	#region PRIVATE_VARIABLES
-
-	private LayerMask _enemyLayer;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
-
-	#endregion
-
 	#region UNITY_METHODS
-	public override void Awake()
-	{
-		base.Awake();
-		_enemyLayer = LayerMask.GetMask("Enemies");
-	}
+
 	void Start()
 	{
 		StartCoroutine(KingBibleFlow());
-	}
-
-	void Update()
-	{
-
 	}
 
 	#endregion
@@ -45,20 +24,14 @@ public class KingBibleBehavior : WeaponBase
 	{
 		while (true)
 		{
-			for (int i = 0; i < amount; i++)
+			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				KingBibleProjectile project = Instantiate(_projectile, _spawnPoint.position+Vector3.right, Quaternion.identity,_spawnPoint);
-				project.SetValues(speed, _spawnPoint.gameObject, true, area);
+				project.SetValues(speed * _weaponStats.globalSpeed.Value, _spawnPoint.gameObject, true);
 				yield return new WaitForSeconds(projectInverval);
 			}
-			yield return new WaitForSeconds(cooldown);
+			yield return new WaitForSeconds(cooldown/_weaponStats.globalCooldown.Value);
 		}
 
-	}
-
-	private void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawSphere(transform.position, _radius);
 	}
 }

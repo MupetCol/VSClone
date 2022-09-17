@@ -21,13 +21,17 @@ public class KnifeProjectile : Projectile
 
 	#region UNITY_METHODS
 
-
+	private void Awake()
+	{
+		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
+	}
 
 	public void SetDirection(Vector3 direction, float speed)
 	{
 		_direction = direction;
 		_speed = speed;
 	}
+
 	void Update()
 	{
 		transform.Translate(_direction * Time.deltaTime *_speed);

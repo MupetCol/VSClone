@@ -11,24 +11,8 @@ public class AxesBehavior : WeaponBase
 
 	#endregion
 
-	#region PRIVATE_VARIABLES
-
-	private LayerMask _enemyLayer;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
-
-	#endregion
-
 	#region UNITY_METHODS
-	public override void Awake()
-	{
-		base.Awake();
-		_enemyLayer = LayerMask.GetMask("Enemies");
-	}
+
 	void Start()
 	{
 		StartCoroutine(AxeFlow());
@@ -40,14 +24,14 @@ public class AxesBehavior : WeaponBase
 	{
 		while (true)
 		{
-			for (int i = 0; i < amount; i++)
+			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				AxeProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
 
-				project.SetDirection(i+1,_axeForce);
-				yield return new WaitForSeconds(.2f);
+				project.SetDirection(i+1,_axeForce *speed*_weaponStats.globalSpeed.Value);
+				yield return new WaitForSeconds(projectInverval);
 			}
-			yield return new WaitForSeconds(cooldown);
+			yield return new WaitForSeconds(cooldown/_weaponStats.globalCooldown.Value);
 		}
 
 	}

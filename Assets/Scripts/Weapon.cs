@@ -8,16 +8,15 @@ public class Weapon : ScriptableObject
 	//State
 	public bool equipped;
 
-	//Stats
-	public int weaponLevel;
-	public int maxLevel;
-	public int baseDamage;
-	public int cooldown;
-	public int amount;
-	public int pierce;
-	public int poolLimit;
-	public int rarity;
-
+	//Stats unique to each weapon
+	public float weaponLevel;
+	public float maxLevel;
+	public float baseDamage;
+	public float cooldown;
+	public float amount;
+	public float pierce;
+	public float poolLimit;
+	public float rarity;
 	public float speed;
 	public float area;
 	public float duration;
@@ -25,6 +24,13 @@ public class Weapon : ScriptableObject
 	public float hitboxDelay;
 	public float knockBack;
 
+	//Stats multipliers or additions shared globally
+	public FloatReference globalAmount;
+	public FloatReference globalArea;
+	public FloatReference globalCooldown;
+	public FloatReference globalDuration;
+	public FloatReference globalMight;
+	public FloatReference globalSpeed;
 
 	#endregion
 

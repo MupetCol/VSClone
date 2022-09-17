@@ -3,34 +3,26 @@ using System.Collections;
 
 public class GarlicBehavior : WeaponBase
 {
-	#region PUBLIC_VARIABLES
-
-
-	#endregion
 
 	#region PRIVATE_VARIABLES
 
 	private bool _canDealDamage = true;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
+	private float _lastArea;
 
 	#endregion
 
 	#region UNITY_METHODS
+	public override void Awake()
+	{
+		base.Awake();
+		UpdateArea();
+	}
 
-	void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+	void UpdateArea()
+	{
+		transform.localScale *= _weaponStats.area * _weaponStats.globalArea.Value;
+		_lastArea = _weaponStats.area + _weaponStats.globalArea.Value;
+	}
 
 	private void OnCollisionStay2D(Collision2D collision)
 	{
@@ -40,8 +32,6 @@ public class GarlicBehavior : WeaponBase
 		}
 	}
 
-
-
 	#endregion
 
 	public IEnumerator DealDamage(Collision2D coll)
@@ -50,5 +40,13 @@ public class GarlicBehavior : WeaponBase
 		//coll.gameObject.GetComponent<Enemy>().Damage();
 		yield return new WaitForSeconds(hitboxDelay);
 		_canDealDamage = true;
+	}
+
+	private void Update()
+	{
+		if(_weaponStats.area + _weaponStats.globalArea.Value != _lastArea)
+		{
+			UpdateArea();
+		}
 	}
 }

@@ -47,8 +47,7 @@ public class KnifeBehavior : WeaponBase
 	{
 		while (true)
 		{
-			for (int i = 0; i < amount; i++)
-			{
+			
 				Vector3 dir = Vector3.zero;
 				if (Input.GetKey(KeyCode.W))
 				{
@@ -79,13 +78,15 @@ public class KnifeBehavior : WeaponBase
 					dir.Normalize();
 				}
 
+			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
+			{
 				KnifeProjectile project = Instantiate(_projectile, _spawnPoint.position + 
 					new Vector3(Random.Range(-_offset, _offset), Random.Range(-_offset,_offset),0), Quaternion.identity);
-				project.SetDirection(dir, speed);
+				project.SetDirection(dir, speed* _weaponStats.globalSpeed.Value);
 
 				yield return new WaitForSeconds(projectInverval);
 			}
-			yield return new WaitForSeconds(cooldown);
+			yield return new WaitForSeconds(cooldown/_weaponStats.globalCooldown.Value);
 		}
 
 	}

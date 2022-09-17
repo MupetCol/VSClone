@@ -2,19 +2,10 @@ using UnityEngine;
 
 public class FireWandProjectile : Projectile
 {
-	#region PUBLIC_VARIABLES
-
-	#endregion
 
 	#region PRIVATE_VARIABLES
 
 	public Vector3 _direction;
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
 
 	#endregion
 
@@ -23,6 +14,7 @@ public class FireWandProjectile : Projectile
 	private void Awake()
 	{
 		_direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
+		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
 	public void SetDirection(Transform target, float offset)
@@ -36,7 +28,7 @@ public class FireWandProjectile : Projectile
 
 	void Update()
 	{
-		transform.Translate(_direction * _weapon.speed * Time.deltaTime);
+		transform.Translate(_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
 	}
 
 	#endregion
