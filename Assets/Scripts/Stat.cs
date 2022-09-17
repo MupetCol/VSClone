@@ -7,10 +7,14 @@ public class Stat : ScriptableObject
 	public FloatReference baseStat;
 	public float powerUpRank;
 	public float bonusPerRank;
+	public int stackingType;
 	public float maxCap;
+	public float rarity;
+
+	[TextArea]
+	public string upgradesText;
 
 	//0 Additive - 1 MaxHealth - 2 Magnet
-	public int stackingType;
 
 
 	public void ApplyPowerUp()
@@ -24,6 +28,11 @@ public class Stat : ScriptableObject
 			//+1 because in the inspector i added the bonus on a bonus/100 manner
 			baseStat.Value *= (powerUpRank * (bonusPerRank+1));
 		}
+	}
+
+	private void OnEnable()
+	{
+
 	}
 
 

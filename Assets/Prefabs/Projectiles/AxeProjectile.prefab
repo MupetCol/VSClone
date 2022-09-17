@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c416e1239508724fab88fdde0ab7654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _axeStats: {fileID: 11400000, guid: 0f5ae2f198960a24aa393f63975b90d4, type: 2}
+  _weapon: {fileID: 11400000, guid: 0f5ae2f198960a24aa393f63975b90d4, type: 2}
   _direction: {x: 0, y: 0, z: 0}
 --- !u!114 &6046955264627066603
 MonoBehaviour:

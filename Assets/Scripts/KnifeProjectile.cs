@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class KnifeProjectile : MonoBehaviour
+public class KnifeProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _knifeStats;
 
 	#endregion
 
@@ -21,6 +20,8 @@ public class KnifeProjectile : MonoBehaviour
 	#endregion
 
 	#region UNITY_METHODS
+
+
 
 	public void SetDirection(Vector3 direction, float speed)
 	{

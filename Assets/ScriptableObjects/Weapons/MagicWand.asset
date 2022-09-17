@@ -23,7 +23,7 @@ MonoBehaviour:
   rarity: 100
   speed: 2
   area: 0
-  duration: 0
+  duration: 3
   projectInverval: 0
   hitboxDelay: 0
   knockBack: 1

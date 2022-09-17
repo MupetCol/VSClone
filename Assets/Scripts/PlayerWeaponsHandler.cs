@@ -20,6 +20,7 @@ public class PlayerWeaponsHandler : MonoBehaviour
 			if (_weapons[i].equipped)
 			{
 				_weaponsObjects[i].SetActive(true);
+				Utilities.Instance._ownedObjects.Add(_weaponsObjects[i]);
 			}
 			else
 			{

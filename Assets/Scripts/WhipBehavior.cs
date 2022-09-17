@@ -50,7 +50,6 @@ public class WhipBehavior : WeaponBase
 		ContactFilter2D filter = new ContactFilter2D().NoFilter();
 		List<Collider2D> results = new List<Collider2D>();
 		hitbox.OverlapCollider(filter, results);
-		//Debug.Log(results.Count);
 	}
 
 	#endregion

@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be0ce51a263d3e4595c322481932302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _kingBibleStats: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
+  _weapon: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
 --- !u!114 &-3639188769485754025
 MonoBehaviour:
   m_ObjectHideFlags: 0

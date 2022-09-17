@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class RuneTracerProjectile : MonoBehaviour
+public class RuneTracerProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _runeTracerStats;
 	public float _distanceToBounce;
 	public Vector3 _direction;
 
@@ -48,11 +47,11 @@ public class RuneTracerProjectile : MonoBehaviour
 		}
 		if(_hasBounced)
 		{
-			transform.Translate(_direction * _runeTracerStats.speed * Time.deltaTime);
+			transform.Translate(_direction * _weapon.speed * Time.deltaTime);
 		}
 		else
 		{
-			transform.Translate(-_direction * _runeTracerStats.speed * Time.deltaTime);
+			transform.Translate(-_direction * _weapon.speed * Time.deltaTime);
 		}
 
 	}

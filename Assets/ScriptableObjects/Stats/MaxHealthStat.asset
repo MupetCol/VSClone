@@ -15,5 +15,7 @@ MonoBehaviour:
   baseStat: {fileID: 11400000, guid: b91cfa3e243650843b5ddf781ccfbaed, type: 2}
   powerUpRank: 1
   bonusPerRank: 0.1
-  maxCap: 0.33
   stackingType: 1
+  maxCap: 0.33
+  rarity: 100
+  upgradesText: 

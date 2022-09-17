@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abdb797ba9c3a1438524d4a7394885a, type: 3}
   m_Name: KingBible
   m_EditorClassIdentifier: 
-  equipped: 0
+  equipped: 1
   weaponLevel: 1
   maxLevel: 8
   baseDamage: 10
@@ -20,10 +20,10 @@ MonoBehaviour:
   amount: 1
   pierce: 0
   poolLimit: 0
-  rarity: 0
+  rarity: 100
   speed: 200
   area: 1
-  duration: 0
+  duration: 3
   projectInverval: 0.2
   hitboxDelay: 0
   knockBack: 1

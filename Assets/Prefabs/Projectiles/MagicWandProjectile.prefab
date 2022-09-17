@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67e5257aa47ac9448670548c46b8ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _magicWandStats: {fileID: 11400000, guid: a73bd4ccd696dcf4981e1373a9807a7c, type: 2}
+  _weapon: {fileID: 11400000, guid: a73bd4ccd696dcf4981e1373a9807a7c, type: 2}
   _direction: {x: 0, y: 0, z: 0}
 --- !u!114 &-8815767233671085459
 MonoBehaviour:
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _constant: 0
   _weapon: {fileID: 11400000, guid: a73bd4ccd696dcf4981e1373a9807a7c, type: 2}
   _triggerDamage: 1
   _tickDamage: 0

@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class AxeProjectile : MonoBehaviour
+public class AxeProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _axeStats;
 
 	#endregion
 

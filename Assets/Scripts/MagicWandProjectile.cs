@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class MagicWandProjectile : MonoBehaviour
+public class MagicWandProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _magicWandStats;
 
 	#endregion
 
@@ -37,7 +36,7 @@ public class MagicWandProjectile : MonoBehaviour
 
     void Update()
     {
-		transform.Translate(_direction * _magicWandStats.speed * Time.deltaTime);
+		transform.Translate(_direction * _weapon.speed * Time.deltaTime);
     }
 
 	#endregion

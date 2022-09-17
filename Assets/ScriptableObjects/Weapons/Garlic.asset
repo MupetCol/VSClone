@@ -20,10 +20,10 @@ MonoBehaviour:
   amount: 0
   pierce: 0
   poolLimit: 0
-  rarity: 70
+  rarity: 100
   speed: 0
   area: 1
-  duration: 0
+  duration: 3
   projectInverval: 0
   hitboxDelay: 0.5
   knockBack: 0.5

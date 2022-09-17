@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abdb797ba9c3a1438524d4a7394885a, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  equipped: 0
+  equipped: 1
   weaponLevel: 1
   maxLevel: 8
   baseDamage: 1
@@ -20,10 +20,10 @@ MonoBehaviour:
   amount: 3
   pierce: 1
   poolLimit: 0
-  rarity: 0
+  rarity: 100
   speed: 0
   area: 0
-  duration: 0
+  duration: 3
   projectInverval: 0
   hitboxDelay: 0
   knockBack: 1

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Utilities : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Utilities : MonoBehaviour
 	public float _maxHealth = 0;
 	public float _expToLevelUp = 15f;
 	public FloatReference _health;
+	public List<Object> _ownedObjects = new List<Object>();
 	#region PUBLIC_VARIABLES
 
 
@@ -32,7 +34,6 @@ public class Utilities : MonoBehaviour
     void Awake()
     {
         Instance = this;
-
     }
 
     void Update()

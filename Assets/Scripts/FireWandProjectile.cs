@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class FireWandProjectile : MonoBehaviour
+public class FireWandProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _fireWandStats;
 
 	#endregion
 
@@ -37,7 +36,7 @@ public class FireWandProjectile : MonoBehaviour
 
 	void Update()
 	{
-		transform.Translate(_direction * _fireWandStats.speed * Time.deltaTime);
+		transform.Translate(_direction * _weapon.speed * Time.deltaTime);
 	}
 
 	#endregion

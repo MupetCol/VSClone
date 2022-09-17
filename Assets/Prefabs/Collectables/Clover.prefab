@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65878bb58b89b8d46b85c3fecb188161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rarity: 5
+  _rarity: 10
   _value: 0.1
   _luck: {fileID: 11400000, guid: d8594109e34dfec43a964fac2f046984, type: 2}

@@ -4,36 +4,10 @@ using System.Collections.Generic;
 
 public class ToggleChange : MonoBehaviour
 {
-	public Toggle[] _charactersToggles;
-	public Weapon[] weapons;
-
 	#region PUBLIC_VARIABLES
 
-
-	#endregion
-
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
-
-	#endregion
-
-	#region UNITY_METHODS
-
-    void Start()
-    {
-		
-    }
-	
-    void Update()
-    {
-        
-    }
+	public Toggle[] _charactersToggles;
+	public Weapon[] weapons;
 
 	#endregion
 

@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class KingBibleProjectile : MonoBehaviour
+public class KingBibleProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
-	public Weapon _kingBibleStats;
 
 	#endregion
 

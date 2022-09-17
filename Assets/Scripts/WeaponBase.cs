@@ -10,21 +10,20 @@ public class WeaponBase : MonoBehaviour
 
 	#region PRIVATE_VARIABLES
 
-	protected int weaponLevel;
-	protected int maxLevel;
-	protected int baseDamage;
-	protected int amount;
-	protected int pierce;
-	protected int poolLimit;
-	protected int rarity;
-
-	protected float speed;
-	protected float area;
-	protected float duration;
-	protected float cooldown;
-	protected float projectInverval;
-	protected float hitboxDelay;
-	protected float knockBack;
+	public int weaponLevel;
+	public int maxLevel;
+	public int baseDamage;
+	public int amount;
+	public int pierce;
+	public int poolLimit;
+	public int rarity;
+	public float speed;
+	public float area;
+	public float duration;
+	public float cooldown;
+	public float projectInverval;
+	public float hitboxDelay;
+	public float knockBack;
 
 	#endregion
 	

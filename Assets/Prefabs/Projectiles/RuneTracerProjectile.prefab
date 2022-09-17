@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a430b73fa3916c542b74e2fcb1b18ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _runeTracerStats: {fileID: 11400000, guid: 41a23fa91b60e454faeca57045844ac6, type: 2}
+  _weapon: {fileID: 11400000, guid: 41a23fa91b60e454faeca57045844ac6, type: 2}
   _distanceToBounce: 2
   _direction: {x: 0, y: 0, z: 0}
 --- !u!114 &652779047187560672

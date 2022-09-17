@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 40
   power: 5
-  speed: 0.5
+  speed: 0.3
   knockback: 0.1
   xp: 3
   hpXlevel: 0
