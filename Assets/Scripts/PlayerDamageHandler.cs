@@ -6,14 +6,18 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 	#region PUBLIC_VARIABLES
 
 	public FloatReference _health;
+	public bool _immortal = false;
 
 	#endregion
 
 
 	public void Damage(float damageTaken, float weaponKnockBackStat)
 	{
-		_health.Value -= damageTaken;
-		if (_health.Value <= 0) Kill();
+		if (!_immortal)
+		{
+			_health.Value -= damageTaken;
+			if (_health.Value <= 0) Kill();
+		}
 	}
 
 	public void Kill()

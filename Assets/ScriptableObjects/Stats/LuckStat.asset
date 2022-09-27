@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a146c738e04ded040ab335c2960ca91c, type: 3}
   m_Name: LuckStat
   m_EditorClassIdentifier: 
-  baseStat: {fileID: 11400000, guid: d8594109e34dfec43a964fac2f046984, type: 2}
+  floatData: {fileID: 11400000, guid: d8594109e34dfec43a964fac2f046984, type: 2}
   powerUpRank: 0
   bonusPerRank: 0.1
   stackingType: 0

@@ -12,6 +12,10 @@ public class Utilities : MonoBehaviour
 	public float _initDistanceToGoal = 0f;
 	public FloatReference _health;
 	public List<Object> _ownedObjects = new List<Object>();
+	public List<EnemyBehavior> _enemies = new List<EnemyBehavior>();
+	public List<ExpGem> _expGems = new List<ExpGem>();
+	
+	public Transform _player;
 
 	public GameObject _goal;
 
@@ -26,6 +30,7 @@ public class Utilities : MonoBehaviour
 	}
     void Awake()
     {
+		_player = FindObjectOfType<PlayerMovement>().transform;
         Instance = this;
 		_initDistanceToGoal = Vector2.Distance(transform.position, _goal.transform.position);
     }

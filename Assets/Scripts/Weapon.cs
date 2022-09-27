@@ -36,6 +36,6 @@ public class Weapon : ScriptableObject
 
 	private void OnDisable()
 	{
-		equipped = false;
+		//equipped = false;
 	}
 }

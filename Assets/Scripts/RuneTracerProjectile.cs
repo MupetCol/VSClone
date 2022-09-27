@@ -28,7 +28,6 @@ public class RuneTracerProjectile : Projectile
 	{
 		_direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
 		_origin = transform.position;
-		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
 	void Update()

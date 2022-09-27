@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a146c738e04ded040ab335c2960ca91c, type: 3}
   m_Name: MaxHealthStat
   m_EditorClassIdentifier: 
-  baseStat: {fileID: 11400000, guid: b91cfa3e243650843b5ddf781ccfbaed, type: 2}
+  floatData: {fileID: 11400000, guid: b91cfa3e243650843b5ddf781ccfbaed, type: 2}
   powerUpRank: 1
   bonusPerRank: 0.1
   stackingType: 1

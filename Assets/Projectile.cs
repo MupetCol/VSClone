@@ -23,6 +23,7 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
+	    transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 		Destroy(gameObject, _weapon.duration * _weapon.globalDuration.Value);
 	}
 

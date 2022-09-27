@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.A))
 		{
 			totalMovement -= transform.right;
+			transform.localScale = new Vector3(-1,1,1);
 		}
 
 		if (Input.GetKey(KeyCode.S))
@@ -43,9 +44,10 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.D))
 		{
 			totalMovement += transform.right;
+			transform.localScale = new Vector3(1, 1, 1);
 		}
 
-		transform.Translate(totalMovement.normalized * Time.deltaTime * _speed.baseStat.Value);
+		transform.Translate(totalMovement.normalized * Time.deltaTime * _speed.floatData.Value);
 	}
 
 	#endregion

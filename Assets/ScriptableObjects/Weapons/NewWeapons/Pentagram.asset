@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abdb797ba9c3a1438524d4a7394885a, type: 3}
+  m_Name: Pentagram
+  m_EditorClassIdentifier: 
+  equipped: 0
+  weaponLevel: 1
+  maxLevel: 8
+  baseDamage: 2
+  cooldown: 5
+  amount: 1
+  pierce: 0
+  poolLimit: 0
+  rarity: 100
+  speed: 2
+  area: 1
+  duration: 5
+  projectInverval: 0.2
+  hitboxDelay: 0.5
+  knockBack: 0.2
+  globalAmount: {fileID: 11400000, guid: 28ca878219d4c4e4e854d5d53a6e8db3, type: 2}
+  globalArea: {fileID: 11400000, guid: a9098175408b47e43b5dfd200a5ccec9, type: 2}
+  globalCooldown: {fileID: 11400000, guid: aba07f73c96dcf541a59f85720879589, type: 2}
+  globalDuration: {fileID: 11400000, guid: 47408c63969c4a4498a441fb0bc87e36, type: 2}
+  globalMight: {fileID: 11400000, guid: dbf5b3124ca1467409f87e12c5948d42, type: 2}
+  globalSpeed: {fileID: 11400000, guid: 703e306eb65367045a2118701d3b3584, type: 2}

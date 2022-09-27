@@ -20,7 +20,9 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	private Rigidbody2D _rigidbody;
 
 	private bool _canDealDamage = true;
+	public bool _frozen = false;
 	private DropCollectable _dropper;
+	private EnemyMovement _movement;
 
 	#endregion
 
@@ -34,6 +36,8 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	private void Awake()
 	{
+		Utilities.Instance._enemies.Add(this);
+		_movement = GetComponent<EnemyMovement>();
 		_player = FindObjectOfType<PlayerMovement>().gameObject;
 		_damagePoints = _enemyStats.power;
 		_health = _enemyStats.baseHealth;
@@ -48,15 +52,35 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	private void OnCollisionStay2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Player" && _canDealDamage)
+		if (collision.gameObject.tag == "Player" && _canDealDamage && !_frozen)
 		{
 			StartCoroutine(DealDamage(collision));
 		}
 	}
 
+	private void OnDestroy() {
+		Utilities.Instance._enemies.Remove(this);
+	}
+
 
 
 	#endregion
+
+	public void Freeze(float freezeTime){
+		StartCoroutine(FreezeCor(freezeTime));
+	}
+
+	public IEnumerator FreezeCor (float freezeTime)
+	{
+		Color DefColor = GetComponent<SpriteRenderer>().color;
+		GetComponent<SpriteRenderer>().color = Color.blue;
+		_frozen = true;
+		_movement._frozen = true;
+		yield return new WaitForSeconds(freezeTime);
+		_frozen = false;
+		_movement._frozen = false;
+		GetComponent<SpriteRenderer>().color = DefColor;
+	}
 
 	public IEnumerator DealDamage(Collision2D coll)
 	{

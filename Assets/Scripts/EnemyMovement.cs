@@ -18,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
 	private float _trackingSpeed;
 	private Vector3 _fixedPosition;
 	private Vector3 _updatedPosition;
+	public bool _frozen = false;
 
 
 	#endregion
@@ -51,6 +52,7 @@ public class EnemyMovement : MonoBehaviour
 
 		// Create coroutine that updates the direction every some time, that way it wont folow the player like
 		// a homing projectile
+		if(!_frozen)
 		Move();
 		
 	}

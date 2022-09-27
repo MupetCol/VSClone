@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a146c738e04ded040ab335c2960ca91c, type: 3}
   m_Name: RerollStat
   m_EditorClassIdentifier: 
-  baseStat: {fileID: 11400000, guid: 4da3c72813486054b935d93f2d245f24, type: 2}
+  floatData: {fileID: 11400000, guid: 4da3c72813486054b935d93f2d245f24, type: 2}
   powerUpRank: 0
   bonusPerRank: 1
   stackingType: 0

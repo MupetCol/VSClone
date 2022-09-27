@@ -22,20 +22,20 @@ public class PlayerCharacter : ScriptableObject
 			{
 				if (baseStatToBoost[i].stackingType == 0)
 				{
-					baseStatToBoost[i].baseStat.Value += bonus[i];
+					baseStatToBoost[i].floatData.Value += bonus[i];
 				}
 				else if(baseStatToBoost[i].stackingType == 1)
 				{
 					//Max health stat
-					baseStatToBoost[i].baseStat.Value += bonus[i];
+					baseStatToBoost[i].floatData.Value += bonus[i];
 				}
 				else if(baseStatToBoost[i].stackingType == 2)
 				{
 					//Magnet stat
-					baseStatToBoost[i].baseStat.Value *= bonus[i];
+					baseStatToBoost[i].floatData.Value *= bonus[i];
 				}
 			}
-			startingWeapon.equipped = true;
+			//startingWeapon.equipped = true;
 		}
 	}
 }

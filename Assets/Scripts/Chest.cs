@@ -33,7 +33,7 @@ public class Chest : CollectableBase, ICollectable
 		else if (_reward.GetType() == typeof(Stat))
 		{
 			Stat stat = (Stat)_reward;
-			stat.baseStat.Value += stat.bonusPerRank;
+			stat.floatData.Value += stat.bonusPerRank;
 			_rewardGiven.description = stat.name + " Upgraded";
 		}
 
