@@ -11,6 +11,9 @@ public class Stat : ScriptableObject
 	public float maxCap;
 	public float rarity;
 
+	public bool reset;
+
+
 	[TextArea]
 	public string upgradesText;
 
@@ -28,11 +31,13 @@ public class Stat : ScriptableObject
 			//+1 because in the inspector i added the bonus on a bonus/100 manner
 			floatData.Value *= (powerUpRank * (bonusPerRank+1));
 		}
+		powerUpRank++;
 	}
 
 	private void OnEnable()
 	{
-
+		if (reset)
+			powerUpRank = 0;
 	}
 
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c09ce490143b8a49b216715a8e0a5a0, type: 3}
   m_Name: Amount
   m_EditorClassIdentifier: 
-  Value: 1
+  Value: 0
   defaultValue: 0
-  reset: 1
+  reset: 0

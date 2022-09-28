@@ -18,4 +18,5 @@ MonoBehaviour:
   stackingType: 2
   maxCap: 0.56
   rarity: 100
+  reset: 1
   upgradesText: 

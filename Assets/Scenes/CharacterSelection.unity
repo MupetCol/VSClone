@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 21052691}
   - component: {fileID: 21052692}
+  - component: {fileID: 21052693}
   m_Layer: 5
-  m_Name: Toggle (11)
+  m_Name: Luck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +211,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &21052693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21052690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Luck
+  _statBonusText: Chance to get lucky goes up by 10% per rank (max +30%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 600
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 7ea5ead0319e82f4e8aa7dc94ccc1799, type: 2}
 --- !u!1 &73665859
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +243,7 @@ GameObject:
   - component: {fileID: 73665860}
   - component: {fileID: 73665861}
   - component: {fileID: 73665862}
+  - component: {fileID: 73665863}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -310,6 +333,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: bbfac784139402b49a7f97624b6073f6, type: 2}
+--- !u!114 &73665863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73665859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  _statBonusText: 
+  _statName: {fileID: 0}
+  _bonusText: {fileID: 0}
+  _priceText: {fileID: 0}
+  _basePrice: 0
+  _currentPrice: 0
+  _totalBought: {fileID: 0}
+  _stat: {fileID: 0}
 --- !u!1 &105893293
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,8 +364,9 @@ GameObject:
   m_Component:
   - component: {fileID: 105893294}
   - component: {fileID: 105893295}
+  - component: {fileID: 105893296}
   m_Layer: 5
-  m_Name: Toggle (10)
+  m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,6 +442,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &105893296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105893293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 'Magnet '
+  _statBonusText: Items pickup range +25% per rank (max +50%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 300
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 07d862151c0b7f246ae26e3563273a2b, type: 2}
 --- !u!1 &135755504
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,8 +685,9 @@ GameObject:
   m_Component:
   - component: {fileID: 159696591}
   - component: {fileID: 159696592}
+  - component: {fileID: 159696593}
   m_Layer: 5
-  m_Name: Toggle (5)
+  m_Name: Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,6 +763,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &159696593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159696590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Area
+  _statBonusText: Augments area of attacks by 5% per rank (max +10%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 300
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: a6a907ff70ae84148a7d2fab8ee3dfa0, type: 2}
 --- !u!1 &173120024
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,8 +1009,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283256141
+  m_fontColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -939,8 +1027,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1212,7 +1300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Max Health
 --- !u!222 &230210676
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1292,7 +1380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: MoveSpeed
 --- !u!222 &250530270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1847,8 +1935,9 @@ GameObject:
   m_Component:
   - component: {fileID: 420529362}
   - component: {fileID: 420529363}
+  - component: {fileID: 420529364}
   m_Layer: 5
-  m_Name: Toggle (8)
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1924,6 +2013,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &420529364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420529361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Amount
+  _statBonusText: Fires 1 more projectile (all weapons).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 5000
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 430bd2c5c2676784f998f249dff7f632, type: 2}
 --- !u!1 &438909356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2147,155 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &489653745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489653746}
+  - component: {fileID: 489653749}
+  - component: {fileID: 489653748}
+  - component: {fileID: 489653747}
+  m_Layer: 5
+  m_Name: CoinNumber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &489653746
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489653745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1490837147}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 18, y: -36.200012}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &489653747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489653745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b54ec6e9faa7b74c9ef9911dd5f4df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floatToGive: {fileID: 11400000, guid: e7ad720e7f743d546a01ddc1bc686381, type: 2}
+--- !u!114 &489653748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489653745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 100
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &489653749
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489653745}
+  m_CullTransparentMesh: 1
 --- !u!1 &536802174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,8 +2863,9 @@ GameObject:
   m_Component:
   - component: {fileID: 591515909}
   - component: {fileID: 591515910}
+  - component: {fileID: 591515911}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2681,6 +2941,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &591515911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591515908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Armor
+  _statBonusText: Reduces incoming damage by 1 per rank (max -3)
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 600
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 6a43b8fdbb782ab418e02b16de1065b4, type: 2}
 --- !u!1 &632377269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +3185,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Curse
 --- !u!222 &680508249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2923,8 +3204,9 @@ GameObject:
   m_Component:
   - component: {fileID: 686322962}
   - component: {fileID: 686322963}
+  - component: {fileID: 686322964}
   m_Layer: 5
-  m_Name: Toggle (9)
+  m_Name: Movespeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3000,6 +3282,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &686322964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686322961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: MoveSpeed
+  _statBonusText: Character moves 5% faster per rank (max 10%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 300
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 33e7ba02450b6e940bd5ae1d10d90c79, type: 2}
 --- !u!1 &696263839
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,7 +3374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Growth
 --- !u!222 &696263842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3166,8 +3469,9 @@ GameObject:
   m_Component:
   - component: {fileID: 758630279}
   - component: {fileID: 758630280}
+  - component: {fileID: 758630281}
   m_Layer: 5
-  m_Name: Toggle (13)
+  m_Name: Greed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3243,6 +3547,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &758630281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758630278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Greed
+  _statBonusText: Gains 10% more coins per rank (max +50%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 200
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: d01ca5678456b714da536ad5e4e41798, type: 2}
 --- !u!1 &776663519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,8 +3713,9 @@ GameObject:
   m_Component:
   - component: {fileID: 822373597}
   - component: {fileID: 822373598}
+  - component: {fileID: 822373599}
   m_Layer: 5
-  m_Name: Toggle (2)
+  m_Name: Max Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3465,6 +3791,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &822373599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822373596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Max Health
+  _statBonusText: Augments max health by 10% per rank (max +30%)
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 200
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: dc071493a2d69e748b919b6d4248e3d9, type: 2}
 --- !u!1 &833698620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,6 +4011,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834440311}
   m_CullTransparentMesh: 1
+--- !u!1 &844222670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844222671}
+  m_Layer: 0
+  m_Name: StartingScreenUtilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &844222671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844222670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1949898, y: -0.3861515, z: -0.057205852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855960055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,7 +4113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Greed
 --- !u!222 &855960058
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4083,6 +4461,7 @@ GameObject:
   - component: {fileID: 928727130}
   - component: {fileID: 928727131}
   - component: {fileID: 928727132}
+  - component: {fileID: 928727133}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -4172,6 +4551,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 28d57210975e5e14e8acb4a23a0316f9, type: 2}
+--- !u!114 &928727133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928727129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  _statBonusText: 
+  _statName: {fileID: 0}
+  _bonusText: {fileID: 0}
+  _priceText: {fileID: 0}
+  _basePrice: 0
+  _currentPrice: 0
+  _totalBought: {fileID: 0}
+  _stat: {fileID: 0}
 --- !u!1 &929315007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,7 +4643,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Area
 --- !u!222 &929315010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4488,7 +4888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041958921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1090276811}
+        m_TargetAssemblyTypeName: RefundPowerUps, Assembly-CSharp
+        m_MethodName: ResetPowerUps
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1041958921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4613,6 +5025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090276810}
   - component: {fileID: 1090276809}
+  - component: {fileID: 1090276811}
   m_Layer: 0
   m_Name: PowerUpMenuScripts
   m_TagString: Untagged
@@ -4632,6 +5045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2d7e071ab992b4b8ea01d8313f95e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinsHolded: {fileID: 11400000, guid: e7ad720e7f743d546a01ddc1bc686381, type: 2}
+  _spentCoinsStack: {fileID: 11400000, guid: d27bc59a3af41e7458acc88f0e84a1cf, type: 2}
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _items: {fileID: 1555959531}
+  _itemBought: {fileID: 0}
 --- !u!4 &1090276810
 Transform:
   m_ObjectHideFlags: 0
@@ -4647,6 +5065,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090276811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090276808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a4e9a4606ad994a8adc41545af0948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsList:
+  - {fileID: 11400000, guid: 430bd2c5c2676784f998f249dff7f632, type: 2}
+  - {fileID: 11400000, guid: a6a907ff70ae84148a7d2fab8ee3dfa0, type: 2}
+  - {fileID: 11400000, guid: 6a43b8fdbb782ab418e02b16de1065b4, type: 2}
+  - {fileID: 11400000, guid: f390967a08494134bb7a522c75c967f9, type: 2}
+  - {fileID: 11400000, guid: 6356930dd00d46b479781ca792aa65e9, type: 2}
+  - {fileID: 11400000, guid: 01f91e9df62b29a4980dc2c64af39af4, type: 2}
+  - {fileID: 11400000, guid: 9c67208c880cb9a40af751722b02912d, type: 2}
+  - {fileID: 11400000, guid: d01ca5678456b714da536ad5e4e41798, type: 2}
+  - {fileID: 11400000, guid: 7608abfd711f8754ca34ab77c7fd8ee1, type: 2}
+  - {fileID: 11400000, guid: 7ea5ead0319e82f4e8aa7dc94ccc1799, type: 2}
+  - {fileID: 11400000, guid: 07d862151c0b7f246ae26e3563273a2b, type: 2}
+  - {fileID: 11400000, guid: dc071493a2d69e748b919b6d4248e3d9, type: 2}
+  - {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
+  - {fileID: 11400000, guid: 33e7ba02450b6e940bd5ae1d10d90c79, type: 2}
+  - {fileID: 11400000, guid: d4a30cbd24d334942b1d5acc2ec155f3, type: 2}
+  - {fileID: 11400000, guid: 0e7a9a1522deb2645883d7f570a38f59, type: 2}
+  - {fileID: 11400000, guid: d0b0b245b1f9c1d45ab4fc19870dccb1, type: 2}
+  - {fileID: 11400000, guid: 5aea326faa900924f9a9c790ca23d86c, type: 2}
+  - {fileID: 11400000, guid: b1b84bd0a2d51da48a2aea5afaca59e0, type: 2}
+  - {fileID: 11400000, guid: afb66522a6a16c64080e6064e65af836, type: 2}
+  _items:
+  - {fileID: 1350047528}
+  - {fileID: 591515911}
+  - {fileID: 822373599}
+  - {fileID: 2019706868}
+  - {fileID: 2058478554}
+  - {fileID: 159696593}
+  - {fileID: 2102750038}
+  - {fileID: 1333837684}
+  - {fileID: 420529364}
+  - {fileID: 686322964}
+  - {fileID: 105893296}
+  - {fileID: 21052693}
+  - {fileID: 2123782044}
+  - {fileID: 758630281}
+  - {fileID: 1687946733}
+  - {fileID: 1114814388}
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _coinsHolded: {fileID: 11400000, guid: e7ad720e7f743d546a01ddc1bc686381, type: 2}
+  _spentCoinsStack: {fileID: 11400000, guid: d27bc59a3af41e7458acc88f0e84a1cf, type: 2}
+  _itemsToggles: {fileID: 1555959531}
+  _toggleSelected: {fileID: 0}
 --- !u!1 &1107549643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,8 +5246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -118.900024}
-  m_SizeDelta: {x: 775.28, y: 738.3}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 775.28, y: 485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109787679
 MonoBehaviour:
@@ -4810,8 +5283,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1114814386}
   - component: {fileID: 1114814387}
+  - component: {fileID: 1114814388}
   m_Layer: 5
-  m_Name: Toggle (15)
+  m_Name: Revival
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4887,6 +5361,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1114814388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114814385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Revival
+  _statBonusText: Revives once with 50% health.
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 10000
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 5aea326faa900924f9a9c790ca23d86c, type: 2}
 --- !u!1 &1166197208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5130,7 +5625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195167811}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1090276809}
+        m_TargetAssemblyTypeName: BuyBoxHandler, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1195167811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5475,7 +5982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Revival
 --- !u!222 &1228783561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5842,7 +6349,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Magnet
 --- !u!222 &1294436415
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5937,8 +6444,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1333837682}
   - component: {fileID: 1333837683}
+  - component: {fileID: 1333837684}
   m_Layer: 5
-  m_Name: Toggle (7)
+  m_Name: Duration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6014,6 +6522,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1333837684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333837681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Duration
+  _statBonusText: Effects from weapons last 15% longer per rankd (max 30%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 300
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 9c67208c880cb9a40af751722b02912d, type: 2}
 --- !u!1 &1344916508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6085,7 +6614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Speed
 --- !u!222 &1344916511
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6104,8 +6633,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1350047526}
   - component: {fileID: 1350047527}
+  - component: {fileID: 1350047528}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Might
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6193,6 +6723,27 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &1350047528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350047525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Might
+  _statBonusText: Raises inflicted damage by 5% per rank (max +25%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 100
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
 --- !u!1 &1350809061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6340,7 +6891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Amount
 --- !u!222 &1353901831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6348,6 +6899,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353901828}
+  m_CullTransparentMesh: 1
+--- !u!1 &1356096076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356096077}
+  - component: {fileID: 1356096079}
+  - component: {fileID: 1356096078}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1356096077
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356096076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1571563081}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 363, y: 62}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1356096078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356096076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278252031
+  m_fontColor: {r: 1, g: 0.9451673, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1356096079
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356096076}
   m_CullTransparentMesh: 1
 --- !u!1 &1390859650
 GameObject:
@@ -6360,6 +7046,7 @@ GameObject:
   - component: {fileID: 1390859651}
   - component: {fileID: 1390859652}
   - component: {fileID: 1390859653}
+  - component: {fileID: 1390859654}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -6449,6 +7136,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 37d50c07b9af53f4597db83761c7443b, type: 2}
+--- !u!114 &1390859654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390859650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  _statBonusText: 
+  _statName: {fileID: 0}
+  _bonusText: {fileID: 0}
+  _priceText: {fileID: 0}
+  _basePrice: 0
+  _currentPrice: 0
+  _totalBought: {fileID: 0}
+  _stat: {fileID: 0}
 --- !u!1 &1415513886
 GameObject:
   m_ObjectHideFlags: 0
@@ -6649,7 +7357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Recovery
 --- !u!222 &1437399292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6755,6 +7463,7 @@ RectTransform:
   - {fileID: 1279872373}
   - {fileID: 536802175}
   - {fileID: 1555959528}
+  - {fileID: 489653746}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7068,7 +7777,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Armor
 --- !u!222 &1530128581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7204,6 +7913,7 @@ RectTransform:
   - {fileID: 1195167809}
   - {fileID: 2126650098}
   - {fileID: 173929413}
+  - {fileID: 1356096077}
   m_Father: {fileID: 539382733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7321,7 +8031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Cooldown
 --- !u!222 &1608330081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7416,8 +8126,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1687946731}
   - component: {fileID: 1687946732}
+  - component: {fileID: 1687946733}
   m_Layer: 5
-  m_Name: Toggle (14)
+  m_Name: Curse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7493,6 +8204,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1687946733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687946730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Curse
+  _statBonusText: Increases enemy speed, health, quantity, and frequency by 10% per
+    rank (max +50%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 1666
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 01f91e9df62b29a4980dc2c64af39af4, type: 2}
 --- !u!1 &1719159401
 GameObject:
   m_ObjectHideFlags: 0
@@ -8123,7 +8856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Luck
 --- !u!222 &1829680189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8203,7 +8936,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Might
+  m_Text: Duration
 --- !u!222 &1924889122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8289,8 +9022,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2019706866}
   - component: {fileID: 2019706867}
+  - component: {fileID: 2019706868}
   m_Layer: 5
-  m_Name: Toggle (3)
+  m_Name: Recovery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8366,6 +9100,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2019706868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019706865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Recovery
+  _statBonusText: Recovers 0.1 HP per rank (max 0.5) per second.
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 200
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 0e7a9a1522deb2645883d7f570a38f59, type: 2}
 --- !u!1 &2037071748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8452,8 +9207,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2058478552}
   - component: {fileID: 2058478553}
+  - component: {fileID: 2058478554}
   m_Layer: 5
-  m_Name: Toggle (4)
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8529,6 +9285,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2058478554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058478551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Cooldown
+  _statBonusText: Uses weapons 2.5% faster per rank (max 5%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 900
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 6356930dd00d46b479781ca792aa65e9, type: 2}
 --- !u!1 &2059536114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8612,8 +9389,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 925250499}
   m_HandleRect: {fileID: 925250498}
   m_Direction: 2
-  m_Value: 0.93154764
-  m_Size: 0.6268183
+  m_Value: 0.5000007
+  m_Size: 0.95418555
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8666,8 +9443,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2102750036}
   - component: {fileID: 2102750037}
+  - component: {fileID: 2102750038}
   m_Layer: 5
-  m_Name: Toggle (6)
+  m_Name: Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8743,6 +9521,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2102750038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102750035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Speed
+  _statBonusText: Projectiles move 10% faster per rank (max 20%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 300
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: afb66522a6a16c64080e6064e65af836, type: 2}
 --- !u!1 &2123782041
 GameObject:
   m_ObjectHideFlags: 0
@@ -8753,8 +9552,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2123782042}
   - component: {fileID: 2123782043}
+  - component: {fileID: 2123782044}
   m_Layer: 5
-  m_Name: Toggle (12)
+  m_Name: Growth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8830,6 +9630,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2123782044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123782041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addd0ecb588a61d4e9de17670eca0bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Growth
+  _statBonusText: Gains 3% more experience per rank (max 15%).
+  _statName: {fileID: 2126650099}
+  _bonusText: {fileID: 173929414}
+  _priceText: {fileID: 1356096078}
+  _basePrice: 900
+  _currentPrice: 0
+  _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
+  _stat: {fileID: 11400000, guid: 7608abfd711f8754ca34ab77c7fd8ee1, type: 2}
 --- !u!1 &2126650097
 GameObject:
   m_ObjectHideFlags: 0
@@ -8842,7 +9663,7 @@ GameObject:
   - component: {fileID: 2126650100}
   - component: {fileID: 2126650099}
   m_Layer: 5
-  m_Name: StatSelected
+  m_Name: StatText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8865,7 +9686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -337, y: 0}
+  m_AnchoredPosition: {x: -327, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126650099

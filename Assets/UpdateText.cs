@@ -1,9 +1,12 @@
 using UnityEngine;
+using TMPro;
 
-public class BuyBoxValuesHandler : MonoBehaviour
+public class UpdateText : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
+	public FloatReference _floatToGive;
+	TMP_Text _text;
 
 	#endregion
 
@@ -22,12 +25,12 @@ public class BuyBoxValuesHandler : MonoBehaviour
 
     void Start()
     {
-        
+		_text = GetComponent<TMP_Text>();
     }
 
     void Update()
     {
-        
+        _text.text = _floatToGive.Value.ToString();
     }
 
 	#endregion

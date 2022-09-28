@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	public Weapon _weapon;
+	public bool _projectileCustomDestroyTime;
+	public float _destroyTime;
 
 	#endregion
 
@@ -24,7 +26,14 @@ public class Projectile : MonoBehaviour
     void Start()
     {
 	    transform.localScale *= _weapon.area * _weapon.globalArea.Value;
-		Destroy(gameObject, _weapon.duration * _weapon.globalDuration.Value);
+		if (!_projectileCustomDestroyTime)
+		{
+			Destroy(gameObject, _weapon.duration * _weapon.globalDuration.Value);
+		}
+		else
+		{
+			Destroy(gameObject, _destroyTime);
+		}
 	}
 
     void Update()
