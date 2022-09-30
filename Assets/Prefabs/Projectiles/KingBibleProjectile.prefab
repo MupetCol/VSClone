@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858347026739939312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
+  _projectileCustomDestroyTime: 0
+  _destroyTime: 0
 --- !u!114 &-3639188769485754025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _constant: 0
   _weapon: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
+  _constant: 0
+  _targetsOnCooldown: []
   _triggerDamage: 1
   _tickDamage: 0

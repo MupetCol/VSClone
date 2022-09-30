@@ -46,6 +46,54 @@ public class RuneTracerBehavior : WeaponBase
 			}
 			yield return new WaitForSeconds(cooldown/ _weaponStats.globalCooldown.Value);
 		}
+	}
 
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				baseDamage += 5;
+				speed += .2f;
+				break;
+
+			case 3:
+				baseDamage += 5;
+				duration += .3f;
+				break;
+
+			case 4:
+				amount++;
+				break;
+
+			case 5:
+				baseDamage += 5;
+				speed += .2f;
+				break;
+
+			case 6:
+				baseDamage += 5;
+				duration += .3f;
+				break;
+
+			case 7:
+				amount++;
+				break;
+
+			case 8:
+				duration += .5f;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
 	}
 }

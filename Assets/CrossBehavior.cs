@@ -71,4 +71,51 @@ public class CrossBehavior : WeaponBase
     }
 
 	#endregion
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				baseDamage += 10;
+				break;
+
+			case 3:
+				speed += .25f;
+				area += .1f;
+				break;
+
+			case 4:
+				amount++;
+				break;
+
+			case 5:
+				baseDamage += 10;
+				break;
+
+			case 6:
+				speed += .25f;
+				area += .1f;
+				break;
+
+			case 7:
+				amount++;
+				break;
+
+			case 8:
+				baseDamage += 10;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

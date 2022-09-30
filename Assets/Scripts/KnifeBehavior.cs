@@ -90,4 +90,51 @@ public class KnifeBehavior : WeaponBase
 		}
 
 	}
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				amount++;
+				break;
+
+			case 3:
+				amount++;
+				baseDamage++;
+				break;
+
+			case 4:
+				amount++;
+				break;
+
+			case 5:
+				pierce++;
+				break;
+
+			case 6:
+				amount++;
+				break;
+
+			case 7:
+				amount++;
+				baseDamage++;
+				break;
+
+			case 8:
+				pierce++;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

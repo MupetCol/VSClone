@@ -51,4 +51,56 @@ public class WhipBehavior : WeaponBase
 	}
 
 	#endregion
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				amount++;
+				break;
+
+			case 3:
+				baseDamage += 5;
+				break;
+
+			case 4:
+				baseDamage += 5;
+				area += .1f;
+				break;
+
+			case 5:
+				baseDamage += 5;
+				break;
+
+			case 6:
+				baseDamage += 5;
+				area += .1f;
+				break;
+
+			case 7:
+				baseDamage += 5;
+				break;
+
+			case 8:
+				baseDamage += 5;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				LevelUpBehavior levelUpSystem = FindObjectOfType<LevelUpBehavior>();
+				if (levelUpSystem._rewards.Contains(this.gameObject))
+				{
+					levelUpSystem._rewards.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

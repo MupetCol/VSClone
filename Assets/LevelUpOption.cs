@@ -23,21 +23,24 @@ public class LevelUpOption : MonoBehaviour
 			WeaponBase weapon = go.GetComponent<WeaponBase>();
 			if (weapon._weaponStats.equipped)
 			{
-				weapon.baseDamage += 10;
+				weapon.LevelUp();
+				if (weapon._reachedMaxLevel)
+				{
+					FindObjectOfType<LevelUpBehavior>()._rewards.Remove(_reward);
+				}
 			}
 			else
 			{
 				weapon._weaponStats.equipped = true;
-			}
-			if (!Utilities.Instance._ownedObjects.Contains(_reward))
 				Utilities.Instance._ownedObjects.Add(_reward);
+			}
 		}
 		else if (_reward.GetType() == typeof(Stat))
 		{
 			Stat stat = (Stat)_reward;
 			stat.floatData.Value += stat.bonusPerRank;
 
-			if(!Utilities.Instance._ownedObjects.Contains(_reward))
+			if(Utilities.Instance._ownedObjects.Contains(_reward))
 			Utilities.Instance._ownedObjects.Add(_reward);
 		}
 		PauseControl.Instance.TogglePause();

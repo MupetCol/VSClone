@@ -7,6 +7,7 @@ public class Chest : CollectableBase, ICollectable
 	public BoolReference _uiToggle;
 	public FloatReference _coins;
 	public StringReference _coinsNumber, _rewardGiven;
+	public float _popUpTime;
 
 
 	public void Collected()
@@ -19,16 +20,7 @@ public class Chest : CollectableBase, ICollectable
 		{
 			GameObject go = (GameObject)_reward;
 			WeaponBase weapon = go.GetComponent<WeaponBase>();
-			if (weapon._weaponStats.equipped)
-			{
-				weapon.baseDamage += 10;
-				_rewardGiven.description = weapon.name + " Upgraded";
-			}
-			else
-			{
-				weapon._weaponStats.equipped = true;
-				_rewardGiven.description = weapon.name + " Equipped";
-			}
+			weapon.LevelUp();
 		}
 		else if (_reward.GetType() == typeof(Stat))
 		{
@@ -49,7 +41,7 @@ public class Chest : CollectableBase, ICollectable
 		_uiToggle.toggle = true;
 		PauseControl.Instance.TogglePause();
 
-		yield return new WaitForSecondsRealtime(5f);
+		yield return new WaitForSecondsRealtime(_popUpTime);
 		PauseControl.Instance.TogglePause();
 		_uiToggle.toggle = false;
 		Destroy(gameObject);

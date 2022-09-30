@@ -142,3 +142,4 @@ MonoBehaviour:
   _coins: {fileID: 11400000, guid: 698f8b652cf54424093264fcbdb01228, type: 2}
   _coinsNumber: {fileID: 11400000, guid: f0e6fdbdcfaa6c444b87147e21369f67, type: 2}
   _rewardGiven: {fileID: 11400000, guid: 57941068bcc369e44b6992de4e4cae3b, type: 2}
+  _popUpTime: 0.5

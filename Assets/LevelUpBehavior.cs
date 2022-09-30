@@ -11,7 +11,6 @@ public class LevelUpBehavior : MonoBehaviour
 	public GameObject _levelUpUIPanel;
 	public LevelUpOption[] _options;
 	public List<Object> _rewards;
-	public Weapon[] _weapons;
 
 	#endregion
 
@@ -19,7 +18,10 @@ public class LevelUpBehavior : MonoBehaviour
 
 	private List<Object> _rewardsSelected = new List<Object>();
 
-	private float _rarityPoolTotal;
+	private float _rarityPoolRewards;
+	private float _rarityPoolOwnedObjects;
+
+	private int _currLevel = 1;
 
 
 	#endregion
@@ -32,21 +34,6 @@ public class LevelUpBehavior : MonoBehaviour
 
 	#region UNITY_METHODS
 
-	void Start()
-    {
-		foreach (Object obj in _rewards)
-		{
-			if(obj.GetType() == typeof(GameObject))
-			{
-				GameObject go = (GameObject)obj;
-				_rarityPoolTotal += go.GetComponent<WeaponBase>()._weaponStats.rarity;
-			}else if(obj.GetType() == typeof(Stat))
-			{
-				Stat stat = (Stat)obj;
-				_rarityPoolTotal += stat.rarity;
-			}
-		}
-	}
 
     void Update()
     {
@@ -62,22 +49,113 @@ public class LevelUpBehavior : MonoBehaviour
 
 	public void LevelUp()
 	{
-		//Temporary reward of activating a random weapon
-		//List<Weapon> weapons = new List<Weapon>();
-		//foreach( Weapon weapon in _weapons)
-		//{
-		//	if (!weapon.equipped)
-		//	{
-		//		weapons.Add(weapon);
-		//	}
-		//}
-		//weapons[Random.Range(0, weapons.Count)].equipped = true;
+		_currLevel++;
 		PickRewards();
 	}
 
 	public void PickRewards()
 	{
-		for (int i = 0; i < 3; i++)
+		// GENERATE RARITY POOLS FOR BOTH REWARDS AND OWNED ITEMS
+		_rarityPoolOwnedObjects = 0;
+		_rarityPoolRewards = 0;
+
+		foreach (Object obj in _rewards)
+		{
+			if (obj.GetType() == typeof(GameObject))
+			{
+				GameObject go = (GameObject)obj;
+				_rarityPoolRewards += go.GetComponent<WeaponBase>()._weaponStats.rarity;
+			}
+			else if (obj.GetType() == typeof(Stat))
+			{
+				Stat stat = (Stat)obj;
+				_rarityPoolRewards += stat.rarity;
+			}
+		}
+
+		foreach (Object obj in Utilities.Instance._ownedObjects)
+		{
+			if (obj.GetType() == typeof(GameObject))
+			{
+				GameObject go = (GameObject)obj;
+				_rarityPoolOwnedObjects += go.GetComponent<WeaponBase>()._weaponStats.rarity;
+			}
+			else if (obj.GetType() == typeof(Stat))
+			{
+				Stat stat = (Stat)obj;
+				_rarityPoolOwnedObjects += stat.rarity;
+			}
+		}
+
+		//////////
+
+		int totalRewards = 3;
+		int ownedItemsRewards = 0;
+
+		float ownedObjectChance = 1f + (0.3f * _currLevel) - (1f / _luck.Value);
+
+		for (int i = 0; i < 2; i++)
+		{
+			float chance = Random.Range(0f, 100f);
+			if(ownedObjectChance > chance) ownedItemsRewards++;
+		}
+
+		// RANDOM IN OWNED OBJECTS
+		for (int i = 0; i < ownedItemsRewards; i++)
+		{
+			float totalWeight = 0;
+			float chance = Random.Range(0f, 100f);
+			foreach (Object obj in Utilities.Instance._ownedObjects)
+			{
+				if (obj.GetType() == typeof(GameObject))
+				{
+					GameObject go = (GameObject)obj;
+					var rarity = go.GetComponent<WeaponBase>()._weaponStats.rarity;
+					float weight = rarity / _rarityPoolOwnedObjects;
+					totalWeight += weight;
+
+					if (totalWeight > (chance / 100))
+					{
+						if (_rewardsSelected.Contains(obj))
+						{
+							ownedItemsRewards--;
+							break;
+						}
+						else
+						{
+							_rewardsSelected.Add(obj);
+							break;
+						}
+					}
+
+				}
+				else if (obj.GetType() == typeof(Stat))
+				{
+					Stat stat = (Stat)obj;
+					var rarity = stat.rarity;
+					float weight = rarity / _rarityPoolOwnedObjects;
+					totalWeight += weight;
+
+					if (totalWeight > (chance / 100))
+					{
+						if (_rewardsSelected.Contains(obj))
+						{
+							ownedItemsRewards--;
+							break;
+						}
+						else
+						{
+							_rewardsSelected.Add(obj);
+							break;
+						}
+					}
+				}
+			}
+		}
+
+
+		// RANDOM BETWEEN ALL REWARDS, TAKES ACCOUNT OF RARITY INDIVIDUALLY
+		for (int i = 0; i < totalRewards - ownedItemsRewards; i++)
 		{
 			float totalWeight = 0;
 			float chance = Random.Range(0f, 100f);
@@ -87,20 +165,36 @@ public class LevelUpBehavior : MonoBehaviour
 				{
 					GameObject go = (GameObject)obj;
 					var rarity = go.GetComponent<WeaponBase>()._weaponStats.rarity;
-					float weight = rarity / _rarityPoolTotal;
+					float weight = rarity / _rarityPoolRewards;
 					totalWeight += weight;
 
 					if (totalWeight > (chance / 100))
 					{
 						if (go.GetComponent<WeaponBase>()._weaponStats.equipped)
 						{
-							SetRewardOption(i, go.GetComponent<WeaponBase>().gameObject.name + " upgrade", obj);
-							break;
+							if (_rewardsSelected.Contains(obj))
+							{
+								totalRewards++;
+								break;
+							}
+							else
+							{
+								_rewardsSelected.Add(obj);
+								break;
+							}
 						}
 						else
 						{
-							SetRewardOption(i, go.GetComponent<WeaponBase>().gameObject.name, obj);
-							break;
+							if (_rewardsSelected.Contains(obj))
+							{
+								totalRewards++;
+								break;
+							}
+							else
+							{
+								_rewardsSelected.Add(obj);
+								break;
+							}
 						}
 
 					}
@@ -110,20 +204,37 @@ public class LevelUpBehavior : MonoBehaviour
 				{
 					Stat stat = (Stat)obj;
 					var rarity = stat.rarity;
-					float weight = rarity / _rarityPoolTotal;
+					float weight = rarity / _rarityPoolRewards;
 					totalWeight += weight;
 
 					if (totalWeight > (chance / 100))
 					{
-						SetRewardOption(i, stat.name + "upgrade", obj);
-						break;
+						if (_rewardsSelected.Contains(obj))
+						{
+							totalRewards++;
+							break;
+						}
+						else
+						{
+							_rewardsSelected.Add(obj);
+							break;
+						}
 					}
 				}
 			}
 		}
 
+
+		for (int i = 0; i < _rewardsSelected.Count; i++)
+		{
+			SetRewardOption(i, _rewardsSelected[i].name, _rewardsSelected[i]);
+		}
+
+
+
 		PauseControl.Instance.TogglePause();
 		EnableOptionsUI();
+		_rewardsSelected.Clear();
 	}
 
 	public void SetRewardOption(int index, string description, Object obj)
@@ -131,19 +242,11 @@ public class LevelUpBehavior : MonoBehaviour
 		_options[index]._optionIndex = index;
 		_options[index]._text = description;
 		_options[index]._reward = obj;
-		_rewardsSelected.Add(obj);
 	}
 
 	public void EnableOptionsUI()
 	{
 		_levelUpUIPanel.SetActive(true);
 	}
-
-	//later on for owned and not owned different chances
-	//public void UpdateOwnedItems()
-	//{
-
-	//}
-
 
 }

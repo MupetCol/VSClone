@@ -55,5 +55,51 @@ public class SelfieStickBehavior : WeaponBase
 		_cellphone.transform.DORotate(Vector3.zero, 0.1f);
 	}
 
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		// TO BE CHANGED LATER
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				baseDamage += 10;
+				break;
+
+			case 3:
+				cooldown -= .2f; //should rest .2seconds, not percent based
+				break;
+
+			case 4:
+				baseDamage += 10;
+				break;
+
+			case 5:
+				baseDamage += 10;
+				break;
+
+			case 6:
+				cooldown -= .2f;
+				break;
+
+			case 7:
+				area += .2f;
+				break;
+
+			case 8:
+				baseDamage += 10;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
+
 	#endregion
 }

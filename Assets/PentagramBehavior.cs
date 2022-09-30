@@ -59,4 +59,49 @@ public class PentagramBehavior : WeaponBase
 		}
 	}
 	#endregion
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				cooldown -= 10;
+				break;
+
+			case 3:
+				// 25% chance not to erase items
+				break;
+
+			case 4:
+				cooldown -= 10;
+				break;
+
+			case 5:
+				// 45% chance not to erase items
+				break;
+
+			case 6:
+				cooldown -= 5;
+				break;
+
+			case 7:
+				// 65% chance not to erase items
+				break;
+
+			case 8:
+				cooldown -= 5;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

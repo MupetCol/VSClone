@@ -75,4 +75,49 @@ public class MagicWandBehavior : WeaponBase
 
 		//OnDrawGizmosSelected();
 	}
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				amount++;
+				break;
+
+			case 3:
+				cooldown -= .2f; //should rest .2seconds, not percent based
+				break;
+
+			case 4:
+				amount++;
+				break;
+
+			case 5:
+				baseDamage += 10;
+				break;
+
+			case 6:
+				amount++;
+				break;
+
+			case 7:
+				pierce++;
+				break;
+
+			case 8:
+				baseDamage += 10;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

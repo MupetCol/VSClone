@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   equipped: 0
-  weaponLevel: 1
-  maxLevel: 8
   baseDamage: 20
   cooldown: 6
   amount: 1
   pierce: 2
   poolLimit: 0
   rarity: 100
-  speed: 0
+  speed: 1
   area: 1
   duration: 5
   projectInverval: 0.1

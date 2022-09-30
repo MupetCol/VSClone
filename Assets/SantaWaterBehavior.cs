@@ -45,4 +45,56 @@ public class SantaWaterBehavior : WeaponBase
 
 	}
 
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				amount++;
+				area += .2f;
+				break;
+
+			case 3:
+				baseDamage += 10;
+				duration +=.5f;
+				break;
+
+			case 4:
+				amount++;
+				area += .2f;
+				break;
+
+			case 5:
+				baseDamage += 10;
+				duration += .3f;
+				break;
+
+			case 6:
+				amount++;
+				area += .2f;
+				break;
+
+			case 7:
+				baseDamage += 5;
+				duration += .3f;
+				break;
+
+			case 8:
+				baseDamage += 5;
+				area += .2f;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
+
 }

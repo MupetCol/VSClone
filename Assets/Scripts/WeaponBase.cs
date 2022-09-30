@@ -5,13 +5,14 @@ public class WeaponBase : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	public Weapon _weaponStats;
+	public bool _reachedMaxLevel;
+	public int _currentLevel = 1;
 
 	#endregion
 
 	#region PRIVATE_VARIABLES
 
-	public float weaponLevel;
-	public float maxLevel;
+	// In-game stats
 	public float baseDamage;
 	public float amount;
 	public float pierce;
@@ -29,8 +30,6 @@ public class WeaponBase : MonoBehaviour
 	
 	public virtual void Awake()
 	{
-		weaponLevel = _weaponStats.weaponLevel;
-		maxLevel = _weaponStats.maxLevel;
 		baseDamage = _weaponStats.baseDamage;
 		rarity = _weaponStats.rarity;
 		cooldown = _weaponStats.cooldown;
@@ -43,5 +42,10 @@ public class WeaponBase : MonoBehaviour
 		projectInverval = _weaponStats.projectInverval;
 		hitboxDelay = _weaponStats.hitboxDelay;
 		knockBack = _weaponStats.knockBack;
+	}
+
+	public virtual void LevelUp()
+	{
+		_currentLevel++;
 	}
 }

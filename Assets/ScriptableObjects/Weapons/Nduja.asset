@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9abdb797ba9c3a1438524d4a7394885a, type: 3}
-  m_Name: LightingRing
+  m_Name: Nduja
   m_EditorClassIdentifier: 
-  equipped: 1
-  weaponLevel: 1
-  maxLevel: 8
-  baseDamage: 2
+  equipped: 0
+  baseDamage: 30
   cooldown: 2
-  amount: 2
+  amount: 1
   pierce: 0
   poolLimit: 0
   rarity: 100
-  speed: 2
+  speed: 6
   area: 1
-  duration: 0.1
+  duration: 3
   projectInverval: 0.2
-  hitboxDelay: 0.2
-  knockBack: 0.2
+  hitboxDelay: 0.5
+  knockBack: 1
   globalAmount: {fileID: 11400000, guid: 28ca878219d4c4e4e854d5d53a6e8db3, type: 2}
   globalArea: {fileID: 11400000, guid: a9098175408b47e43b5dfd200a5ccec9, type: 2}
   globalCooldown: {fileID: 11400000, guid: aba07f73c96dcf541a59f85720879589, type: 2}

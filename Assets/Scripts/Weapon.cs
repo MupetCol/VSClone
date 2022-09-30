@@ -9,8 +9,6 @@ public class Weapon : ScriptableObject
 	public bool equipped;
 
 	//Stats unique to each weapon
-	public float weaponLevel;
-	public float maxLevel;
 	public float baseDamage;
 	public float cooldown;
 	public float amount;
@@ -36,6 +34,6 @@ public class Weapon : ScriptableObject
 
 	private void OnDisable()
 	{
-		//equipped = false;
+		equipped = false;
 	}
 }

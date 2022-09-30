@@ -36,13 +36,23 @@ public class FireWandBehavior : WeaponBase
 		while (true)
 		{
 			var closestEnemy = DetectClosestEnemy();
+			var alternative = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle;
 			int offset = 0;
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				FireWandProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
 
 				if (offset == 3) offset = 0;
-				project.SetDirection(closestEnemy, offset/_offsetDivider);
+
+				if(closestEnemy == null)
+				{
+					
+					project.SetDirection(alternative, offset / _offsetDivider);
+				}
+				else
+				{
+					project.SetDirection(closestEnemy.position, offset / _offsetDivider);
+				}
 				if (i % 3 == 2) yield return new WaitForSeconds(_weaponStats.projectInverval);
 				offset++;
 			}
@@ -73,5 +83,53 @@ public class FireWandBehavior : WeaponBase
 		return null;
 
 		//OnDrawGizmosSelected();
+	}
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				baseDamage += 10;
+				break;
+
+			case 3:
+				baseDamage += 10;
+				speed += .2f;
+				break;
+
+			case 4:
+				baseDamage += 10;
+				break;
+
+			case 5:
+				baseDamage += 10;
+				speed += .2f;
+				break;
+
+			case 6:
+				baseDamage += 10;
+				break;
+
+			case 7:
+				baseDamage += 10;
+				speed += .2f;
+				break;
+
+			case 8:
+				baseDamage += 10;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
 	}
 }

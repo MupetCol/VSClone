@@ -75,4 +75,52 @@ public class LightingRingBehavior : WeaponBase
 
 
 	#endregion
+
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
+
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				amount++;
+				break;
+
+			case 3:
+				area++;
+				baseDamage += 10;
+				break;
+
+			case 4:
+				amount++;
+				break;
+
+			case 5:
+				area++;
+				baseDamage += 20;
+				break;
+
+			case 6:
+				amount++;
+				break;
+
+			case 7:
+				area++;
+				baseDamage += 20;
+				break;
+
+			case 8:
+				amount++;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
 }

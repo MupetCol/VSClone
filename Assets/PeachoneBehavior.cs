@@ -73,6 +73,57 @@ public class PeachoneBehavior : WeaponBase
         }
     }
 
+	public override void LevelUp()
+	{
+		if (_reachedMaxLevel)
+		{
+			Debug.Log("Shouldn't have been called, already max level");
+		}
 
-    #endregion
+		base.LevelUp();
+		switch (_currentLevel)
+		{
+			case 2:
+				duration += projectInverval;
+				area += .4f;
+				break;
+
+			case 3:
+				duration += projectInverval;
+				baseDamage += 10;
+				break;
+
+			case 4:
+				duration += projectInverval;
+				cooldown -= .3f;
+				break;
+
+			case 5:
+				duration += projectInverval;
+				area += .4f;
+				break;
+
+			case 6:
+				duration += projectInverval;
+				baseDamage += 10;
+				break;
+
+			case 7:
+				duration += projectInverval;
+				cooldown -= .3f;
+				break;
+
+			case 8:
+				duration += projectInverval;
+				area += .4f;
+				_reachedMaxLevel = true;
+				if (Utilities.Instance._ownedObjects.Contains(this.gameObject))
+				{
+					Utilities.Instance._ownedObjects.Remove(this.gameObject);
+				}
+				break;
+		}
+	}
+
+	#endregion
 }
