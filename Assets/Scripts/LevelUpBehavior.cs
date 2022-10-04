@@ -11,6 +11,7 @@ public class LevelUpBehavior : MonoBehaviour
 	public GameObject _levelUpUIPanel;
 	public LevelUpOption[] _options;
 	public List<Object> _rewards;
+	public bool _dontGiveRewards = false;
 
 	#endregion
 
@@ -41,7 +42,9 @@ public class LevelUpBehavior : MonoBehaviour
 		{
 			_expPoints.Value = _expPoints.Value% Utilities.Instance._expToLevelUp;
 			Utilities.Instance._expToLevelUp += 10;
+			Utilities.Instance._playerLevel.Value++;
 			LevelUp();
+			Utilities.Instance.LeveledUp();
 		}
     }
 
@@ -50,6 +53,8 @@ public class LevelUpBehavior : MonoBehaviour
 	public void LevelUp()
 	{
 		_currLevel++;
+
+		if(!_dontGiveRewards)
 		PickRewards();
 	}
 

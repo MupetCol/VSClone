@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: SantaWater
   m_EditorClassIdentifier: 
   equipped: 0
-  weaponLevel: 1
-  maxLevel: 8
   baseDamage: 2
   cooldown: 5
   amount: 1

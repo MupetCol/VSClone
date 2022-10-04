@@ -41,7 +41,7 @@ public class BreathCoolBehavior : WeaponBase
 		}
 	}
 
-	public override void LevelUp()
+	public override void LevelUp(int level)
 	{
 		if (_reachedMaxLevel)
 		{
@@ -49,8 +49,8 @@ public class BreathCoolBehavior : WeaponBase
 		}
 
 		// TO BE CHANGED LATER
-		base.LevelUp();
-		switch (_currentLevel)
+		base.LevelUp(level);
+		switch (level)
 		{
 			case 2:
 				duration++;

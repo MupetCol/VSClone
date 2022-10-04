@@ -235,6 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyStats: {fileID: 11400000, guid: cc0aab3a1fc690749829a731a2088da0, type: 2}
   _health: 0
+  _enemyType: 5
+  _frozen: 0
   _whiteCopy: {fileID: 6145784818452972420}
 --- !u!114 &6145784819419003192
 MonoBehaviour:
@@ -251,6 +253,7 @@ MonoBehaviour:
   _enemyStats: {fileID: 11400000, guid: cc0aab3a1fc690749829a731a2088da0, type: 2}
   _fixedMovement: 0
   _trackingInterval: 0.1
+  _frozen: 0
 --- !u!114 &-646385250187820558
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,9 +15,8 @@ public class PlayerCharacterHandler : MonoBehaviour
 
 	#region UNITY_METHODS
 
-    void Awake()
-    {
-	
+	private void Start()
+	{
 		foreach (PlayerCharacter chara in _allCharacters)
 		{
 			if (chara.selected)
@@ -27,7 +26,7 @@ public class PlayerCharacterHandler : MonoBehaviour
 			}
 
 		}
-		
+		Instantiate(_character.bonusScríptHolder);
 
 		GetComponent<SpriteRenderer>().sprite = _character.characterSprite;
 	}

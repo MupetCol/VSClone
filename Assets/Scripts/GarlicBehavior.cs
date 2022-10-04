@@ -7,6 +7,7 @@ public class GarlicBehavior : WeaponBase
 	#region PRIVATE_VARIABLES
 
 	private bool _canDealDamage = true;
+	private bool init = false;
 	private float _lastArea;
 
 	#endregion
@@ -15,16 +16,20 @@ public class GarlicBehavior : WeaponBase
 	public override void Awake()
 	{
 		base.Awake();
-		UpdateArea();
+		StartCoroutine(InitTime());
 	}
 
 	void UpdateArea()
 	{
-		transform.localScale *= _weaponStats.area * _weaponStats.globalArea.Value;
-		_lastArea = _weaponStats.area + _weaponStats.globalArea.Value;
+		_lastArea = area + _weaponStats.globalArea.Value;
+		transform.localScale *= (area * _weaponStats.globalArea.Value);
 	}
 
-
+	IEnumerator InitTime()
+	{
+		yield return new WaitForSeconds(.5f);
+		init = true;
+	}
 	#endregion
 
 	public IEnumerator DealDamage(Collision2D coll)
@@ -36,21 +41,21 @@ public class GarlicBehavior : WeaponBase
 
 	private void Update()
 	{
-		if(_weaponStats.area + _weaponStats.globalArea.Value != _lastArea)
+		if((area + _weaponStats.globalArea.Value) != _lastArea && init == true)
 		{
 			UpdateArea();
 		}
 	}
 
-	public override void LevelUp()
+	public override void LevelUp(int level)
 	{
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp();
-		switch (_currentLevel)
+		base.LevelUp(level);
+		switch (level)
 		{
 			case 2:
 				area += .4f;

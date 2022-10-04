@@ -11,6 +11,8 @@ public class PlayerCharacter : ScriptableObject
 	public Sprite characterSprite;
 	public Stat[] baseStatToBoost;
 	public float[] bonus;
+	public GameObject bonusScríptHolder;
+
 
 	#endregion
 
@@ -35,7 +37,7 @@ public class PlayerCharacter : ScriptableObject
 					baseStatToBoost[i].floatData.Value *= bonus[i];
 				}
 			}
-			//startingWeapon.equipped = true;
+			startingWeapon.equipped = true;
 		}
 	}
 }

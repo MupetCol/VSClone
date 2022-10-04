@@ -23,7 +23,7 @@ public class LevelUpOption : MonoBehaviour
 			WeaponBase weapon = go.GetComponent<WeaponBase>();
 			if (weapon._weaponStats.equipped)
 			{
-				weapon.LevelUp();
+				weapon.LevelUp(weapon._currentLevel);
 				if (weapon._reachedMaxLevel)
 				{
 					FindObjectOfType<LevelUpBehavior>()._rewards.Remove(_reward);

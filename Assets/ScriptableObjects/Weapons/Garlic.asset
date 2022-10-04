@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Garlic
   m_EditorClassIdentifier: 
   equipped: 0
-  weaponLevel: 1
-  maxLevel: 8
   baseDamage: 5
   cooldown: 0
   amount: 1

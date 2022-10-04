@@ -5,18 +5,7 @@ public class TimerBehavior : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 	[SerializeField] private TMP_Text _timerText;
-	[SerializeField] private float _time;
-
-	#endregion
-
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
+	[SerializeField] private FloatReference _time;
 
 	#endregion
 
@@ -29,8 +18,8 @@ public class TimerBehavior : MonoBehaviour
 
     void Update()
     {
-        _time += Time.deltaTime;
-		DisplayTime(_time);
+        _time.Value += Time.deltaTime;
+		DisplayTime(_time.Value);
     }
 
 	void DisplayTime(float timeToDisplay){

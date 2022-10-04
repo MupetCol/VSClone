@@ -17,3 +17,4 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 46577142c13c6a74088472d5dc4697fb, type: 3}
   baseStatToBoost: []
   bonus: []
+  "bonusScr\xEDptHolder": {fileID: 3421097902325655913, guid: e330250dc700de04ba10026ae29f0fbc, type: 3}

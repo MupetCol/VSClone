@@ -5,6 +5,7 @@ public class PauseControl : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	public static PauseControl Instance { get; private set; }
+	public GameObject _pauseMenu;
 
 	#endregion
 
@@ -26,12 +27,23 @@ public class PauseControl : MonoBehaviour
 	private void Awake()
 	{
 		Instance = this;
+		Time.timeScale = 1;
+		//AudioListener.pause = false;
+		isPaused = false;
 	}
 
 	void Update()
     {
-		if (Input.GetKeyDown(KeyCode.P))
+		if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyUp(KeyCode.Escape))
 		{
+			if (_pauseMenu.activeSelf)
+			{
+				_pauseMenu.SetActive(false);
+			}
+			else
+			{
+				_pauseMenu.SetActive(true);
+			}
 			TogglePause();
 		}   
     }

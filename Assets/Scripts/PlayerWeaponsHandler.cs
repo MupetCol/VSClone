@@ -5,8 +5,8 @@ public class PlayerWeaponsHandler : MonoBehaviour
 
 	#region PRIVATE_SERIALIZED_VARIABLES
 
-	[SerializeField] private Weapon[] _weapons;
-	[SerializeField] private GameObject[] _weaponsObjects;
+	[SerializeField] public Weapon[] _weapons;
+	[SerializeField] public GameObject[] _weaponsObjects;
 
 	#endregion
 

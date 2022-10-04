@@ -85,15 +85,15 @@ public class FireWandBehavior : WeaponBase
 		//OnDrawGizmosSelected();
 	}
 
-	public override void LevelUp()
+	public override void LevelUp(int level)
 	{
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp();
-		switch (_currentLevel)
+		base.LevelUp(level);
+		switch (level)
 		{
 			case 2:
 				baseDamage += 10;
@@ -129,6 +129,8 @@ public class FireWandBehavior : WeaponBase
 				{
 					Utilities.Instance._ownedObjects.Remove(this.gameObject);
 				}
+				break;
+			default:
 				break;
 		}
 	}

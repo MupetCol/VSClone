@@ -60,15 +60,15 @@ public class PentagramBehavior : WeaponBase
 	}
 	#endregion
 
-	public override void LevelUp()
+	public override void LevelUp(int level)
 	{
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp();
-		switch (_currentLevel)
+		base.LevelUp(level);
+		switch (level)
 		{
 			case 2:
 				cooldown -= 10;

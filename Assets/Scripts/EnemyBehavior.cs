@@ -7,6 +7,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	public Enemy _enemyStats;
 	public float _health;
+	public int _enemyType = 0;
 
 	#endregion
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abdb797ba9c3a1438524d4a7394885a, type: 3}
   m_Name: FireWand
   m_EditorClassIdentifier: 
-  equipped: 1
+  equipped: 0
   baseDamage: 20
   cooldown: 5
   amount: 3

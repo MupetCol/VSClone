@@ -4,8 +4,6 @@ public class ChangeGameObjectActiveState : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 
-	public GameObject _gameObject;
-
 	#endregion
 
 	#region PRIVATE_VARIABLES
@@ -22,10 +20,10 @@ public class ChangeGameObjectActiveState : MonoBehaviour
 
 	#region UNITY_METHODS
 
-	public void ChangeState()
+	public void ChangeState(GameObject obj)
 	{
-		_state = _gameObject.activeSelf;
-		_gameObject.SetActive(!_state);
+		_state = obj.activeSelf;
+		obj.SetActive(!_state);
 	}
 
 	#endregion

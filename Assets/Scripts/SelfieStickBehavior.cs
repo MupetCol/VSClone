@@ -55,7 +55,7 @@ public class SelfieStickBehavior : WeaponBase
 		_cellphone.transform.DORotate(Vector3.zero, 0.1f);
 	}
 
-	public override void LevelUp()
+	public override void LevelUp(int level)
 	{
 		if (_reachedMaxLevel)
 		{
@@ -63,8 +63,8 @@ public class SelfieStickBehavior : WeaponBase
 		}
 
 		// TO BE CHANGED LATER
-		base.LevelUp();
-		switch (_currentLevel)
+		base.LevelUp(level);
+		switch (level)
 		{
 			case 2:
 				baseDamage += 10;
