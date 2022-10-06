@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Runetracer
   m_EditorClassIdentifier: 
   equipped: 0
-  weaponLevel: 1
-  maxLevel: 8
   baseDamage: 10
   cooldown: 4
   amount: 1

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PentagramBehavior : WeaponBase
+public class PentagramBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PRIVATE_VARIABLES
 
@@ -48,6 +48,7 @@ public class PentagramBehavior : WeaponBase
 				yield return new WaitForSeconds(.1f);
 				foreach (Collider2D collider in colliders)
 				{
+					collider.GetComponent<IDamageable<float,float>>().Damage(99f,1f);
 					collider.GetComponent<IKillable>().Kill();
 				}
 
@@ -60,14 +61,15 @@ public class PentagramBehavior : WeaponBase
 	}
 	#endregion
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+
 		switch (level)
 		{
 			case 2:

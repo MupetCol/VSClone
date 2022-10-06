@@ -84,8 +84,11 @@ public class NdujaFritaTantoBehavior : WeaponBase
 			for (int i = 0; i < 3; i++)
 			{
 				NdujaProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
+
 				if (offset == 2) offset = -1;
 				project.SetDirection(dir, speed,offset / _offsetDivider, changeX);
+	
 				if (i % 3 == 2) yield return new WaitForSeconds(.1f);
 				offset++;
 			}

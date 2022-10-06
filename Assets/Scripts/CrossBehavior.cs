@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CrossBehavior : WeaponBase
+public class CrossBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -38,7 +38,9 @@ public class CrossBehavior : WeaponBase
 		    {
 			    CrossProjectile project = Instantiate(_projectile, transform.position, Quaternion.identity);
 			    project.SetDirection(DetectClosestEnemy(), transform.position);
-			    yield return new WaitForSeconds(_weaponStats.projectInverval);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
+
+				yield return new WaitForSeconds(_weaponStats.projectInverval);
 		    }
 		    yield return new WaitForSeconds(cooldown / _weaponStats.globalSpeed.Value);
 	    }
@@ -72,14 +74,14 @@ public class CrossBehavior : WeaponBase
 
 	#endregion
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

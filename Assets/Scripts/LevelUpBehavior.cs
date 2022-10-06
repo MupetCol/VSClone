@@ -22,7 +22,6 @@ public class LevelUpBehavior : MonoBehaviour
 	private float _rarityPoolRewards;
 	private float _rarityPoolOwnedObjects;
 
-	private int _currLevel = 1;
 
 
 	#endregion
@@ -38,11 +37,10 @@ public class LevelUpBehavior : MonoBehaviour
 
     void Update()
     {
-        if(_expPoints.Value > Utilities.Instance._expToLevelUp)
+        if(_expPoints.Value >= Utilities.Instance._expToLevelUp.Value)
 		{
-			_expPoints.Value = _expPoints.Value% Utilities.Instance._expToLevelUp;
-			Utilities.Instance._expToLevelUp += 10;
-			Utilities.Instance._playerLevel.Value++;
+			_expPoints.Value = _expPoints.Value % Utilities.Instance._expToLevelUp.Value;
+			Utilities.Instance._expToLevelUp.Value += 10;
 			LevelUp();
 			Utilities.Instance.LeveledUp();
 		}
@@ -52,7 +50,7 @@ public class LevelUpBehavior : MonoBehaviour
 
 	public void LevelUp()
 	{
-		_currLevel++;
+		Utilities.Instance._playerLevel.Value++;
 
 		if(!_dontGiveRewards)
 		PickRewards();
@@ -97,7 +95,7 @@ public class LevelUpBehavior : MonoBehaviour
 		int totalRewards = 3;
 		int ownedItemsRewards = 0;
 
-		float ownedObjectChance = 1f + (0.3f * _currLevel) - (1f / _luck.Value);
+		float ownedObjectChance = 1f + (0.3f * Utilities.Instance._playerLevel.Value) - (1f / _luck.Value);
 
 		for (int i = 0; i < 2; i++)
 		{

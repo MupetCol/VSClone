@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class SantaWaterBehavior : WeaponBase
+public class SantaWaterBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -35,9 +35,10 @@ public class SantaWaterBehavior : WeaponBase
 		{
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
-				Instantiate(_projectile, 
+				var project = Instantiate(_projectile, 
 					new Vector3(Random.Range(-transform.position.x, transform.position.x +_radius), 
 						Random.Range(-transform.position.y, transform.position.y + _radius), 0), Quaternion.identity);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(projectInverval);
 			}
 			yield return new WaitForSeconds(cooldown / _weaponStats.globalCooldown.Value);
@@ -45,14 +46,14 @@ public class SantaWaterBehavior : WeaponBase
 
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

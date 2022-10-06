@@ -46,18 +46,13 @@ public class WeaponBase : MonoBehaviour
 		knockBack += _weaponStats.knockBack;
 	}
 
-	public virtual void LevelUp(int level)
-	{
-		_currentLevel++;
-	}
-
 	IEnumerator InitLevelUp()
 	{
 		int minLevel = 1;
 		while (minLevel < _currentLevel)
 		{
 			minLevel++;
-			LevelUp(minLevel);
+			GetComponent<ILevelUp<float>>().LevelUp(minLevel);
 			Debug.Log(minLevel);
 			yield return new WaitForSeconds(.05f);
 			_currentLevel--;

@@ -11,11 +11,12 @@ public class DealDamageOnCollision : MonoBehaviour
 
 	#region PRIVATE_VARIABLES
 
-	public Weapon _weapon;
+	public WeaponBase _weapon;
+	public Stat _might;
 	public bool _constant;
 	protected Collider2D _collider;
 	private LayerMask _enemyLayer;
-	private float _hitCount = 0;
+	public float _hitCount = 0;
 
 	public List<GameObject> _targetsOnCooldown = new List<GameObject>();
 
@@ -41,14 +42,14 @@ public class DealDamageOnCollision : MonoBehaviour
 		{
 			// Deal damage and destroy projectile if pierce count is equal to hitcount
 			// 0 on a weapon pierce stat is taken as "IGNORE" pierce stat
-			_hitCount++;
-			dam.Damage(_weapon.baseDamage * _weapon.globalMight.Value
-					, _weapon.knockBack);
-			if (_hitCount == _weapon.pierce && _weapon.pierce != 0) Destroy(this.gameObject);
-
 			_targetsOnCooldown.Add(collision.gameObject);
 			StartCoroutine(TargetCooldown(collision.gameObject));
+			_hitCount++;
+			dam.Damage(_weapon.baseDamage * _might.floatData.Value
+					, _weapon.knockBack);
 		}
+
+
 	}
 
 	IEnumerator TargetCooldown(GameObject target)
@@ -59,6 +60,7 @@ public class DealDamageOnCollision : MonoBehaviour
 
 	protected IEnumerator DamageOnEnemiesOnArea()
 	{
+		yield return new WaitForEndOfFrame();
 		ContactFilter2D filter = new ContactFilter2D();
 		filter.SetLayerMask(_enemyLayer);
 		List<Collider2D> colliders = new List<Collider2D>();
@@ -71,7 +73,7 @@ public class DealDamageOnCollision : MonoBehaviour
 
 			foreach (Collider2D col in colliders)
 			{
-				col.GetComponent<IDamageable<float, float>>().Damage(_weapon.baseDamage * _weapon.globalMight.Value
+				col.GetComponent<IDamageable<float, float>>().Damage(_weapon.baseDamage * _might.floatData.Value
 					, _weapon.knockBack);
 			}
 
@@ -80,7 +82,15 @@ public class DealDamageOnCollision : MonoBehaviour
 
 		} while (_constant);
 	}
-	
+
+	private void Update()
+	{
+		if (_hitCount >= _weapon.pierce && _weapon.pierce != 0)
+		{
+			Destroy(this.gameObject);
+		}
+	}
+
 
 
 	#endregion

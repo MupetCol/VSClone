@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 11400000, guid: 38529733e50ec824f9f4b33076ad8d5a, type: 2}
+  _projectileCustomDestroyTime: 0
+  _destroyTime: 0
 --- !u!114 &-1986147649813697144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weapon: {fileID: 0}
+  _might: {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
   _constant: 0
-  _weapon: {fileID: 11400000, guid: 38529733e50ec824f9f4b33076ad8d5a, type: 2}
+  _hitCount: 0
+  _targetsOnCooldown: []
   _triggerDamage: 1
   _tickDamage: 0

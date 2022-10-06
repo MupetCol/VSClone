@@ -130,8 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
+  _weapon: {fileID: 0}
+  _might: {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
   _constant: 0
+  _hitCount: 0
   _targetsOnCooldown: []
   _triggerDamage: 1
   _tickDamage: 0

@@ -9,6 +9,7 @@ public class FloatReference : ScriptableObject
 
 	private void OnEnable()
 	{
+		hideFlags = HideFlags.DontUnloadUnusedAsset;
 		if (reset)
 			Value = defaultValue;
 	}

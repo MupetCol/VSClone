@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be8409ba86e1df45bf8c4227f285ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 11400000, guid: ed0b45bcdb436bf408f8d69a7300b055, type: 2}
+  _weapon: {fileID: 0}
+  _might: {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
   _constant: 1
+  _hitCount: 0
   _targetsOnCooldown: []
   _triggerDamage: 0
   _tickDamage: 1
@@ -133,3 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 11400000, guid: ed0b45bcdb436bf408f8d69a7300b055, type: 2}
+  _projectileCustomDestroyTime: 0
+  _destroyTime: 0

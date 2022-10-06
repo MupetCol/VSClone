@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rarity: 50
   _value: 30
-  _playerHealth: {fileID: 11400000, guid: b91cfa3e243650843b5ddf781ccfbaed, type: 2}
+  _playerHealth: {fileID: 11400000, guid: 40cf3b342663d434d96bf1e61e9feb60, type: 2}

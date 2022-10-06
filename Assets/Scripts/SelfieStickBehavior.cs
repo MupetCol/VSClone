@@ -3,7 +3,7 @@ using System.Collections;
 using DG.Tweening;
 
 
-public class SelfieStickBehavior : WeaponBase
+public class SelfieStickBehavior : WeaponBase, ILevelUp<float>
 {
 	private float _lastArea;
 	public GameObject _stickParent;
@@ -55,15 +55,15 @@ public class SelfieStickBehavior : WeaponBase
 		_cellphone.transform.DORotate(Vector3.zero, 0.1f);
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
 		// TO BE CHANGED LATER
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

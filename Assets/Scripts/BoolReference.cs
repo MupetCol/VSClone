@@ -4,4 +4,9 @@ using UnityEngine;
 public class BoolReference : ScriptableObject
 {
 	public bool toggle;
+
+	private void OnEnable()
+	{
+		hideFlags = HideFlags.DontUnloadUnusedAsset;
+	}
 }

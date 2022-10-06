@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MagicWandBehavior : WeaponBase
+public class MagicWandBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -42,6 +42,7 @@ public class MagicWandBehavior : WeaponBase
 			{
 				MagicWandProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
 				project.SetDirection(DetectClosestEnemy());
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(_weaponStats.projectInverval);
 			}
 			yield return new WaitForSeconds(cooldown / _weaponStats.globalSpeed.Value);
@@ -79,14 +80,15 @@ public class MagicWandBehavior : WeaponBase
 		//OnDrawGizmosSelected();
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+	
 		switch (level)
 		{
 			case 2:

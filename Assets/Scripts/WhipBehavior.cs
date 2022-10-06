@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class WhipBehavior : WeaponBase
+public class WhipBehavior : WeaponBase, ILevelUp<float>
 {
 	private float _lastArea;
 
@@ -52,14 +52,15 @@ public class WhipBehavior : WeaponBase
 
 	#endregion
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+
 		switch (level)
 		{
 			case 2:

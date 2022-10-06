@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BreathCoolBehavior : WeaponBase
+public class BreathCoolBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -34,22 +34,23 @@ public class BreathCoolBehavior : WeaponBase
 			{
 				_timer += _weaponStats.projectInverval;
 
-				Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				var project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(_weaponStats.projectInverval);
 			}
 			yield return new WaitForSeconds((cooldown+duration) / _weaponStats.globalCooldown.Value);
 		}
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
 		// TO BE CHANGED LATER
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

@@ -234,8 +234,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyStats: {fileID: 11400000, guid: c5177a0a8249a0749b8a42aa4ac6e6ed, type: 2}
-  _health: 0
+  _health: 10
   _enemyType: 7
+  _numberPrefab: {fileID: 2855800586744337981, guid: e311936636cd06f4f9dc5dbb01f3c251, type: 3}
   _frozen: 0
   _whiteCopy: {fileID: 822665294405509412}
 --- !u!114 &822665295586974616

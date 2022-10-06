@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	public Enemy _enemyStats;
 	public float _health;
 	public int _enemyType = 0;
+	public GameObject _numberPrefab;
 
 	#endregion
 
@@ -102,6 +103,8 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	{
 		_health -= damageTaken;
 		KnockBack(weaponKnockBackStat);
+		var obj = Instantiate(_numberPrefab, transform.position, Quaternion.identity);
+		obj.GetComponentInChildren<DamageNumberBehavior>().UpdateText(damageTaken.ToString());
 		if (_health <= 0) Kill();
 	}
 

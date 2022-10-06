@@ -4,8 +4,8 @@ public class InitializeStats : MonoBehaviour
 {
 	#region PUBLIC_VARIABLES
 	public FloatReference[] resetNeededStats;
-	public PlayerCharacter[] character;
-	public Stat[] stat;
+	//public PlayerCharacter[] character;
+	//public Stat[] stat;
 
 	#endregion
 
@@ -22,33 +22,30 @@ public class InitializeStats : MonoBehaviour
 
 	#region UNITY_METHODS
 
-    void Start()
+	void Start()
 	{
 		foreach (FloatReference reference in resetNeededStats)
 		{
 			reference.ResetValues();
 		}
 
-		foreach (PlayerCharacter character in character)
-		{
-			if (character.selected)
-			{
-				character.ApplyCharacterBonus();
-				break;
-			}
-		}
-		
-		foreach (Stat stat in stat)
-		{
-			stat.ApplyPowerUp();
-		}
+		//TESTING
 
-		Utilities.Instance.SetMaxHealth();
-    }
+		//foreach (PlayerCharacter character in character)
+		//{
+		//	if (character.selected)
+		//	{
+		//		character.ApplyCharacterBonus();
+		//		break;
+		//	}
+		//}
 
-    void Update()
-    {
-        
+		//foreach (Stat stat in stat)
+		//{
+		//	stat.ApplyPowerUp();
+		//}
+
+		//Utilities.Instance.SetMaxHealth();
     }
 
 	#endregion

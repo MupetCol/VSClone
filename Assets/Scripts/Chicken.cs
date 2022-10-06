@@ -8,7 +8,7 @@ public class Chicken : CollectableBase, ICollectable
 	public void Collected()
 	{
 		
-		_playerHealth.Value = Mathf.Clamp(_playerHealth.Value + _value, 0, Utilities.Instance._maxHealth);
+		_playerHealth.Value = Mathf.Clamp(_playerHealth.Value + _value, 0, Utilities.Instance._maxHealth.Value);
 		Destroy(gameObject);
 	}
 }

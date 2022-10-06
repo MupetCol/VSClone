@@ -9,6 +9,7 @@ public class Vector3Reference : ScriptableObject
 
 	private void OnEnable()
 	{
+		hideFlags = HideFlags.DontUnloadUnusedAsset;
 		if (reset)
 			Value = defaultValue;
 	}

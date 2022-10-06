@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RuneTracerBehavior : WeaponBase
+public class RuneTracerBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -42,20 +42,21 @@ public class RuneTracerBehavior : WeaponBase
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				RuneTracerProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(projectInverval);
 			}
 			yield return new WaitForSeconds(cooldown/ _weaponStats.globalCooldown.Value);
 		}
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

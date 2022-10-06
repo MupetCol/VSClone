@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GarlicBehavior : WeaponBase
+public class GarlicBehavior : WeaponBase, ILevelUp<float>
 {
 
 	#region PRIVATE_VARIABLES
@@ -9,6 +9,7 @@ public class GarlicBehavior : WeaponBase
 	private bool _canDealDamage = true;
 	private bool init = false;
 	private float _lastArea;
+	private float _startScale;
 
 	#endregion
 
@@ -16,20 +17,18 @@ public class GarlicBehavior : WeaponBase
 	public override void Awake()
 	{
 		base.Awake();
-		StartCoroutine(InitTime());
+		_startScale = transform.localScale.x;
 	}
 
 	void UpdateArea()
 	{
-		_lastArea = area + _weaponStats.globalArea.Value;
-		transform.localScale *= (area * _weaponStats.globalArea.Value);
+		_lastArea = _startScale + area + _weaponStats.globalArea.Value;
+		transform.localScale = new Vector3(_startScale * area * _weaponStats.globalArea.Value,
+			_startScale * area * _weaponStats.globalArea.Value,
+			_startScale * area * _weaponStats.globalArea.Value);
 	}
 
-	IEnumerator InitTime()
-	{
-		yield return new WaitForSeconds(.5f);
-		init = true;
-	}
+
 	#endregion
 
 	public IEnumerator DealDamage(Collision2D coll)
@@ -41,20 +40,21 @@ public class GarlicBehavior : WeaponBase
 
 	private void Update()
 	{
-		if((area + _weaponStats.globalArea.Value) != _lastArea && init == true)
+		if((area + _weaponStats.globalArea.Value) != _lastArea)
 		{
 			UpdateArea();
 		}
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+	
 		switch (level)
 		{
 			case 2:

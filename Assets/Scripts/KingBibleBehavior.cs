@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class KingBibleBehavior : WeaponBase
+public class KingBibleBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -28,6 +28,7 @@ public class KingBibleBehavior : WeaponBase
 			{
 				KingBibleProjectile project = Instantiate(_projectile, _spawnPoint.position+Vector3.right+Vector3.forward, Quaternion.identity,_spawnPoint);
 				project.SetValues(speed * _weaponStats.globalSpeed.Value, _spawnPoint.gameObject, true);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(projectInverval);
 			}
 			yield return new WaitForSeconds(cooldown/_weaponStats.globalCooldown.Value);
@@ -35,14 +36,14 @@ public class KingBibleBehavior : WeaponBase
 
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

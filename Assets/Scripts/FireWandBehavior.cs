@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class FireWandBehavior : WeaponBase
+public class FireWandBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -41,6 +41,7 @@ public class FireWandBehavior : WeaponBase
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				FireWandProjectile project = Instantiate(_projectile, _spawnPoint.position, Quaternion.identity);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
 
 				if (offset == 3) offset = 0;
 
@@ -85,14 +86,15 @@ public class FireWandBehavior : WeaponBase
 		//OnDrawGizmosSelected();
 	}
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+		
 		switch (level)
 		{
 			case 2:

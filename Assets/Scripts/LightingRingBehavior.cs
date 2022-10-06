@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
-public class LightingRingBehavior : WeaponBase
+public class LightingRingBehavior : WeaponBase, ILevelUp<float>
 {
 	#region PUBLIC_VARIABLES
 
@@ -76,14 +76,14 @@ public class LightingRingBehavior : WeaponBase
 
 	#endregion
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
 		switch (level)
 		{
 			case 2:

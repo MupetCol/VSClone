@@ -22,6 +22,7 @@ public class PlayerCharacterHandler : MonoBehaviour
 			if (chara.selected)
 			{
 				_character = chara;
+				_character.startingWeapon.equipped = true;
 				break;
 			}
 

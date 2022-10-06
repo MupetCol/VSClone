@@ -30,7 +30,7 @@ public class HealthSliderBehavior : MonoBehaviour
 
     void Update()
     {
-		_healthBar.value = _health.Value / Utilities.Instance._maxHealth;
+		_healthBar.value = _health.Value / Utilities.Instance._maxHealth.Value;
     }
 
 	#endregion

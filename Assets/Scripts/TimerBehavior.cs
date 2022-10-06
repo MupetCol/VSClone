@@ -6,6 +6,7 @@ public class TimerBehavior : MonoBehaviour
 	#region PUBLIC_VARIABLES
 	[SerializeField] private TMP_Text _timerText;
 	[SerializeField] private FloatReference _time;
+	[SerializeField] private StageEnd _end;
 
 	#endregion
 
@@ -25,7 +26,7 @@ public class TimerBehavior : MonoBehaviour
 	void DisplayTime(float timeToDisplay){
 		if(timeToDisplay > 1800){
 			timeToDisplay = 1800;
-			FindObjectOfType<PlayerDamageHandler>().Kill();
+			_end.StartEndingCor();
 		}
 
 		float minutes = Mathf.FloorToInt(timeToDisplay / 60);
@@ -33,6 +34,8 @@ public class TimerBehavior : MonoBehaviour
 
 		_timerText.text = string.Format("{0:00}:{1:00}",minutes, seconds);
 	}
+
+
 
 	#endregion
 }

@@ -9,23 +9,45 @@ public class SaveFile : ScriptableObject
 	//State
 	public Vector3Reference playerPos;
 	public FloatReference time;
-	public FloatReference coins;
 	public FloatReference stage;
 	public PlayerCharacter character;
 	public FloatListReference weaponLevels;
-	public List<int> enemyTypes;
 	public List<GameObject> enemiesPrefabs;
+	public List<int> enemyTypes;
 	public List<Vector3> enemiesPos;
 	public List<Weapon> activeWeapons;
+	public FloatReference coinsOnHold;
+	public FloatReference xpOnHold;
+	public FloatReference xpToLevelUp;
+	public FloatReference playerLvl;
+	public FloatReference playerHP;
 
+	public bool _manualReset;
+	public bool _isEmpty;
 
 	#endregion
 
 	public void ResetFile()
 	{
+		_isEmpty = true;
 		playerPos.ResetValues();
 		time.ResetValues();
-		coins.ResetValues();
 		weaponLevels.ResetValues();
+		stage.ResetValues();
+		enemyTypes.Clear();
+		//DONT CLEAR
+		//enemiesPrefabs.Clear();
+		enemiesPos.Clear();
+		activeWeapons.Clear();
+		coinsOnHold.ResetValues();
+		xpToLevelUp.ResetValues();
+		xpOnHold.ResetValues();
+		playerLvl.ResetValues();
+		time.ResetValues();
+	}
+
+	private void OnEnable()
+	{
+		if(_manualReset) ResetFile();
 	}
 }

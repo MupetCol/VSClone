@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using DG.Tweening;
 
-public class PeachoneBehavior : WeaponBase
+public class PeachoneBehavior : WeaponBase, ILevelUp<float>
 {
     #region PUBLIC_VARIABLES
 
@@ -63,9 +63,10 @@ public class PeachoneBehavior : WeaponBase
 
                 _timer += _weaponStats.projectInverval;
 
-                PeachoneProjectile instance = Instantiate(_projectile, transform.position, Quaternion.identity);
-                instance.SetTarget(target);
-                yield return new WaitForSeconds(_weaponStats.projectInverval);
+                PeachoneProjectile project = Instantiate(_projectile, transform.position, Quaternion.identity);
+				project.SetTarget(target);
+				project.GetComponent<WeaponDealDamage>()._weapon = this;
+				yield return new WaitForSeconds(_weaponStats.projectInverval);
             }
             _onAction = false;
             _bombardingZone.SetActive(false);
@@ -73,14 +74,15 @@ public class PeachoneBehavior : WeaponBase
         }
     }
 
-	public override void LevelUp(int level)
+	public void LevelUp(float level)
 	{
+		_currentLevel++;
 		if (_reachedMaxLevel)
 		{
 			Debug.Log("Shouldn't have been called, already max level");
 		}
 
-		base.LevelUp(level);
+
 		switch (level)
 		{
 			case 2:

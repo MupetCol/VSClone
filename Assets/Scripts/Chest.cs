@@ -20,7 +20,8 @@ public class Chest : CollectableBase, ICollectable
 		{
 			GameObject go = (GameObject)_reward;
 			WeaponBase weapon = go.GetComponent<WeaponBase>();
-			weapon.LevelUp(weapon._currentLevel);
+			weapon.GetComponent<ILevelUp<float>>().LevelUp(weapon._currentLevel+1);
+			_rewardGiven.description = weapon.name + " Upgraded";
 		}
 		else if (_reward.GetType() == typeof(Stat))
 		{

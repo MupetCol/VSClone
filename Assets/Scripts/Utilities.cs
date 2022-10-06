@@ -8,11 +8,11 @@ public class Utilities : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	public static Utilities Instance { get; private set; }
-	public float _maxHealth = 0;
-	public float _expToLevelUp = 15f;
+	public FloatReference _expToLevelUp;
 	public FloatReference _playerLevel;
 	public float _initDistanceToGoal = 0f;
-	public FloatReference _health;
+	public FloatReference _maxHealth;
+	public FloatReference _currHealth;
 	public List<UnityEngine.Object> _ownedObjects = new List<UnityEngine.Object>();
 	public List<EnemyBehavior> _enemies = new List<EnemyBehavior>();
 	public List<ExpGem> _expGems = new List<ExpGem>();
@@ -29,8 +29,7 @@ public class Utilities : MonoBehaviour
 
 	public void SetMaxHealth()
 	{
-		_maxHealth = _health.Value;
-		_expToLevelUp = 5f;
+		_currHealth.Value = _maxHealth.Value;
 	}
     void Awake()
     {
@@ -39,7 +38,8 @@ public class Utilities : MonoBehaviour
 		_initDistanceToGoal = Vector2.Distance(transform.position, _goal.transform.position);
     }
 
-    void Update()
+
+	void Update()
     {
         
     }

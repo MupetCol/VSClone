@@ -30,8 +30,8 @@ public class ExpSliderBehavior : MonoBehaviour
 
 	void Update()
 	{
-		if(_exp.Value != 0)
-		_expBar.value = _exp.Value / Utilities.Instance._expToLevelUp;
+		//if(_exp.Value != 0)
+		_expBar.value = _exp.Value / Utilities.Instance._expToLevelUp.Value;
 	}
 
 	#endregion
