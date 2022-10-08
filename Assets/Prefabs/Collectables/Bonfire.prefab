@@ -141,13 +141,13 @@ MonoBehaviour:
   - {fileID: 2146230709292228982, guid: 9a7cbedb3c6b44f46bc412a57525c4bd, type: 3}
   - {fileID: 4904380014623135471, guid: e8862be9606eed846aa84acc59bcc6b2, type: 3}
   - {fileID: 1737852662223515356, guid: 0dbfa2baea7d3fb44a5bdef6c5b08591, type: 3}
-  - {fileID: 669924481555236137, guid: 3ee0dcc0ce4d28d49991d9d6114528f9, type: 3}
   - {fileID: 2146230709292228982, guid: 0e268500c1ddaef4cad787fb9b1ad39c, type: 3}
   - {fileID: 2146230709292228982, guid: bb176bb04fd8e6f43b100da46fb3d672, type: 3}
   - {fileID: 1737852662223515356, guid: dfa2d0830c7c1f9429573db3d59579fe, type: 3}
   - {fileID: 2900014535521336057, guid: 3b4a7a057b485294b8685dad0f78390a, type: 3}
   - {fileID: 2900014535521336057, guid: cf69cd3beb30cbd4e9e6818874a5b8e6, type: 3}
   - {fileID: 2900014535521336057, guid: eeb8be91f23e91847803b9bfe66170bd, type: 3}
+  - {fileID: 669924481555236137, guid: 3ee0dcc0ce4d28d49991d9d6114528f9, type: 3}
   _health: 10
   _collectiblePicked: {fileID: 0}
   _whiteCopy: {fileID: 6472500312190922247}

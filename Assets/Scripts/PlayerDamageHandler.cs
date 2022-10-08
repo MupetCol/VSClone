@@ -22,8 +22,7 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 
 	public void Kill()
 	{
-		Destroy(this.gameObject);
-		SceneManager.LoadScene(0);
+		FindObjectOfType<StageEnd>().StartEndingCor();
 	}
 }
 

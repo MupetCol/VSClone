@@ -13,6 +13,10 @@ public class SaveFile : ScriptableObject
 	public PlayerCharacter character;
 	public FloatListReference weaponLevels;
 	public List<GameObject> enemiesPrefabs;
+	public List<GameObject> mapPrefabs;
+
+	public List<int> mapTypes;
+	public List<Vector3> mapsPos;
 	public List<int> enemyTypes;
 	public List<Vector3> enemiesPos;
 	public List<Weapon> activeWeapons;
@@ -35,6 +39,8 @@ public class SaveFile : ScriptableObject
 		weaponLevels.ResetValues();
 		stage.ResetValues();
 		enemyTypes.Clear();
+		mapTypes.Clear();
+		mapsPos.Clear();
 		//DONT CLEAR
 		//enemiesPrefabs.Clear();
 		enemiesPos.Clear();

@@ -46,6 +46,11 @@ public class SaveRunValues : MonoBehaviour
 				wp.equipped = true;
 			}
 
+			for (int i = 0; i < _saveFile.mapTypes.Count; i++)
+			{
+				Instantiate(_saveFile.mapPrefabs[_saveFile.mapTypes[i]], _saveFile.mapsPos[i], Quaternion.identity);
+			}
+
 			for (int i = 0; i < _saveFile.enemyTypes.Count; i++)
 			{
 				Instantiate(_saveFile.enemiesPrefabs[_saveFile.enemyTypes[i]], _saveFile.enemiesPos[i], Quaternion.identity);
@@ -86,6 +91,13 @@ public class SaveRunValues : MonoBehaviour
 
 		_saveFile.enemyTypes.Clear();
 		_saveFile.enemiesPos.Clear();
+
+		var tempMaps = FindObjectsOfType<MapType>();
+		foreach (MapType map in tempMaps)
+		{
+			_saveFile.mapTypes.Add(map._type);
+			_saveFile.mapsPos.Add(map.transform.position);
+		}
 
 		var temp = FindObjectsOfType<EnemyBehavior>();
 		foreach(EnemyBehavior enemy in temp)

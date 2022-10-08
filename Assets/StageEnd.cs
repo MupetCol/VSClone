@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StageEnd : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class StageEnd : MonoBehaviour
 		_coinsOwned.Value += _coinsOnStage.Value;
 		_coinsOnStage.Value = 0;
 		_saveFile.ResetFile();
-		FindObjectOfType<PlayerDamageHandler>().Kill();
+		SceneManager.LoadScene(0);
 		yield return null;
 	}
 

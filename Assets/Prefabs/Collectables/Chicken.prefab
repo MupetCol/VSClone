@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9386b53dc398c5041beac85d5ced0694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rarity: 50
+  _rarity: 12
   _value: 30
   _playerHealth: {fileID: 11400000, guid: 40cf3b342663d434d96bf1e61e9feb60, type: 2}
