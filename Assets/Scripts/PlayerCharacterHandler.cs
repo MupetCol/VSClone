@@ -27,7 +27,7 @@ public class PlayerCharacterHandler : MonoBehaviour
 			}
 
 		}
-		Instantiate(_character.bonusScríptHolder);
+		Instantiate(_character.bonusScriptHolder);
 
 		GetComponent<SpriteRenderer>().sprite = _character.characterSprite;
 	}

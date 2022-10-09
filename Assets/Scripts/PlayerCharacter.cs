@@ -11,7 +11,7 @@ public class PlayerCharacter : ScriptableObject
 	public Sprite characterSprite;
 	public Stat[] baseStatToBoost;
 	public float[] bonus;
-	public GameObject bonusScríptHolder;
+	public GameObject bonusScriptHolder;
 
 
 	#endregion

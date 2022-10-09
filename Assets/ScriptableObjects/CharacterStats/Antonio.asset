@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc071493a2d69e748b919b6d4248e3d9, type: 2}
   bonus:
   - 20
-  "bonusScr\xEDptHolder": {fileID: 297756034769162364, guid: b1b90d65f8b9d1c4187cfd0bb071fcc8, type: 3}
+  bonusScriptHolder: {fileID: 297756034769162364, guid: b1b90d65f8b9d1c4187cfd0bb071fcc8, type: 3}
