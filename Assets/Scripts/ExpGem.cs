@@ -4,6 +4,7 @@ public class ExpGem : CollectableBase, ICollectable
 {
 	public float _value;
 	public FloatReference _expCounter;
+	public FloatReference _growth;
 
 	private void Awake() {
 		Utilities.Instance._expGems.Add(this);
@@ -11,7 +12,7 @@ public class ExpGem : CollectableBase, ICollectable
 
 	public void Collected()
 	{
-		_expCounter.Value += _value;
+		_expCounter.Value += (_value*_growth.Value);
 		Destroy(gameObject);
 	}
 

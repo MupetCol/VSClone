@@ -8,6 +8,8 @@ public class KnifeBehavior : WeaponBase, ILevelUp<float>
 	public KnifeProjectile _projectile;
 	public Transform _spawnPoint;
 	public float _offset = .1f;
+	public Vector3 _dir = Vector3.right;
+	public bool _resDir = false;
 
 
 
@@ -38,7 +40,47 @@ public class KnifeBehavior : WeaponBase, ILevelUp<float>
 
 	void Update()
 	{
+		if (Input.GetKey(KeyCode.W))
+		{
+			if (!_resDir)
+			{
+				_resDir = true;
+				_dir = Vector3.zero;
+			}
+			_dir += Vector3.up;
+		}
 
+		if (Input.GetKey(KeyCode.A))
+		{
+			if (!_resDir)
+			{
+				_resDir = true;
+				_dir = Vector3.zero;
+			}
+			_dir += Vector3.left;
+		}
+
+		if (Input.GetKey(KeyCode.S))
+		{
+			if (!_resDir)
+			{
+				_resDir = true;
+				_dir = Vector3.zero;
+			}
+			_dir += Vector3.down;
+		}
+
+		if (Input.GetKey(KeyCode.D))
+		{
+			if (!_resDir)
+			{
+				_resDir = true;
+				_dir = Vector3.zero;
+			}
+			_dir += Vector3.right;
+		}
+
+		_resDir = false;
 	}
 
 	#endregion
@@ -47,42 +89,14 @@ public class KnifeBehavior : WeaponBase, ILevelUp<float>
 	{
 		while (true)
 		{
+			Vector3 tempDir = _dir;
+			tempDir.Normalize();
 			
-				Vector3 dir = Vector3.zero;
-				if (Input.GetKey(KeyCode.W))
-				{
-					dir += Vector3.up;
-				}
-
-				if (Input.GetKey(KeyCode.A))
-				{
-					dir += Vector3.left;
-				}
-
-				if (Input.GetKey(KeyCode.S))
-				{
-					dir += Vector3.down;
-				}
-
-				if (Input.GetKey(KeyCode.D))
-				{
-					dir += Vector3.right;
-				}
-
-				if(dir == Vector3.zero)
-				{
-					dir = Vector3.right;
-				}
-				else
-				{
-					dir.Normalize();
-				}
-
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				KnifeProjectile project = Instantiate(_projectile, _spawnPoint.position + 
 					new Vector3(Random.Range(-_offset, _offset), Random.Range(-_offset,_offset),0), Quaternion.identity);
-				project.SetDirection(dir, speed* _weaponStats.globalSpeed.Value);
+				project.SetDirection(tempDir, speed* _weaponStats.globalSpeed.Value);
 				project.GetComponent<WeaponDealDamage>()._weapon = this;
 
 				yield return new WaitForSeconds(projectInverval);

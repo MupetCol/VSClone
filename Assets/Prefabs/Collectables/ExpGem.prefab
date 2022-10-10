@@ -139,3 +139,4 @@ MonoBehaviour:
   _rarity: 100
   _value: 1
   _expCounter: {fileID: 11400000, guid: d56a11a628d304446ac0009c74b75618, type: 2}
+  _growth: {fileID: 11400000, guid: 61ebf86b5e4191041b56396beb1cbee7, type: 2}

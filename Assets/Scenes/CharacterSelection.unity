@@ -232,6 +232,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 7ea5ead0319e82f4e8aa7dc94ccc1799, type: 2}
+  _isMaxed: 0
 --- !u!1 &68538308
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +943,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 07d862151c0b7f246ae26e3563273a2b, type: 2}
+  _isMaxed: 0
 --- !u!1 &135755504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1265,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: a6a907ff70ae84148a7d2fab8ee3dfa0, type: 2}
+  _isMaxed: 0
 --- !u!1 &173120024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +2528,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 430bd2c5c2676784f998f249dff7f632, type: 2}
+  _isMaxed: 0
 --- !u!1 &438909356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,6 +3946,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 6a43b8fdbb782ab418e02b16de1065b4, type: 2}
+  _isMaxed: 0
 --- !u!1 &625545237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,6 +4507,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 33e7ba02450b6e940bd5ae1d10d90c79, type: 2}
+  _isMaxed: 0
 --- !u!1 &696263839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4902,6 +4908,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: d01ca5678456b714da536ad5e4e41798, type: 2}
+  _isMaxed: 0
 --- !u!1 &776663519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,6 +5153,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: dc071493a2d69e748b919b6d4248e3d9, type: 2}
+  _isMaxed: 0
 --- !u!1 &833698620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5956,7 +5964,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.02290726}
-  m_AnchorMax: {x: 1, y: 0.97709274}
+  m_AnchorMax: {x: 1, y: 0.9770928}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7043,6 +7051,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 5aea326faa900924f9a9c790ca23d86c, type: 2}
+  _isMaxed: 0
 --- !u!1 &1121629572
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,6 +8668,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 9c67208c880cb9a40af751722b02912d, type: 2}
+  _isMaxed: 0
 --- !u!1 &1344916508
 GameObject:
   m_ObjectHideFlags: 0
@@ -8860,6 +8870,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: c29f317533989e0448b7d723c28f35b3, type: 2}
+  _isMaxed: 0
 --- !u!1 &1350809061
 GameObject:
   m_ObjectHideFlags: 0
@@ -10576,6 +10587,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 01f91e9df62b29a4980dc2c64af39af4, type: 2}
+  _isMaxed: 0
 --- !u!1 &1719159401
 GameObject:
   m_ObjectHideFlags: 0
@@ -11578,6 +11590,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 0e7a9a1522deb2645883d7f570a38f59, type: 2}
+  _isMaxed: 0
 --- !u!1 &2037071748
 GameObject:
   m_ObjectHideFlags: 0
@@ -11763,6 +11776,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 6356930dd00d46b479781ca792aa65e9, type: 2}
+  _isMaxed: 0
 --- !u!1 &2059536114
 GameObject:
   m_ObjectHideFlags: 0
@@ -11999,6 +12013,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: afb66522a6a16c64080e6064e65af836, type: 2}
+  _isMaxed: 0
 --- !u!1 &2123782041
 GameObject:
   m_ObjectHideFlags: 0
@@ -12108,6 +12123,7 @@ MonoBehaviour:
   _currentPrice: 0
   _totalBought: {fileID: 11400000, guid: a4344820160291041840185227d78036, type: 2}
   _stat: {fileID: 11400000, guid: 7608abfd711f8754ca34ab77c7fd8ee1, type: 2}
+  _isMaxed: 0
 --- !u!1 &2126650097
 GameObject:
   m_ObjectHideFlags: 0

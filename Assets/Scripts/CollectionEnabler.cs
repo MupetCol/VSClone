@@ -24,7 +24,11 @@ public class CollectionEnabler : MonoBehaviour
 	{
 		if(collision.tag == "Collectable")
 		{
-			collision.GetComponent<CollectableBase>().CollectionEnabled(transform);
+			//collision.GetComponent<CollectableBase>().CollectionEnabled(transform);
+			if(collision.TryGetComponent(out CollectableBase collectable))
+			{
+				collectable.CollectionEnabled(transform);
+			}
 		}
 	}
 

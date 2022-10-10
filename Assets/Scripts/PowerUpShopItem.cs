@@ -18,6 +18,8 @@ public class PowerUpShopItem : MonoBehaviour, IPointerDownHandler
 	public FloatReference _totalBought;
 	public Stat _stat;
 
+	public bool _isMaxed = false;
+
 	
 
 	public void OnPointerDown(PointerEventData pointerEventData)
@@ -31,8 +33,17 @@ public class PowerUpShopItem : MonoBehaviour, IPointerDownHandler
 	public void UpdatePrice()
 	{
 		_currentPrice = _totalBought.Value == 0 ? _basePrice : (_basePrice * (_stat.powerUpRank + 1)) + (20 * Mathf.Pow(1.1f, _totalBought.Value));
-		_currentPrice -= _currentPrice % 1;
-		_priceText.text = _currentPrice.ToString();
+
+		if(_stat.powerUpRank >= _stat.maxRank)
+		{
+			_priceText.text = "Maxed";
+			_isMaxed = true;
+		}
+		else
+		{
+			_currentPrice -= _currentPrice % 1;
+			_priceText.text = _currentPrice.ToString();
+		}
 	}
 
 

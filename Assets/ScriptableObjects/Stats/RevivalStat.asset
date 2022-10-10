@@ -16,7 +16,7 @@ MonoBehaviour:
   powerUpRank: 0
   bonusPerRank: 1
   stackingType: 0
-  maxCap: 1
+  maxRank: 1
   rarity: 100
   reset: 1
   upgradesText: 

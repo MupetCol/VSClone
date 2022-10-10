@@ -8,7 +8,7 @@ public class Stat : ScriptableObject
 	public float powerUpRank;
 	public float bonusPerRank;
 	public int stackingType;
-	public float maxCap;
+	public float maxRank;
 	public float rarity;
 
 	public bool reset;

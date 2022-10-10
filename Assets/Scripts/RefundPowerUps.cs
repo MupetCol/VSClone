@@ -34,6 +34,7 @@ public class RefundPowerUps : MonoBehaviour
 
         foreach (PowerUpShopItem item in _items)
         {
+            item._isMaxed = false;
             item.UpdatePrice();
         }
 
