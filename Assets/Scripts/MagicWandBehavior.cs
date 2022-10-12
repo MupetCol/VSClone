@@ -68,6 +68,7 @@ public class MagicWandBehavior : WeaponBase, ILevelUp<float>
 			{
 				if (Vector3.Distance(transform.position, enemy.transform.position) < distance)
 				{
+					distance = Vector3.Distance(transform.position, enemy.transform.position);
 					target = enemy.transform;
 				}
 			}

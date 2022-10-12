@@ -2403,7 +2403,7 @@ MonoBehaviour:
   projectInverval: 0
   hitboxDelay: 0
   knockBack: 0
-  _radius: 1
+  _radius: 4
   _projectile: {fileID: 5119114582033581049, guid: 81352740890e134458613ebcd44a5c6e, type: 3}
   _spawnPoint: {fileID: 1808407712}
 --- !u!1 &585170298
@@ -7295,7 +7295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1501400691
 Transform:
   m_ObjectHideFlags: 0
