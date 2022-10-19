@@ -24,8 +24,14 @@ public class CollectionEffector : MonoBehaviour
 	{
 		if (collision.tag == "Collectable")
 		{
-			collision.GetComponent<ICollectable>().Collected();
+			if(collision.TryGetComponent(out ICollectable collectable))
+			{
+				collectable.Collected();
+			}
+
 		}
+
+
 	}
 
 	#endregion
