@@ -44,11 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ffa0c35a86701418993f86030ba23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  replaceTheme: 0
+  replaceTheme: 1
   sounds:
-  - name: TittleScreen
-    clip: {fileID: 8300000, guid: a5f1e54835748d647ad88a5de2b9cb5f, type: 3}
-    mixer: {fileID: 0}
+  - name: StageBegin
+    clip: {fileID: 8300000, guid: d07c00919b1265844b621a8516843757, type: 3}
+    mixer: {fileID: 1683619487752388247, guid: 28649223aee7f224fa9cad4c0ca5f82c, type: 2}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MidStage
+    clip: {fileID: 8300000, guid: 9cfe70ee15cb7b142aa6f87bc9fd8e7d, type: 3}
+    mixer: {fileID: 1683619487752388247, guid: 28649223aee7f224fa9cad4c0ca5f82c, type: 2}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: FinalStage
+    clip: {fileID: 8300000, guid: b250a5baf2e889843855acbf3469f6c9, type: 3}
+    mixer: {fileID: 1683619487752388247, guid: 28649223aee7f224fa9cad4c0ca5f82c, type: 2}
     volume: 0.4
     pitch: 1
     loop: 1

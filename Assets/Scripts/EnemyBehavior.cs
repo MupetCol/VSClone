@@ -9,6 +9,8 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	public float _health;
 	public int _enemyType = 0;
 	public GameObject _numberPrefab;
+	public BoolReference _floatingNumbers;
+	public BoolReference _knockBackFlash;
 
 	#endregion
 
@@ -103,8 +105,13 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	{
 		_health -= damageTaken;
 		KnockBack(weaponKnockBackStat);
-		var obj = Instantiate(_numberPrefab, transform.position, Quaternion.identity);
-		obj.GetComponentInChildren<DamageNumberBehavior>().UpdateText(damageTaken.ToString());
+
+		if (_floatingNumbers.toggle)
+		{
+			var obj = Instantiate(_numberPrefab, transform.position, Quaternion.identity);
+			obj.GetComponentInChildren<DamageNumberBehavior>().UpdateText(damageTaken.ToString());
+		}
+
 		if (_health <= 0) Kill();
 	}
 
@@ -116,7 +123,9 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	private void KnockBack(float weaponKnockBackStat)
 	{
+		if(_knockBackFlash.toggle)
 		StartCoroutine(KnockbackFlash());
+
 		transform.Translate(-(_player.transform.position - transform.position).normalized * _enemyStats.knockback * weaponKnockBackStat);
 	}
 }

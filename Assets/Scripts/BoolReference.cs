@@ -9,4 +9,9 @@ public class BoolReference : ScriptableObject
 	{
 		hideFlags = HideFlags.DontUnloadUnusedAsset;
 	}
+
+	public void Toggle()
+	{
+		toggle = !toggle;
+	}
 }

@@ -237,6 +237,8 @@ MonoBehaviour:
   _health: 10
   _enemyType: 0
   _numberPrefab: {fileID: 2855800586744337981, guid: e311936636cd06f4f9dc5dbb01f3c251, type: 3}
+  _floatingNumbers: {fileID: 11400000, guid: 0f8f5e3c4d5c22a44a1e4f45cf870093, type: 2}
+  _knockBackFlash: {fileID: 11400000, guid: c2853ea2c268c3d4c9d23cd4dc9547d9, type: 2}
   _frozen: 0
   _whiteCopy: {fileID: 8498023512142539624}
 --- !u!114 &8498023513057759700

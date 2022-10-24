@@ -19,13 +19,14 @@ public class TimerBehavior : MonoBehaviour
 
     void Update()
     {
-        _time.Value += Time.deltaTime;
+		// CAN BE OPTIMIZED TO A COROUTINE EVERY SECOND
+        _time.Value -= Time.deltaTime;
 		DisplayTime(_time.Value);
     }
 
 	void DisplayTime(float timeToDisplay){
-		if(timeToDisplay > 1800){
-			timeToDisplay = 1800;
+		if(timeToDisplay <= 0){
+			timeToDisplay = 0;
 			_end.StartEndingCor();
 		}
 

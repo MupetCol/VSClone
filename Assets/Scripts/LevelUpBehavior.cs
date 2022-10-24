@@ -42,7 +42,8 @@ public class LevelUpBehavior : MonoBehaviour
 			_expPoints.Value = _expPoints.Value % Utilities.Instance._expToLevelUp.Value;
 			Utilities.Instance._expToLevelUp.Value += 10;
 			LevelUp();
-			Utilities.Instance.LeveledUp();
+
+			Utilities.Instance.LeveledUp?.Invoke();
 		}
     }
 

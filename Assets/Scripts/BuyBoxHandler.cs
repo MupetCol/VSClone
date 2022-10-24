@@ -24,6 +24,8 @@ public class BuyBoxHandler : MonoBehaviour
 		
 		_itemBought = _items.ActiveToggles().FirstOrDefault();
 		PowerUpShopItem itemSelected = _itemBought.GetComponent<PowerUpShopItem>();
+
+
 		if (_coinsHolded.Value >= itemSelected._currentPrice && !itemSelected._isMaxed)
 		{
 			_coinsHolded.Value -= itemSelected._currentPrice + (itemSelected._currentPrice % 1);

@@ -29,13 +29,13 @@ public class StageAudioOnTime : MonoBehaviour
 
     void Update()
     {
-        if(_time.Value > 120 && _midStage == false)
+        if(_time.Value < 1680 && _midStage == false)
 		{
 			_midStage = true;
 			AudioManager.instance.StartSwap(_startStageAudioName, _midStageAudioName);
 		}
 
-		if (_time.Value > 1680 && _finalStage == false)
+		if (_time.Value < 120 && _finalStage == false)
 		{
 			_finalStage = true;
 			AudioManager.instance.StartSwap(_midStageAudioName, _endStageAudioName);

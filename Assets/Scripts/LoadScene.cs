@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
 	public FloatReference _sceneIndex;
+	public Animator _animator;
 	#region PUBLIC_VARIABLES
 
 
@@ -36,7 +37,13 @@ public class LoadScene : MonoBehaviour
 
 	public void LoadSceneByIndex()
 	{
-		SceneManager.LoadScene((int)_sceneIndex.Value);
+		if(_sceneIndex.Value == 0) {
+			_animator.SetTrigger("IsSaveFile");
+		}
+		else
+		{
+			SceneManager.LoadScene((int)_sceneIndex.Value);
+		}
 	}
 
 	public void LoadFreeScene(int index)
