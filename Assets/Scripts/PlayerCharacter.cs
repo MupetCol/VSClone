@@ -9,8 +9,8 @@ public class PlayerCharacter : ScriptableObject
 	public bool selected = false;
 	public Weapon startingWeapon;
 	public Sprite characterSprite;
-	public Stat[] baseStatToBoost;
-	public float[] bonus;
+	public Stat[] baseStatToChange;
+	public float[] change;
 	public GameObject bonusScriptHolder;
 
 
@@ -20,21 +20,21 @@ public class PlayerCharacter : ScriptableObject
 	{
 		if (selected)
 		{
-			for (int i = 0; i < baseStatToBoost.Length; i++)
+			for (int i = 0; i < baseStatToChange.Length; i++)
 			{
-				if (baseStatToBoost[i].stackingType == 0)
+				if (baseStatToChange[i].stackingType == 0)
 				{
-					baseStatToBoost[i].floatData.Value += bonus[i];
+					baseStatToChange[i].floatData.Value += change[i];
 				}
-				else if(baseStatToBoost[i].stackingType == 1)
+				else if(baseStatToChange[i].stackingType == 1)
 				{
 					//Max health stat
-					baseStatToBoost[i].floatData.Value += bonus[i];
+					baseStatToChange[i].floatData.Value += change[i];
 				}
-				else if(baseStatToBoost[i].stackingType == 2)
+				else if(baseStatToChange[i].stackingType == 2)
 				{
 					//Magnet stat
-					baseStatToBoost[i].floatData.Value *= bonus[i];
+					baseStatToChange[i].floatData.Value *= change[i];
 				}
 			}
 			startingWeapon.equipped = true;

@@ -15,8 +15,8 @@ MonoBehaviour:
   selected: 1
   startingWeapon: {fileID: 11400000, guid: 7b8cbdb4233530b43968db69d3b4cb6b, type: 2}
   characterSprite: {fileID: 21300000, guid: 18ee4e8854debde4eb37987e77bb97be, type: 3}
-  baseStatToBoost:
+  baseStatToChange:
   - {fileID: 11400000, guid: dc071493a2d69e748b919b6d4248e3d9, type: 2}
-  bonus:
+  change:
   - 20
   bonusScriptHolder: {fileID: 297756034769162364, guid: b1b90d65f8b9d1c4187cfd0bb071fcc8, type: 3}

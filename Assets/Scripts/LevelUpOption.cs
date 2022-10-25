@@ -38,7 +38,7 @@ public class LevelUpOption : MonoBehaviour
 		else if (_reward.GetType() == typeof(Stat))
 		{
 			Stat stat = (Stat)_reward;
-			stat.floatData.Value += stat.bonusPerRank;
+			stat.ApplyChestPowerUp();
 
 			if(Utilities.Instance._ownedObjects.Contains(_reward))
 			Utilities.Instance._ownedObjects.Add(_reward);

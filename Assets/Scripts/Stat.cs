@@ -22,22 +22,55 @@ public class Stat : ScriptableObject
 
 	public void ApplyPowerUp()
 	{
-		if(stackingType == 0)
+		powerUpRank++;
+		if (stackingType == 0)
 		{
-			floatData.Value += (powerUpRank * bonusPerRank);
+			floatData.Value = floatData.defaultValue + (powerUpRank * bonusPerRank);
 		}
 		else if(powerUpRank > 0)
 		{
 			//+1 because in the inspector i added the bonus on a bonus/100 manner
-			floatData.Value *= (powerUpRank * (bonusPerRank+1));
+			floatData.Value = floatData.defaultValue * (powerUpRank * (bonusPerRank+1));
 		}
-		powerUpRank++;
+
+	}
+
+	public void ApplyChestPowerUp()
+	{
+		if (stackingType == 0)
+		{
+			floatData.Value += (bonusPerRank);
+		}
+		else
+		{
+			//+1 because in the inspector i added the bonus on a bonus/100 manner
+			floatData.Value = floatData.defaultValue * (bonusPerRank + 1);
+		}
+		
 	}
 
 	private void OnEnable()
 	{
+		hideFlags = HideFlags.DontUnloadUnusedAsset;
+
+
+
 		if (reset)
 			powerUpRank = 0;
+
+		// RESET TO THE UPGRADES ON ENABLE
+		if(stackingType == 0)
+		{
+			floatData.Value = floatData.defaultValue + (powerUpRank * bonusPerRank);
+		}
+		else if(powerUpRank > 0)
+		{
+			floatData.Value = floatData.defaultValue * (powerUpRank * (bonusPerRank + 1));
+		}
+		else
+		{
+			floatData.Value = floatData.defaultValue * (bonusPerRank + 1);
+		}
 	}
 
 

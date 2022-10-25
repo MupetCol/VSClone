@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ChestRockPapersScissors : MonoBehaviour
+public class ChestRockPapersScissors : ChestMinigame
 {
 	#region PUBLIC_VARIABLES
 
@@ -108,13 +108,16 @@ public class ChestRockPapersScissors : MonoBehaviour
 			if(_wins == _maxRounds && _draws == 0)
 			{
 				_resultsText.text = "HIGH";
+				SetChestAndGiveRewards(5, 2f);
 			}else if(_losses > 0)
 			{
 				_resultsText.text = "LOW";
+				SetChestAndGiveRewards(1, 1f);
 			}
 			else
 			{
 				_resultsText.text = "MID";
+				SetChestAndGiveRewards(3, 1.25f);
 			}
 		}
 		else

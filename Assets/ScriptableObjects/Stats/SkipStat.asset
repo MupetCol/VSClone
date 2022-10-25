@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16,7 +16,7 @@ MonoBehaviour:
   powerUpRank: 0
   bonusPerRank: 2
   stackingType: 0
-  maxCap: 10
+  maxRank: 0
   rarity: 100
-  reset: 1
+  reset: 0
   upgradesText: 
