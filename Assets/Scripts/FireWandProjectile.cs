@@ -6,6 +6,7 @@ public class FireWandProjectile : Projectile
 	#region PRIVATE_VARIABLES
 
 	public Vector3 _direction;
+	public float _speed;
 
 	#endregion
 
@@ -28,7 +29,7 @@ public class FireWandProjectile : Projectile
 
 	void Update()
 	{
-		transform.Translate(_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
+		transform.Translate(_direction * _speed * Time.deltaTime);
 	}
 
 	#endregion

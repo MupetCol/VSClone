@@ -4,6 +4,7 @@ public class RuneTracerProjectile : Projectile
 {
 	#region PUBLIC_VARIABLES
 	public float _distanceToBounce;
+	public float _speed = 1f;
 	public Vector3 _direction;
 
 
@@ -38,11 +39,11 @@ public class RuneTracerProjectile : Projectile
 		}
 		if(_hasBounced)
 		{
-			transform.Translate(_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
+			transform.Translate(_direction * _speed * Time.deltaTime);
 		}
 		else
 		{
-			transform.Translate(-_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
+			transform.Translate(-_direction * _speed * Time.deltaTime);
 		}
 
 	}

@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 5741416310195296093}
   - component: {fileID: 6820270101756975780}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ScissorsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 4560334456850992243}
   - component: {fileID: 5910046969849955184}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PaperText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 589040506571322436}
   - component: {fileID: 7767857710886383530}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MachineScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 6684420308356474355}
   - component: {fileID: 5854988482492820931}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PlayerPickText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 3147622649511929530}
   - component: {fileID: 1000615086204949267}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MachineText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 4166183614764086673}
   - component: {fileID: 7261341789198532604}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: PlayerScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 2474732315302509303}
   - component: {fileID: 6391127799602357544}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1750,7 +1750,7 @@ GameObject:
   - component: {fileID: 8657735553473000585}
   - component: {fileID: 2641304309164801971}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MachinePickText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1885,7 @@ GameObject:
   - component: {fileID: 6801080333014129518}
   - component: {fileID: 1024422587598179718}
   m_Layer: 5
-  m_Name: results
+  m_Name: ResultsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2059,6 +2059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf74f2fc1c707464689803aeb03e3122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chest: {fileID: 0}
   _maxRounds: 2
   _playerPick: {fileID: 5854988482492820931}
   _machinePick: {fileID: 2641304309164801971}
@@ -2066,6 +2067,48 @@ MonoBehaviour:
   _machineScoreText: {fileID: 7767857710886383530}
   _roundText: {fileID: 7637371289584292621}
   _resultsText: {fileID: 1024422587598179718}
+  _langSelected: {fileID: 11400000, guid: 6dfdd5c4439f9034fb74cfb82b4f058d, type: 2}
+  _langTextOptions:
+  - _languageStrings:
+    - Rock
+    - Paper
+    - Scissors
+    - Choose!
+    - You
+    - Your choice
+    - Machine
+    - Machine is picking...
+    - Round
+  - _languageStrings:
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+    - "ESPA\xD1OL"
+  - _languageStrings:
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+    - JAPANESE
+  _texts:
+  - {fileID: 6391127799602357544}
+  - {fileID: 5910046969849955184}
+  - {fileID: 6820270101756975780}
+  - {fileID: 7757444104969935202}
+  - {fileID: 8328409121362046802}
+  - {fileID: 5854988482492820931}
+  - {fileID: 1000615086204949267}
+  - {fileID: 2641304309164801971}
+  - {fileID: 7637371289584292621}
   _disableOnOver:
   - {fileID: 2417969180549761009}
   - {fileID: 2542565129963805087}
@@ -2222,7 +2265,7 @@ GameObject:
   - component: {fileID: 1373005940639091762}
   - component: {fileID: 8328409121362046802}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: YouText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

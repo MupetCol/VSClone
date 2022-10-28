@@ -8,7 +8,7 @@ public class KingBibleProjectile : Projectile
 
 	#region PRIVATE_VARIABLES
 
-	private float _speed;
+	public float _speed = 1f;
 	private bool _rotate;
 	private GameObject _pivot;
 
@@ -19,9 +19,8 @@ public class KingBibleProjectile : Projectile
 	{
 		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
-	public void SetValues(float speed, GameObject pivot, bool rotate)
+	public void SetValues( GameObject pivot, bool rotate)
 	{
-		_speed = speed;
 		_pivot = pivot;
 		_rotate = true;
 	}

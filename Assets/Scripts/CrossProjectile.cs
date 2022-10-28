@@ -6,6 +6,7 @@ public class CrossProjectile : Projectile
 
 	public Vector3 _direction;
 	public Vector3 _spawnPoint;
+	public float _speed;
 
 	#endregion
 
@@ -45,10 +46,10 @@ public class CrossProjectile : Projectile
 			_flightBack = true;
 
 		if(!_flightBack)
-			transform.Translate(_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
+			transform.Translate(_direction * _speed  * Time.deltaTime);
 		else
 		{
-			transform.Translate(-_direction * _weapon.speed * _weapon.globalSpeed.Value * Time.deltaTime);
+			transform.Translate(-_direction * _speed  * Time.deltaTime);
 		}
 	}
 

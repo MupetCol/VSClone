@@ -11,8 +11,13 @@ public class ChestPrecisionMinigame : ChestMinigame
 	public Slider _slider;
 	public float _speed;
 	public Tweener _tween;
-	public TMP_Text _text;
+	public TMP_Text _callToActionText;
+	public TMP_Text[] _texts;
 	public bool _done;
+
+	public FloatReference _langSelected;
+	public LanguageTextGroup[] _langTextOptions;
+
 	#endregion
 
 	#region PRIVATE_VARIABLES
@@ -32,6 +37,11 @@ public class ChestPrecisionMinigame : ChestMinigame
     {
         _slider = GetComponent<Slider>();
 		StartCoroutine(startMinigame());
+
+		for (int i = 0; i < _texts.Length; i++)
+		{
+			_texts[i].text = _langTextOptions[(int)_langSelected.Value]._languageStrings[i];
+		}
     }
 
 	private void Update()
@@ -56,43 +66,43 @@ public class ChestPrecisionMinigame : ChestMinigame
 	{
 		if(_slider.value < 0.2)
 		{
-			_text.text = "LOW";
+			_callToActionText.text = "LOW";
 			Debug.Log("LOW");
 			SetChestAndGiveRewards(1, 1f);
 		}
 		else if(_slider.value >= .2 && _slider.value <= .3)
 		{
-			_text.text = "MID";
+			_callToActionText.text = "MID";
 			Debug.Log("MID");
 			SetChestAndGiveRewards(3, 1.25f);
 		}
 		else if(_slider.value > .3 && _slider.value < .475)
 		{
-			_text.text = "LOW";
+			_callToActionText.text = "LOW";
 			Debug.Log("LOW");
 			SetChestAndGiveRewards(1, 1f);
 		}
 		else if(_slider.value >= .475 && _slider.value <= .525)
 		{
-			_text.text = "HIGH";
+			_callToActionText.text = "HIGH";
 			Debug.Log("HIGH");
 			SetChestAndGiveRewards(5, 2f);
 		}
 		else if(_slider.value > .525 && _slider.value < .7)
 		{
-			_text.text = "LOW";
+			_callToActionText.text = "LOW";
 			Debug.Log("LOW");
 			SetChestAndGiveRewards(1, 1f);
 		}
 		else if(_slider.value >= .7 && _slider.value <= .8)
 		{
-			_text.text = "MID";
+			_callToActionText.text = "MID";
 			Debug.Log("MID");
 			SetChestAndGiveRewards(3, 1.25f);
 		}
 		else
 		{
-			_text.text = "LOW";
+			_callToActionText.text = "LOW";
 			Debug.Log("LOW");
 			SetChestAndGiveRewards(1, 1f);
 		}

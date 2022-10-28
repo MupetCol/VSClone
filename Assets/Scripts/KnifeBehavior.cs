@@ -96,7 +96,7 @@ public class KnifeBehavior : WeaponBase, ILevelUp<float>
 			{
 				KnifeProjectile project = Instantiate(_projectile, _spawnPoint.position + 
 					new Vector3(Random.Range(-_offset, _offset), Random.Range(-_offset,_offset),0), Quaternion.identity);
-				project.SetDirection(tempDir, speed* _weaponStats.globalSpeed.Value);
+				project.SetDirection(tempDir);
 				project.GetComponent<WeaponDealDamage>()._weapon = this;
 
 				yield return new WaitForSeconds(projectInverval);

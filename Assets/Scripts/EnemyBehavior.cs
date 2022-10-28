@@ -25,6 +25,11 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	private bool _canDealDamage = true;
 	public bool _frozen = false;
+	public bool _shooter = false;
+	public float _maxShootRange = 5f;
+	public float _minShootRange = 3f;
+	public float _cooldownBetweenShot = 1f;
+	public GameObject _projectile;
 	private DropCollectable _dropper;
 	private EnemyMovement _movement;
 
@@ -40,8 +45,14 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	private void Awake()
 	{
+		if(Utilities.Instance)
 		Utilities.Instance._enemies.Add(this);
+
 		_movement = GetComponent<EnemyMovement>();
+		_movement._maxShootRange = this._maxShootRange;
+		_movement._minShootRange = this._minShootRange;
+		_movement._shooter = this._shooter;
+
 		_player = FindObjectOfType<PlayerMovement>().gameObject;
 		_damagePoints = _enemyStats.power;
 		_health = _enemyStats.baseHealth;
@@ -52,6 +63,10 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	void Start()
     {
 		_player = FindObjectOfType<PlayerMovement>().gameObject;
+		if (_shooter)
+		{
+			StartCoroutine(Shoot());
+		}
     }
 
 	private void OnCollisionStay2D(Collision2D collision)
@@ -63,7 +78,8 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	}
 
 	private void OnDestroy() {
-		Utilities.Instance._enemies.Remove(this);
+		if (Utilities.Instance)
+			Utilities.Instance._enemies.Remove(this);
 	}
 
 
@@ -72,6 +88,20 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	public void Freeze(float freezeTime){
 		StartCoroutine(FreezeCor(freezeTime));
+	}
+
+	public IEnumerator Shoot()
+	{
+		while (true)
+		{
+			if (Vector2.Distance(transform.position, _player.transform.position) >= _minShootRange &&
+			Vector2.Distance(transform.position, _player.transform.position) <= _maxShootRange)
+			{
+				if(_projectile)
+				Instantiate(_projectile, transform.position, Quaternion.identity);
+			}
+			yield return new WaitForSeconds(_cooldownBetweenShot);
+		}
 	}
 
 	public IEnumerator FreezeCor (float freezeTime)

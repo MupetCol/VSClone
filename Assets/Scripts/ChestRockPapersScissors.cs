@@ -10,6 +10,10 @@ public class ChestRockPapersScissors : ChestMinigame
 
 	public TMP_Text _playerPick, _machinePick, _playerScoreText, _machineScoreText, _roundText, _resultsText;
 
+	public FloatReference _langSelected;
+	public LanguageTextGroup[] _langTextOptions;
+	public TMP_Text[] _texts;
+
 	[SerializeField] private GameObject[] _disableOnOver;
 	[SerializeField] private GameObject[] _enableOnOver;
 
@@ -34,8 +38,11 @@ public class ChestRockPapersScissors : ChestMinigame
 
     void Start()
     {
-        
-    }
+		for (int i = 0; i < _texts.Length; i++)
+		{
+			_texts[i].text = _langTextOptions[(int)_langSelected.Value]._languageStrings[i];
+		}
+	}
 
     void Update()
     {
@@ -122,7 +129,18 @@ public class ChestRockPapersScissors : ChestMinigame
 		}
 		else
 		{
-			_roundText.text = "Round " + _currentRound.ToString();
+			if(_langSelected.Value == 0)
+			{
+				_roundText.text = "Round " + _currentRound.ToString();
+			}else if(_langSelected.Value == 1)
+			{
+				_roundText.text = "Ronda " + _currentRound.ToString();
+			}
+			else
+			{
+				_roundText.text = "JAPANESE " + _currentRound.ToString();
+			}
+			
 		}
 	}
 

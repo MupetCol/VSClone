@@ -87,7 +87,7 @@ public class NdujaFritaTantoBehavior : WeaponBase
 				project.GetComponent<WeaponDealDamage>()._weapon = this;
 
 				if (offset == 2) offset = -1;
-				project.SetDirection(dir, speed,offset / _offsetDivider, changeX);
+				project.SetDirection(dir,offset / _offsetDivider, changeX);
 	
 				if (i % 3 == 2) yield return new WaitForSeconds(.1f);
 				offset++;

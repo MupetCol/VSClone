@@ -8,7 +8,7 @@ public class NdujaProjectile : Projectile
 
 	#region PRIVATE_VARIABLES
 
-	private float _speed;
+	public float _speed = 1f;
 	private Vector3 _direction = Vector3.right;
 
 	#endregion
@@ -26,7 +26,7 @@ public class NdujaProjectile : Projectile
 		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
-	public void SetDirection(Vector3 direction, float speed, float offset, bool axis)
+	public void SetDirection(Vector3 direction, float offset, bool axis)
 	{
 		if (!axis)
 		{
@@ -38,7 +38,6 @@ public class NdujaProjectile : Projectile
 		}
 	
 		_direction.Normalize();
-		_speed = speed;
 	}
 
 	void Update()

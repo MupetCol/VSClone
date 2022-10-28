@@ -27,7 +27,7 @@ public class KingBibleBehavior : WeaponBase, ILevelUp<float>
 			for (int i = 0; i < amount + _weaponStats.globalAmount.Value; i++)
 			{
 				KingBibleProjectile project = Instantiate(_projectile, _spawnPoint.position+Vector3.right+Vector3.forward, Quaternion.identity,_spawnPoint);
-				project.SetValues(speed * _weaponStats.globalSpeed.Value, _spawnPoint.gameObject, true);
+				project.SetValues(_spawnPoint.gameObject, true);
 				project.GetComponent<WeaponDealDamage>()._weapon = this;
 				yield return new WaitForSeconds(projectInverval);
 			}

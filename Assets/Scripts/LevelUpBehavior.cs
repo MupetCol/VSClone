@@ -13,6 +13,10 @@ public class LevelUpBehavior : MonoBehaviour
 	public List<Object> _rewards;
 	public bool _dontGiveRewards = false;
 
+	//LANG VARIABLES
+	public FloatReference _languageSelected;
+	public LanguageTextGroup[] _rewardsNames;
+
 	#endregion
 
 	#region PRIVATE_VARIABLES
@@ -231,7 +235,7 @@ public class LevelUpBehavior : MonoBehaviour
 
 		for (int i = 0; i < _rewardsSelected.Count; i++)
 		{
-			SetRewardOption(i, _rewardsSelected[i].name, _rewardsSelected[i]);
+			SetRewardOption(i, _rewardsSelected[i]);
 		}
 
 
@@ -241,10 +245,11 @@ public class LevelUpBehavior : MonoBehaviour
 		_rewardsSelected.Clear();
 	}
 
-	public void SetRewardOption(int index, string description, Object obj)
+	public void SetRewardOption(int index, Object obj)
 	{
+		
 		_options[index]._optionIndex = index;
-		_options[index]._text = description;
+		_options[index]._text = _rewardsNames[_rewards.IndexOf(obj)]._languageStrings[(int)_languageSelected.Value];
 		_options[index]._reward = obj;
 	}
 

@@ -8,7 +8,7 @@ public class KnifeProjectile : Projectile
 
 	#region PRIVATE_VARIABLES
 
-	private float _speed;
+	public float _speed = 1f;
 	private Vector3 _direction = Vector3.right;
 
 	#endregion
@@ -26,10 +26,9 @@ public class KnifeProjectile : Projectile
 		transform.localScale *= _weapon.area * _weapon.globalArea.Value;
 	}
 
-	public void SetDirection(Vector3 direction, float speed)
+	public void SetDirection(Vector3 direction)
 	{
 		_direction = direction;
-		_speed = speed;
 	}
 
 	void Update()

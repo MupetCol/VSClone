@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -16,9 +17,19 @@ public class EnemyMovement : MonoBehaviour
 	public float _trackingInterval = 0.1f;
 
 	private float _trackingSpeed;
-	private Vector3 _fixedPosition;
+	public Vector3 _fixedPosition;
 	private Vector3 _updatedPosition;
+
+	
+	public float _maxShootRange;
+	
+	public float _minShootRange;
+
+	
 	public bool _frozen = false;
+
+
+	public bool _shooter = false;
 
 
 	#endregion
@@ -34,16 +45,14 @@ public class EnemyMovement : MonoBehaviour
 	private void Awake()
 	{
 		_player = FindObjectOfType<PlayerMovement>().gameObject;
-		_trackingSpeed = _enemyStats.speed;		
-	}
+		_trackingSpeed = _enemyStats.speed;
 
-	void Start()
-    {
-        if(!_fixedMovement)
+		if (!_fixedMovement)
 			StartCoroutine(UpdateTargetPosition());
 
 		_fixedPosition = (_player.transform.position - transform.position).normalized;
 	}
+
 
     void Update()
     {
@@ -54,20 +63,29 @@ public class EnemyMovement : MonoBehaviour
 		// a homing projectile
 		if(!_frozen)
 		Move();
-		
+		Debug.Log(Vector2.Distance(transform.position, _player.transform.position));
 	}
 
 	void Move()
 	{
 		if (_player)
 		{
-			if (!_fixedMovement)
+			if (_fixedMovement)
 			{
-				transform.Translate(_updatedPosition * Time.deltaTime * _trackingSpeed);
+				transform.Translate(_fixedPosition * Time.deltaTime * _trackingSpeed);
+			}else if (_shooter)
+			{
+				if(Vector2.Distance(transform.position,_player.transform.position) < _minShootRange)
+				{
+					transform.Translate(-_updatedPosition * Time.deltaTime * _trackingSpeed);
+				}else if(Vector2.Distance(transform.position, _player.transform.position) > _maxShootRange)
+				{
+					transform.Translate(_updatedPosition * Time.deltaTime * _trackingSpeed);
+				}
 			}
 			else
 			{
-				transform.Translate(_fixedPosition * Time.deltaTime * _trackingSpeed);
+				transform.Translate(_updatedPosition * Time.deltaTime * _trackingSpeed);
 			}
 		}
 	}

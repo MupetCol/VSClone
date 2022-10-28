@@ -6,12 +6,14 @@ public class PowerUpShopItem : MonoBehaviour, IPointerDownHandler
 {
 	#region PUBLIC_VARIABLES
 
-	public string _name;
+	public string[] _name;
 	[TextArea]
-	public string _statBonusText;
+	public string[] _statBonusText;
 	public TMP_Text _statName;
 	public TMP_Text _bonusText;
 	public TMP_Text _priceText;
+	
+	public FloatReference _language;
 
 	public float _basePrice;
 	public float _currentPrice;
@@ -20,14 +22,23 @@ public class PowerUpShopItem : MonoBehaviour, IPointerDownHandler
 
 	public bool _isMaxed = false;
 
-	
+	private void Awake()
+	{
+		LanguageChanger.instance.languageAction += UpdateLanguage;
+	}
+
 
 	public void OnPointerDown(PointerEventData pointerEventData)
 	{
 		//Output the name of the GameObject that is being clicked
-		_statName.text = _name;
-		_bonusText.text = _statBonusText;
+		_statName.text = _name[(int)_language.Value];
+		_bonusText.text = _statBonusText[(int)_language.Value];
 		UpdatePrice();
+	}
+
+	public void UpdateLanguage()
+	{
+		_bonusText.text = _statBonusText[(int)_language.Value];
 	}
 
 	public void UpdatePrice()
@@ -44,6 +55,11 @@ public class PowerUpShopItem : MonoBehaviour, IPointerDownHandler
 			_currentPrice -= _currentPrice % 1;
 			_priceText.text = _currentPrice.ToString();
 		}
+	}
+
+	private void OnDisable()
+	{
+		LanguageChanger.instance.languageAction -= UpdateLanguage;
 	}
 
 
