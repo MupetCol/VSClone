@@ -143,8 +143,6 @@ MonoBehaviour:
   _coinsNumber: {fileID: 11400000, guid: f0e6fdbdcfaa6c444b87147e21369f67, type: 2}
   _rewardGiven: {fileID: 11400000, guid: 57941068bcc369e44b6992de4e4cae3b, type: 2}
   _popUpTime: 5
-  _rockPapersScissorsMinigame: {fileID: 3031416185632005056, guid: 9fd339b035278cb458e1cff2d24fcdc1, type: 3}
-  _precisionMinigame: {fileID: 1704620739528458159, guid: 18c9534f4825de14789e19382299fc7a, type: 3}
-  go: {fileID: 0}
+  _selectionObject: {fileID: 2338411891379128591, guid: 7f8cb223070ef684f990c36f3a86c970, type: 3}
   _rewardAmount: 1
   _coinMultiplier: 1

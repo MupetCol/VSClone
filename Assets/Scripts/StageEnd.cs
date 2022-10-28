@@ -9,29 +9,20 @@ public class StageEnd : MonoBehaviour
 	public SaveFile _saveFile;
 	public FloatReference _coinsOnStage, _coinsOwned;
 
-	#endregion
-
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
+	public GameObject _gameOverPopUp;
 
 	#endregion
 
 	#region UNITY_METHODS
 
-	private void OnDestroy()
-	{
-		
-	}
-
 	public void StartEndingCor()
 	{
 		StartCoroutine(StageEndFlow());
+	}
+
+	public void GameOverCor()
+	{
+		StartCoroutine(GameOver());
 	}
 
 	IEnumerator StageEndFlow()
@@ -40,6 +31,15 @@ public class StageEnd : MonoBehaviour
 		_coinsOnStage.Value = 0;
 		_saveFile.ResetFile();
 		SceneManager.LoadScene(0);
+		yield return null;
+	}
+
+	IEnumerator GameOver()
+	{
+		_coinsOwned.Value += _coinsOnStage.Value;
+		_coinsOnStage.Value = 0;
+		_saveFile.ResetFile();
+		_gameOverPopUp.SetActive(true);
 		yield return null;
 	}
 

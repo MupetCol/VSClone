@@ -5,17 +5,7 @@ public class GameStartPressAnyKey : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	[SerializeField] private GameObject[] _objectsToActivate;
-
-	#endregion
-
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
+	[SerializeField] private BoolReference _firstOpeningGame;
 
 	#endregion
 
@@ -23,20 +13,29 @@ public class GameStartPressAnyKey : MonoBehaviour
 
     void Start()
     {
-        
+        if(_firstOpeningGame.toggle == true)
+		{
+			ActivateObjects();
+		}
     }
 
     void Update()
     {
-		if (Input.anyKey)
+		if (Input.anyKey && _firstOpeningGame.toggle == false)
 		{
-			foreach(GameObject obj in _objectsToActivate)
-			{
-				obj.SetActive(true);
-			}
-			this.gameObject.SetActive(false);
+			ActivateObjects();
 		}
     }
+
+	private void ActivateObjects()
+	{
+		foreach (GameObject obj in _objectsToActivate)
+		{
+			obj.SetActive(true);
+		}
+		this.gameObject.SetActive(false);
+		_firstOpeningGame.toggle = true;
+	}
 
 	#endregion
 }

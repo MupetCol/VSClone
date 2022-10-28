@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chest: {fileID: 0}
+  _parent: {fileID: 1704620739528458159}
   _slider: {fileID: 0}
   _speed: 5
   _callToActionText: {fileID: 1704620737634484769}

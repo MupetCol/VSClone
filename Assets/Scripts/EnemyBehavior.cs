@@ -139,7 +139,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 		if (_floatingNumbers.toggle)
 		{
 			var obj = Instantiate(_numberPrefab, transform.position, Quaternion.identity);
-			obj.GetComponentInChildren<DamageNumberBehavior>().UpdateText(damageTaken.ToString());
+			obj.GetComponentInChildren<DamageNumberBehavior>().UpdateText(damageTaken);
 		}
 
 		if (_health <= 0) Kill();

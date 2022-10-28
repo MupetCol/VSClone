@@ -20,11 +20,6 @@ public class ChestPrecisionMinigame : ChestMinigame
 
 	#endregion
 
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
 	#region PRIVATE_SERIALIZED_VARIABLES
 
 

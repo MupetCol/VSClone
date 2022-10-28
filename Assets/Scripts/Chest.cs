@@ -9,7 +9,7 @@ public class Chest : CollectableBase, ICollectable
 	public StringReference _coinsNumber, _rewardGiven;
 	public float _popUpTime;
 
-	public GameObject _rockPapersScissorsMinigame, _precisionMinigame, go;
+	public GameObject _selectionObject;
 	public int _rewardAmount = 1;
 	public float _coinMultiplier = 1f;
 
@@ -18,23 +18,11 @@ public class Chest : CollectableBase, ICollectable
 
 	public void Collected()
 	{
-		var temp = Random.Range(0, 2);
-
-		if(temp == 0)
-		{
-			go = Instantiate(_rockPapersScissorsMinigame);
-			go.GetComponentInChildren<ChestMinigame>()._chest = this;
-
-		}
-		else
-		{
-			go = Instantiate(_precisionMinigame);
-			go.GetComponentInChildren<ChestMinigame>()._chest = this;
-		}
+		Instantiate(_selectionObject).GetComponent<MinigameSelectHandler>()._chest = this;
 		PauseControl.Instance.TogglePause();
 	}
 
-	public void GiveReward()
+	public void GiveReward(float _timeToWait)
 	{
 		GetComponent<SpriteRenderer>().enabled = false;
 		GetComponent<Collider2D>().enabled = false;
@@ -74,13 +62,12 @@ public class Chest : CollectableBase, ICollectable
 		_coins.Value += (coinReward * _coinMultiplier);
 		_coinsNumber.description = (coinReward * _coinMultiplier).ToString();
 
-		StartCoroutine(StatusChangeUI());
+		StartCoroutine(StatusChangeUI(_timeToWait));
 	}
 
-	IEnumerator StatusChangeUI()
+	IEnumerator StatusChangeUI(float _timeToWait)
 	{
-		yield return new WaitForSecondsRealtime(3f);
-		Destroy(go);
+		yield return new WaitForSecondsRealtime(_timeToWait);
 		_uiToggle.toggle = true;
 		yield return new WaitForSecondsRealtime(_popUpTime);
 		PauseControl.Instance.TogglePause();

@@ -29,7 +29,7 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 
 	public void Kill()
 	{
-		FindObjectOfType<StageEnd>().StartEndingCor();
+		FindObjectOfType<StageEnd>().GameOverCor();
 	}
 
 	public IEnumerator HealthRegeneration()
@@ -40,6 +40,11 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 			_health.Value = Mathf.Clamp(_health.Value, -1, _maxHealth.Value);
 			yield return new WaitForSeconds(1f);
 		}
+	}
+
+	private void Update()
+	{
+		if (_health.Value <= 0) Kill();
 	}
 }
 

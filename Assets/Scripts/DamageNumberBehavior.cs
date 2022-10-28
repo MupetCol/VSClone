@@ -11,17 +11,6 @@ public class DamageNumberBehavior : MonoBehaviour
 
 	#endregion
 
-	#region PRIVATE_VARIABLES
-
-
-	#endregion
-
-	#region PRIVATE_SERIALIZED_VARIABLES
-
-
-
-	#endregion
-
 	#region UNITY_METHODS
 
     void Start()
@@ -41,9 +30,10 @@ public class DamageNumberBehavior : MonoBehaviour
 
 	}
 
-	public void UpdateText(string content)
+	public void UpdateText(float content)
 	{
-		_text.text = content;	
+		int temp = Mathf.CeilToInt(content);
+		_text.text = temp.ToString();	
 	}
 
 	#endregion
