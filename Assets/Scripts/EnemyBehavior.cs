@@ -9,6 +9,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	public float _health;
 	public int _enemyType = 0;
 	public GameObject _numberPrefab;
+	public FloatReference _damageDealthByPlayerAchievement, _killAchievement;
 	public BoolReference _floatingNumbers;
 	public BoolReference _knockBackFlash;
 
@@ -134,6 +135,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 	public void Damage(float damageTaken, float weaponKnockBackStat)
 	{
 		_health -= damageTaken;
+		_damageDealthByPlayerAchievement.Value += damageTaken;
 		KnockBack(weaponKnockBackStat);
 
 		if (_floatingNumbers.toggle)
@@ -147,6 +149,7 @@ public class EnemyBehavior : MonoBehaviour, IDamageable<float,float>, IKillable
 
 	public void Kill()
 	{
+		_killAchievement.Value++;
 		_dropper.Drop();
 		Destroy(this.gameObject);
 	}

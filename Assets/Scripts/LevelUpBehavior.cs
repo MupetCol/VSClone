@@ -8,6 +8,7 @@ public class LevelUpBehavior : MonoBehaviour
 
 	public FloatReference _expPoints;
 	public FloatReference _luck;
+	public FloatReference _levelUpAchievement;
 	public GameObject _levelUpUIPanel;
 	public LevelUpOption[] _options;
 	public List<Object> _rewards;
@@ -56,6 +57,11 @@ public class LevelUpBehavior : MonoBehaviour
 	public void LevelUp()
 	{
 		Utilities.Instance._playerLevel.Value++;
+		
+		if(Utilities.Instance._playerLevel.Value > _levelUpAchievement.Value)
+		{
+			_levelUpAchievement.Value++;
+		} 
 
 		if(!_dontGiveRewards)
 		PickRewards();

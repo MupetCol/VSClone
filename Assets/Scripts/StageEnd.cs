@@ -8,6 +8,7 @@ public class StageEnd : MonoBehaviour
 
 	public SaveFile _saveFile;
 	public FloatReference _coinsOnStage, _coinsOwned;
+	public FloatReference _stageFinishAchievement;
 
 	public GameObject _gameOverPopUp;
 
@@ -27,6 +28,7 @@ public class StageEnd : MonoBehaviour
 
 	IEnumerator StageEndFlow()
 	{
+		_stageFinishAchievement.Value++;
 		_coinsOwned.Value += _coinsOnStage.Value;
 		_coinsOnStage.Value = 0;
 		_saveFile.ResetFile();

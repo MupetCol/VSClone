@@ -6,6 +6,7 @@ public class TimerBehavior : MonoBehaviour
 	#region PUBLIC_VARIABLES
 	[SerializeField] private TMP_Text _timerText;
 	[SerializeField] private FloatReference _time;
+	[SerializeField] private FloatReference _surviveTimeAchievement;
 	[SerializeField] private StageEnd _end;
 
 	#endregion
@@ -21,6 +22,7 @@ public class TimerBehavior : MonoBehaviour
     {
 		// CAN BE OPTIMIZED TO A COROUTINE EVERY SECOND
         _time.Value -= Time.deltaTime;
+		_surviveTimeAchievement.Value += Time.deltaTime;
 		DisplayTime(_time.Value);
     }
 

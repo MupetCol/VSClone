@@ -9,6 +9,7 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 	public FloatReference _health;
 	public FloatReference _healthRegen;
 	public FloatReference _maxHealth;
+	public FloatReference _damageTakenAchievement, _deathCountAchievement;
 	public bool _immortal = false;
 
 	#endregion
@@ -22,6 +23,7 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 	{
 		if (!_immortal)
 		{
+			_damageTakenAchievement.Value += damageTaken;
 			_health.Value -= damageTaken;
 			if (_health.Value <= 0) Kill();
 		}
@@ -29,6 +31,7 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageable<float, float>, IKi
 
 	public void Kill()
 	{
+		_deathCountAchievement.Value++;
 		FindObjectOfType<StageEnd>().GameOverCor();
 	}
 

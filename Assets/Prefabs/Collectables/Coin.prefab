@@ -102,6 +102,7 @@ MonoBehaviour:
   _rarity: 50
   _value: 1
   _coinsCounter: {fileID: 11400000, guid: 698f8b652cf54424093264fcbdb01228, type: 2}
+  _coinsCollectedAchievement: {fileID: 11400000, guid: 69bc285c787b97b41b070271c60a36bc, type: 2}
 --- !u!58 &2146230709292228989
 CircleCollider2D:
   m_ObjectHideFlags: 0

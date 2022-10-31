@@ -5,6 +5,7 @@ public class Chest : CollectableBase, ICollectable
 {
 	public float _value;
 	public BoolReference _uiToggle;
+	public FloatReference _chestCollectedAchievement;
 	public FloatReference _coins;
 	public StringReference _coinsNumber, _rewardGiven;
 	public float _popUpTime;
@@ -18,6 +19,7 @@ public class Chest : CollectableBase, ICollectable
 
 	public void Collected()
 	{
+		_chestCollectedAchievement.Value++;
 		Instantiate(_selectionObject).GetComponent<MinigameSelectHandler>()._chest = this;
 		PauseControl.Instance.TogglePause();
 	}

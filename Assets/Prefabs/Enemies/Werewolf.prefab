@@ -237,9 +237,16 @@ MonoBehaviour:
   _health: 10
   _enemyType: 6
   _numberPrefab: {fileID: 2855800586744337981, guid: e311936636cd06f4f9dc5dbb01f3c251, type: 3}
+  _damageDealthByPlayerAchievement: {fileID: 11400000, guid: 33540526ad8915345b2a3d375b33e178, type: 2}
+  _killAchievement: {fileID: 11400000, guid: 1b056d461728c0545b208b4447a1170f, type: 2}
   _floatingNumbers: {fileID: 11400000, guid: 0f8f5e3c4d5c22a44a1e4f45cf870093, type: 2}
   _knockBackFlash: {fileID: 11400000, guid: c2853ea2c268c3d4c9d23cd4dc9547d9, type: 2}
   _frozen: 0
+  _shooter: 0
+  _maxShootRange: 5
+  _minShootRange: 3
+  _cooldownBetweenShot: 1
+  _projectile: {fileID: 0}
   _whiteCopy: {fileID: 7213005123619062345}
 --- !u!114 &7213005124601837813
 MonoBehaviour:
@@ -256,7 +263,11 @@ MonoBehaviour:
   _enemyStats: {fileID: 11400000, guid: a02ef4f1e35a6f24698c38a6a7bfb97c, type: 2}
   _fixedMovement: 0
   _trackingInterval: 0.1
+  _fixedPosition: {x: 0, y: 0, z: 0}
+  _maxShootRange: 0
+  _minShootRange: 0
   _frozen: 0
+  _shooter: 0
 --- !u!114 &4491264366050283497
 MonoBehaviour:
   m_ObjectHideFlags: 0

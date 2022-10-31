@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
 		// a homing projectile
 		if(!_frozen)
 		Move();
-		Debug.Log(Vector2.Distance(transform.position, _player.transform.position));
+		//Debug.Log(Vector2.Distance(transform.position, _player.transform.position));
 	}
 
 	void Move()
