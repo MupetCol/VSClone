@@ -11,7 +11,8 @@ public class AchievementHandler : MonoBehaviour
 
 	#region PRIVATE_SERIALIZED_VARIABLES
 
-	[SerializeField] private string[] _achievementsName;
+	[SerializeField] private FloatReference _languageSaved;
+	[SerializeField] private LanguageTextGroup[] _achievementsName;
 	[SerializeField] private FloatReference[] _achievements;
     [SerializeField] private AchievementConditions[] _goals;
     [SerializeField] private Animator _animator;
@@ -48,7 +49,7 @@ public class AchievementHandler : MonoBehaviour
 					if(_achievements[i].Value == _goals[i]._conditions[j] && !_goals[i]._goaldReached[j])
 					{
 						//DO SOMETHING ON THAT CONDITION
-						_achievementText.text = _achievementsName[i] + ": " + _goals[i]._conditions[j];
+						_achievementText.text = _achievementsName[i]._languageStrings[(int)_languageSaved.Value] + ": " + _goals[i]._conditions[j];
 						_goals[i]._goaldReached[j] = true;
 						_animator.SetTrigger("AchievementReached");
 					}

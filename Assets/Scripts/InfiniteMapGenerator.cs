@@ -16,7 +16,6 @@ public class InfiniteMapGenerator : MonoBehaviour
 	public Vector3 _startingPos = Vector3.zero;
 
 	private Transform _currentMapTransform;
-	private bool _canInstantiate = true;
 
 	#endregion
 

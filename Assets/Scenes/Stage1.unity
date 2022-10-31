@@ -6273,20 +6273,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217e1ce4f14793149a317f0e32bd4dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _languageSaved: {fileID: 11400000, guid: 6dfdd5c4439f9034fb74cfb82b4f058d, type: 2}
   _achievementsName:
-  - Level up times
-  - Chests Collected
-  - Coins Collected
-  - Damage Inflicted
-  - Damage Taken
-  - Death Count
-  - Kill Count
-  - Maxed Out Skill
-  - Finish Stage
-  - Survive Time
+  - _languageStrings:
+    - Chests Collected
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Level Up Times
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Coins Collected
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Damage Inflicted
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Damage Taken
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Death Count
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Kill Count
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Maxed Out Skill
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Finished Stage
+    - SPANISH
+    - JAPANESE
+  - _languageStrings:
+    - Survive Time
+    - SPANISH
+    - JAPANESE
   _achievements:
-  - {fileID: 11400000, guid: 7ba2df0ce4d68e842b0fa01f115ced20, type: 2}
   - {fileID: 11400000, guid: d6100f696ca41444290288dad54d0b63, type: 2}
+  - {fileID: 11400000, guid: 7ba2df0ce4d68e842b0fa01f115ced20, type: 2}
   - {fileID: 11400000, guid: 69bc285c787b97b41b070271c60a36bc, type: 2}
   - {fileID: 11400000, guid: 33540526ad8915345b2a3d375b33e178, type: 2}
   - {fileID: 11400000, guid: 174bc9b0ae826cb43aa2e456940df2d6, type: 2}
@@ -6296,6 +6327,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 357a61729ffb0ac4488dc11611cc8834, type: 2}
   - {fileID: 11400000, guid: 739685194023aff4d8ceab3ca03c50d0, type: 2}
   _goals:
+  - _conditions:
+    - 3
+    - 6
+    - 9
+    - 12
+    _goaldReached: 00000000
   - _conditions:
     - 1
     - 2
@@ -6308,12 +6345,6 @@ MonoBehaviour:
     - 40
     - 50
     _goaldReached: 00000000000000000000
-  - _conditions:
-    - 3
-    - 6
-    - 9
-    - 12
-    _goaldReached: 00000000
   - _conditions:
     - 100
     - 200
@@ -7453,7 +7484,7 @@ MonoBehaviour:
   - {fileID: 1662166236}
   - {fileID: 25599997}
   - {fileID: 713680927}
-  _eventNeedsRandomSpawnPoint: 0000000000000000000000000000000000000000000000000000000000
+  _eventNeedsRandomSpawnPoint: 0100000100000000000000000000000000000000000000000000000000
 --- !u!4 &2096818812
 Transform:
   m_ObjectHideFlags: 0
@@ -7599,6 +7630,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 174bc9b0ae826cb43aa2e456940df2d6, type: 2}
     - target: {fileID: 8522219025722325629, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
+      propertyPath: _resetWeapons
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522219025722325629, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
       propertyPath: _weaponsObjects.Array.data[4]
       value: 
       objectReference: {fileID: 1887021641}
@@ -7606,6 +7641,10 @@ PrefabInstance:
       propertyPath: _weaponsObjects.Array.data[13]
       value: 
       objectReference: {fileID: 1211620744}
+    - target: {fileID: 8522219025722325630, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
+      propertyPath: _isNewGoal
+      value: 
+      objectReference: {fileID: 11400000, guid: cb26bc48d06c21448a0f4c7c9f86112d, type: 2}
     - target: {fileID: 8522219025722325630, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
       propertyPath: _goals.Array.data[0]
       value: 

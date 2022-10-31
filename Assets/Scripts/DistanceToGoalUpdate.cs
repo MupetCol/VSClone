@@ -5,6 +5,7 @@ public class DistanceToGoalUpdate : MonoBehaviour
 	#region PUBLIC_VARIABLES
 
 	[SerializeField] private FloatReference _distanceToGoal;
+	[SerializeField] private BoolReference _isNewGoal;
 	[SerializeField] private GameObject[] _goals;
 	
 	/* Player moves 1 unit per second, meaning in 30 minutes a maximum of 1800 uinits
@@ -36,6 +37,11 @@ public class DistanceToGoalUpdate : MonoBehaviour
 			_dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
 			go.transform.position = _dir.normalized * _distanceOnStart;
 		}
+
+		if (_isNewGoal.toggle)
+		{
+			_distanceToGoal.Value = 0f;
+		}
     }
 
     void FixedUpdate()
@@ -53,7 +59,7 @@ public class DistanceToGoalUpdate : MonoBehaviour
 				}
 			}
 			_distanceToGoal.Value = Utilities.Instance._initDistanceToGoal - Vector2.Distance(transform.position, go.transform.position);
-			Debug.Log(_distanceToGoal.Value);
+			//Debug.Log(_distanceToGoal.Value);
 		}
 
     }

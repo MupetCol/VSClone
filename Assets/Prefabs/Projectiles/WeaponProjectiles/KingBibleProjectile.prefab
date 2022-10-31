@@ -118,7 +118,7 @@ MonoBehaviour:
   _weapon: {fileID: 11400000, guid: 69cd792e0fdcc8945996464fc926efd3, type: 2}
   _projectileCustomDestroyTime: 0
   _destroyTime: 0
-  _speed: 100
+  _speed: 150
 --- !u!114 &-3639188769485754025
 MonoBehaviour:
   m_ObjectHideFlags: 0

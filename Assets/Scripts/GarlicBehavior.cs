@@ -6,8 +6,6 @@ public class GarlicBehavior : WeaponBase, ILevelUp<float>
 
 	#region PRIVATE_VARIABLES
 
-	private bool _canDealDamage = true;
-	private bool init = false;
 	private float _lastArea;
 	private float _startScale;
 
@@ -30,13 +28,6 @@ public class GarlicBehavior : WeaponBase, ILevelUp<float>
 
 
 	#endregion
-
-	public IEnumerator DealDamage(Collision2D coll)
-	{
-		_canDealDamage = false;
-		yield return new WaitForSeconds(hitboxDelay);
-		_canDealDamage = true;
-	}
 
 	private void Update()
 	{
