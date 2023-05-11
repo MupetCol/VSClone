@@ -7665,6 +7665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GemSpawner TEST
       objectReference: {fileID: 0}
+    - target: {fileID: 8522219025908211419, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8522219025908211421, guid: e9aa860f34349b647987b007b69f19f7, type: 3}
       propertyPath: _spawnPoints.Array.data[0]
       value: 
